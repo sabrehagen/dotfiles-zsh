@@ -2,4 +2,4 @@
 source $HOME/.zshenv.base
 
 # Alias common commands to better alternatives
-alias chrome="nohup google-chrome >/dev/null &"
+alias chrome="nohup google-chrome >/dev/null 2>&1 &"
