@@ -1,6 +1,3 @@
-# Load base container .zshenv
-source $HOME/.zshenv.base
-
 # Load secrets into environment if present
 test -f ~/.secrets.conf &&
   export $(cat ~/.secrets.conf)
