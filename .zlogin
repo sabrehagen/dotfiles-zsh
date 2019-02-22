@@ -42,5 +42,5 @@ fi
 eval `keychain --eval id_rsa 2>/dev/null`
 
 # Clone secrets
-test -d ~/.config/vcsh/repo.d/dotfiles-env-secrets.git || \
+test -d ~/.config/vcsh/repo.d/dotfiles-secrets.git || \
   ~/.config/scripts/clone-secrets.sh
