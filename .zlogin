@@ -41,6 +41,7 @@ fi
 # Unlock ssh private key
 eval `keychain --eval id_rsa 2>/dev/null`
 
-# Clone secrets
-test -d ~/.config/vcsh/repo.d/dotfiles-env-secrets.git || \
+# Clone secrets if not already cloned
+if [ ! -d ~/.config/vcsh/repo.d/dotfiles-secrets.git ]; then
   ~/.config/scripts/clone-secrets.sh
+fi

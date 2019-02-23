@@ -1,6 +1,7 @@
 # Load secrets into environment if present
-test -f ~/.secrets.conf &&
-  export $(cat ~/.secrets.conf)
+if [ -d ~/.secrets ]; then
+  export $(cat ~/.secrets/*)
+fi
 
 # Alias remote connections to include webrelay environment secrets
 alias ssh-desktop="nohup google-chrome --app=$RELAY_HOST_DESKTOP >/dev/null 2>&1 &; disown %1"
