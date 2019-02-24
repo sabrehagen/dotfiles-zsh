@@ -14,5 +14,4 @@ alias chrome="nohup google-chrome >/dev/null 2>&1 &; disown %1"
 export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
 
 # Custom shell functions
-function https-to-git () { sed -i 's;https://github.com/\(.*\);git@github.com:\1.git;' "${1:-.git/config}"; }
-
+function https-to-git () { sed -i 's;https://.*github.com/\(.*\);git@github.com:\1;' "${1:-.git/config}"; }
