@@ -56,14 +56,3 @@ export PROMPT='
 ${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT_ICON_CHAR $(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
-# Alias common commands to better alternatives
-alias cat=bat
-alias g=grep
-alias imgur=imgur-uploader
-alias pastebin="curl -F 'f:1=<-' ix.io"
-alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
-alias tmux="tmux -S ${STEMN_TMUX-$HOME}/.tmux.sock"
-alias tree="tree -a -I 'node_modules|.git' -L 4"
-
-# Custom shell functions
-function https-to-git () { sed -i 's;https://github.com/\(.*\);git@github.com:\1.git;' "${1:-.git/config}"; }
