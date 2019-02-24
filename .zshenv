@@ -1,5 +1,5 @@
 # Load secrets into environment if present
-if [ "$(ls ~/.secrets | wc -l)" -gt 0 ]; then
+if [ -d ~/.secrets ] && [ "$(ls ~/.secrets | wc -l)" -gt 0 ]; then
   export $(cat ~/.secrets/*)
 fi
 
