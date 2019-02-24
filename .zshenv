@@ -23,5 +23,5 @@ alias tmux="tmux -S $HOME/.tmux.sock"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
 
 # Custom shell functions
-function https-to-git () { sed -i 's;https://.*github.com/\(.*\);git@github.com:\1;' "${1:-.git/config}"; }
+export function https-to-git () { sed -i 's;https://.*github.com/\(.*\);git@github.com:\1;' "${1:-.git/config}"; }
 
