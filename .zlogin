@@ -47,7 +47,7 @@ if [ ! -d ~/.config/vcsh/repo.d/dotfiles-secrets.git ]; then
 fi
 
 # Start desktop services if not alredy started
-EXISTING_LOGIN_SESSION=$(ps aux | grep "zsh --login" | grep -v grep)
+EXISTING_LOGIN_SESSION=$(tmux ls | grep desktop-environment | grep -v grep)
 if [ -z $EXISTING_LOGIN_SESSION ]; then
   ~/.config/scripts/startup.sh
 fi
