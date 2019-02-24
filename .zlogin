@@ -43,6 +43,11 @@ eval `keychain --eval id_rsa 2>/dev/null`
 
 # Clone secrets if not already cloned
 if [ ! -d ~/.config/vcsh/repo.d/dotfiles-secrets.git ]; then
-  echo "$USER $SHELL $(date)" >> /tmp/run-history
   zsh ~/.config/scripts/clone-secrets.sh
+fi
+
+# Start desktop services if not alredy started
+EXISTING_LOGIN_SESSION=$(ps aux | grep "zsh --login" | grep -v grep)
+if [ -z $EXISTING_LOGIN_SESSION ]; then
+  ~/.config/scripts/startup.sh
 fi
