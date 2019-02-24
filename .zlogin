@@ -42,6 +42,6 @@ fi
 eval `keychain --eval id_rsa 2>/dev/null`
 
 # Clone secrets if not already cloned
-if [ "$(ls ~/.secrets | wc -l)" -gt "0" ]; then
+if [ ! -d ~/.config/vcsh/repo.d/dotfiles-secrets.git ]; then
   ~/.config/scripts/clone-secrets.sh
 fi
