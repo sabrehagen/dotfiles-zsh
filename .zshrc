@@ -64,3 +64,5 @@ alias pastebin="curl -F 'f:1=<-' ix.io"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias tmux="tmux -S ${STEMN_TMUX-$HOME}/.tmux.sock"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
+alias vcshp="VCSH_REPO_D=$HOME/.config/vcsh/repo-private.d vcsh"
+
