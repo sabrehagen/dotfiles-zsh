@@ -39,7 +39,7 @@ fi
 # tree -L 1 -d
 
 # Unlock ssh private key
-eval `keychain --eval id_rsa 2>/dev/null`
+eval `keychain --eval $HOME/.ssh-private/id_rsa 2>/dev/null`
 
 # Clone secrets if not already cloned
 if [ ! -d ~/.config/vcsh/repo-private.d/dotfiles-secrets.git ]; then
