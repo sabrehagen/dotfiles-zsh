@@ -63,5 +63,6 @@ alias g=grep
 alias imgur=imgur-uploader
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
+alias scripts="cat package.json | jq .scripts"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
 alias vcshp="VCSH_REPO_D=$HOME/.config/vcsh/repo-private.d vcsh"
