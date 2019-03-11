@@ -65,10 +65,6 @@ alias pastebin="curl -F 'f:1=<-' ix.io"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias s="git s"
 alias scripts="cat package.json | jq .scripts"
-alias tmux="tmux -S ${STEMN_TMUX-$HOME}/.tmux.sock"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
 alias vcshp="VCSH_REPO_D=$HOME/.config/vcsh/repo-private.d vcsh"
 alias x='xargs -n 1 -I %'
-
-# Ensure tmux socket exists before accessing it
-touch ${STEMN_TMUX-$HOME}/.tmux.sock
