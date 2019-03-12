@@ -66,5 +66,8 @@ alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias s="git s"
 alias scripts="cat package.json | jq .scripts"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
+alias u=".."
+alias uu="..."
+alias uuu="...."
 alias vcshp="VCSH_REPO_D=$HOME/.config/vcsh/repo-private.d vcsh"
 alias x='xargs -n 1 -I %'
