@@ -43,7 +43,7 @@ eval `keychain --eval $HOME/.ssh-private/id_rsa 2>/dev/null`
 
 # Clone secrets if not already cloned
 if [ ! -d ~/.config/vcsh/repo-private.d/dotfiles-secrets.git ]; then
-  zsh ~/.config/scripts/clone-secrets.sh
+  . ~/.config/scripts/clone-secrets.sh
 fi
 
 # Start desktop services if not alredy started
