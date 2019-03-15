@@ -10,11 +10,17 @@ alias ssh-laptop="nohup google-chrome --app=$RELAY_HOST_LAPTOP >/dev/null 2>&1 &
 # Alias common commands to better alternatives
 alias chrome="nohup google-chrome >/dev/null 2>&1 &; disown %1"
 
+# Configure antigen
+export ADOTDIR=/opt/antigen
+
+# Add user binaries to path
+export PATH=$HOME/.bin:$PAHT
+
 # Add fzf to path
 export PATH=$PATH:/opt/fzf/bin
 
-# Set user environment
-export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
+# Configure tmux plugin manager
+export TMUX_PLUGIN_MANAGER_PATH=/opt/tpm/plugins
 
 # Custom shell functions
 function https-to-git () { sed -i 's;https://.*github.com/\(.*\);git@github.com:\1;' "${1:-.git/config}"; }
