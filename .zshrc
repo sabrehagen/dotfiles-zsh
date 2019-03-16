@@ -60,11 +60,15 @@ ${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT
 alias c=cat
 alias cat=bat
 alias d="git d"
+alias f=fzf
 alias g=grep
 alias gg=lazygit
 alias imgur=imgur-uploader
 alias pastebin="curl -F 'f:1=<-' ix.io"
+alias pp="git pp"
+alias p="git pull"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
+alias pu="git push"
 alias s="git s"
 alias scripts="cat package.json | jq .scripts"
 alias tn="tmux new-session -s on-demand-$(date +%s) -t"
@@ -77,4 +81,3 @@ alias x='xargs -n 1 -I %'
 
 # Load jump shell
 eval "$(jump shell zsh)"
-
