@@ -57,6 +57,7 @@ ${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 # Alias common commands to better alternatives
+alias ascii="figlet -f slant -m 2"
 alias c=cat
 alias cat=bat
 alias d="git d"
@@ -76,7 +77,11 @@ alias tree="tree -a -I 'node_modules|.git' -L 4"
 alias u=".."
 alias uu="..."
 alias uuu="...."
+alias v=vcsh
 alias vcshp="VCSH_REPO_D=$HOME/.config/vcsh/repo-private.d vcsh"
+alias vp=vcshp
+alias vps="vcshp status"
+alias vs="vcsh status"
 alias x='xargs -n 1 -I %'
 
 # Load jump shell

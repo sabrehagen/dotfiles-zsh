@@ -12,14 +12,13 @@ if [ ! -z "$STEMN_GIT_NAME" ]; then
 fi
 
 # Print mesasge of the day
-ascii_art () { figlet -f slant -m 2 $1 | sed 's/^/ /'; }
 echo
 if echo $HOSTNAME | grep -q laptop; then
-  ascii_art LAPTOP
+  ascii LAPTOP
 elif echo $HOSTNAME | grep -q desktop; then
-  ascii_art DESKTOP
+  ascii DESKTOP
 else
-  ascii_art CLOUD
+  ascii CLOUD
 fi
 echo
 
