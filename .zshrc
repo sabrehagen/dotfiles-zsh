@@ -79,8 +79,10 @@ alias uu="..."
 alias uuu="...."
 alias v=vcsh
 alias vcshp="VCSH_REPO_D=$HOME/.config/vcsh/repo-private.d vcsh"
+alias vd="vcsh foreach diff"
 alias vp=vcshp
 alias vps="vcshp status"
+alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
 alias x='xargs -n 1 -I %'
 
