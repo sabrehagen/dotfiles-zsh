@@ -12,7 +12,9 @@ if [ ! -z "$STEMN_GIT_NAME" ]; then
 fi
 
 # Print mesasge of the day
-/bin/cat $HOME/.motd
+echo
+figlet -f slant -m 2 DESKTOP | sed 's/^/ /'
+echo
 
 # Print container build info if present
 if [ ! -z "$CONTAINER_BUILD_DATE" ]; then
@@ -28,7 +30,6 @@ if [ ! -z "$CONTAINER_BUILD_DATE" ]; then
   COLOURED_CONTAINER_GIT_SHA="$YELLOW${CONTAINER_GIT_SHA}$WHITE"
   COLOURED_CONTAINER_IMAGE_NAME="$MAGENTA${CONTAINER_IMAGE_NAME}$WHITE"
 
-  echo
   echo "$COLOURED_CONTAINER_IMAGE_NAME | built $COLOURED_TIME_SINCE_CONTAINER_BUILD | $COLOURED_CONTAINER_GIT_SHA"
 fi
 
