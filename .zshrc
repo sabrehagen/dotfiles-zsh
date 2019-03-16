@@ -39,18 +39,9 @@ unsetopt nomatch
 # Do not remove spaces when piping commands
 ZLE_REMOVE_SUFFIX_CHARS=
 
-# Configure antigen
-export ADOTDIR=/opt/antigen
-
-# Set fzf install directory
-export FZF_BASE=/opt/fzf
-
 # Set zsh history file location
 export HISTFILE=$HOME/.cache/zsh/histfile
 mkdir -p $(dirname $HISTFILE)
-
-# Set fzf install directory
-export NVM_DIR=/opt/nvm
 
 # Highlight the development environment icon in the shell prompt if we're on a remote machine
 export STEMN_ZSH_ENVIRONMENT_ICON_CHAR=⛀
@@ -64,9 +55,6 @@ fi
 export PROMPT='
 ${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT_ICON_CHAR $(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
-
-# Configure tmux plugin manager
-export TMUX_PLUGIN_MANAGER_PATH=/opt/tpm/plugins
 
 # Alias common commands to better alternatives
 alias c=cat
