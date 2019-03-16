@@ -12,8 +12,15 @@ if [ ! -z "$STEMN_GIT_NAME" ]; then
 fi
 
 # Print mesasge of the day
+ascii_art () { figlet -f slant -m 2 $1 | sed 's/^/ /'; }
 echo
-figlet -f slant -m 2 DESKTOP | sed 's/^/ /'
+if echo $HOSTNAME | grep -q laptop; then
+  ascii_art LAPTOP
+elif echo $HOSTNAME | grep -q desktop; then
+  ascii_art DESKTOP
+else
+  ascii_art CLOUD
+fi
 echo
 
 # Print container build info if present
