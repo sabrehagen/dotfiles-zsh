@@ -1,6 +1,9 @@
 # Configure antigen
 export ADOTDIR=/opt/antigen
 
+# Add user binaries to path
+export PATH=$HOME/.bin:$PATH
+
 # Add fzf to path
 export PATH=$PATH:/opt/fzf/bin
 

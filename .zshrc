@@ -11,6 +11,7 @@ antigen use oh-my-zsh
 antigen bundle command-not-found
 antigen bundle docker
 antigen bundle docker-compose
+antigen bundle fzf
 antigen bundle git
 antigen bundle helm
 antigen bundle kubectl
@@ -60,11 +61,13 @@ alias c=cat
 alias cat=bat
 alias d="git d"
 alias g=grep
+alias gg=lazygit
 alias imgur=imgur-uploader
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias s="git s"
 alias scripts="cat package.json | jq .scripts"
+alias tn="tmux new-session -s on-demand-$(date +%s) -t"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
 alias u=".."
 alias uu="..."
