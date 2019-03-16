@@ -1,6 +1,3 @@
-# Load jump shell
-eval "$(jump shell zsh)"
-
 # Load development environment ssh keys if present
 if [ -d /stemn/credentials ]; then
   ssh-add /stemn/credentials/development-environment.prv >/dev/null 2>&1
@@ -15,7 +12,7 @@ if [ ! -z "$STEMN_GIT_NAME" ]; then
 fi
 
 # Print mesasge of the day
-# /bin/cat $HOME/.motd
+/bin/cat $HOME/.motd
 
 # Print container build info if present
 if [ ! -z "$CONTAINER_BUILD_DATE" ]; then
@@ -36,7 +33,7 @@ if [ ! -z "$CONTAINER_BUILD_DATE" ]; then
 fi
 
 # Log current working directory structure
-# tree -L 1 -d
+tree -L 1 -d
 
 # Unlock ssh private key
 eval `keychain --eval $HOME/.ssh-private/id_rsa 2>/dev/null`

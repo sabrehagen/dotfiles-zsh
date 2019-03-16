@@ -74,3 +74,7 @@ alias uu="..."
 alias uuu="...."
 alias vcshp="VCSH_REPO_D=$HOME/.config/vcsh/repo-private.d vcsh"
 alias x='xargs -n 1 -I %'
+
+# Load jump shell
+eval "$(jump shell zsh)"
+
