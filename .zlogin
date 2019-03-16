@@ -46,7 +46,7 @@ tree -L 1 -d
 eval `keychain --eval $HOME/.ssh-private/id_rsa 2>/dev/null`
 
 # Clone secrets if not already cloned
-if [ ! -d ~/.config/vcsh/repo-private.d/dotfiles-secrets.git ]; then
+if [ ! -f ~/.ssh-private/id_rsa ]; then
   . ~/.config/scripts/clone-secrets.sh
 fi
 
