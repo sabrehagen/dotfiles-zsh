@@ -1,3 +1,12 @@
+# Configure antigen
+export ADOTDIR=/opt/antigen
+
+# Add fzf to path
+export PATH=$PATH:/opt/fzf/bin
+
+# Configure tmux plugin manager
+export TMUX_PLUGIN_MANAGER_PATH=/opt/tpm/plugins
+
 # Load secrets into environment if present
 if [ -d ~/.secrets ] && [ "$(ls ~/.secrets | wc -l)" -gt 0 ]; then
   export $(cat ~/.secrets/*)
@@ -9,12 +18,6 @@ alias ssh-laptop="nohup google-chrome --app=$RELAY_HOST_LAPTOP >/dev/null 2>&1 &
 
 # Alias common commands to better alternatives
 alias chrome="nohup google-chrome >/dev/null 2>&1 &; disown %1"
-
-# Add fzf to path
-export PATH=$PATH:$HOME/.fzf/bin
-
-# Set user environment
-export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
 
 # Custom shell functions
 function https-to-git () { sed -i 's;https://.*github.com/\(.*\);git@github.com:\1;' "${1:-.git/config}"; }
