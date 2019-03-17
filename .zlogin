@@ -46,12 +46,13 @@ tree -L 1 -d
 eval `keychain --eval id_rsa 2>/dev/null`
 
 # Clone secrets if not already cloned
-if [ ! -f ~/.ssh-private/id_rsa ]; then
-  . ~/.config/scripts/clone-secrets.sh
+if [ ! -f $HOME/.ssh-private/id_rsa ]; then
+  . $HOME/.config/scripts/clone-secrets.sh
+  . $HOME/.zshenv
 fi
 
 # Start desktop services if not alredy started
 EXISTING_LOGIN_SESSION=$(tmux ls | egrep "^desktop-environment-shell:" | grep -v grep)
 if [ -z $EXISTING_LOGIN_SESSION ]; then
-  ~/.config/scripts/startup.sh
+  $HOME/.config/scripts/startup.sh
 fi
