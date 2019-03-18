@@ -60,6 +60,10 @@ ${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT
 alias ascii="figlet -f slant -m 2"
 alias c=cat
 alias cat=bat
+alias cam="git cam"
+alias camp="git camp"
+alias co="git co"
+alias cob="git cob"
 alias d="git d"
 alias f=fzf
 alias g=grep
