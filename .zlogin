@@ -1,16 +1,3 @@
-# Load development environment ssh keys if present
-if [ -d /stemn/credentials ]; then
-  ssh-add /stemn/credentials/development-environment.prv >/dev/null 2>&1
-fi
-
-# Set git user configuration from environment variables
-if [ ! -z "$STEMN_GIT_EMAIL" ]; then
-  git config --global user.email "$STEMN_GIT_EMAIL"
-fi
-if [ ! -z "$STEMN_GIT_NAME" ]; then
-  git config --global user.name "$STEMN_GIT_NAME"
-fi
-
 # Print mesasge of the day
 echo
 if echo $HOSTNAME | grep -q laptop; then

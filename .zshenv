@@ -18,8 +18,8 @@ export NVM_DIR=/opt/nvm
 export TMUX_PLUGIN_MANAGER_PATH=/opt/tpm/plugins
 
 # Load secrets into environment if present
-if [ -d ~/.secrets ] && [ "$(ls ~/.secrets | wc -l)" -gt 0 ]; then
-  export $(cat ~/.secrets/*)
+if [ -d $HOME/.secrets ]; then
+  . $HOME/.secrets/*
 fi
 
 # Alias remote connections to include webrelay environment secrets
