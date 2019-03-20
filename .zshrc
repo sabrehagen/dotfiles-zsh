@@ -46,7 +46,7 @@ mkdir -p $(dirname $HISTFILE)
 # Highlight the development environment icon in the shell prompt if we're on a remote machine
 export STEMN_ZSH_ENVIRONMENT_ICON_CHAR=⛀
 export STEMN_ZSH_ENVIRONMENT_ICON_COLOUR=white
-if [ ! -z "$TERRAFORM_TARGET" ] && [ "$TERRAFORM_TARGET" != "localhost" ]; then
+if [ "$TERRAFORM_TARGET" = "development-environment" ]; then
   export STEMN_ZSH_ENVIRONMENT_ICON_CHAR=⛃
   export STEMN_ZSH_ENVIRONMENT_ICON_COLOUR=magenta
 fi
@@ -58,6 +58,7 @@ ${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT
 
 # Alias common commands to better alternatives
 alias a="git a"
+alias aa="git added"
 alias ascii="figlet -f slant -m 2"
 alias c=cat
 alias cat=bat
