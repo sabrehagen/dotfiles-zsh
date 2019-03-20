@@ -56,27 +56,32 @@ export PROMPT='
 ${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT_ICON_CHAR $(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
-# Alias common commands to better alternatives
+# Alias git commands
 alias a="git a"
 alias aa="git added"
+alias ap="git ap"
+alias cam="git cam"
+alias camp="git camp"
+alias cln="git cln"
+alias co="git co"
+alias cob="git cob"
+alias cp="git cp"
+alias d="git d"
+alias p="git p"
+alias pp="git pp"
+alias pu="git pu"
+alias s="git s"
+
+# Alias common commands to better alternatives
 alias ascii="figlet -f slant -m 2"
 alias c=cat
 alias cat=bat
-alias cam="git cam"
-alias camp="git camp"
-alias co="git co"
-alias cob="git cob"
-alias d="git d"
 alias f=fzf
 alias g=grep
 alias gg=lazygit
 alias imgur=imgur-uploader
 alias pastebin="curl -F 'f:1=<-' ix.io"
-alias pp="git pp"
-alias p="git p"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
-alias pu="git pu"
-alias s="git s"
 alias scripts="cat package.json | jq .scripts"
 alias tn="tmux new-session -s on-demand-$(date +%s) -t"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
