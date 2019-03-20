@@ -57,6 +57,7 @@ ${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 # Alias common commands to better alternatives
+alias a="git a"
 alias ascii="figlet -f slant -m 2"
 alias c=cat
 alias cat=bat
