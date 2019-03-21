@@ -83,7 +83,9 @@ alias imgur=imgur-uploader
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias scripts="cat package.json | jq .scripts"
+alias t=tmux
 alias tn="tmux new-session -s on-demand-$(date +%s) -t"
+alias ts="tmux display-message -p '#S'"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
 alias u=".."
 alias uu="..."
