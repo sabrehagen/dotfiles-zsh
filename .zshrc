@@ -88,6 +88,7 @@ alias co="git co"
 alias cob="git cob"
 alias cop="git cp"
 alias d="git d"
+alias l="git l"
 alias p="git p"
 alias pp="git pp"
 alias pu="git pu"
@@ -101,6 +102,7 @@ alias f=fzf
 alias g=grep
 alias gg=lazygit
 alias imgur=imgur-uploader
+alias ll="ls -lah"
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias scripts="cat package.json | jq .scripts"
