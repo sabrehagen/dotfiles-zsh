@@ -78,7 +78,7 @@ ${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT
 
 # Alias git commands
 alias a="git a"
-alias aa="git added"
+alias ad="git added"
 alias ap="git ap"
 alias cam="git cam"
 alias camp="git camp"
