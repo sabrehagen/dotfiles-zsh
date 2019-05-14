@@ -41,5 +41,5 @@ fi
 # Start desktop services if not alredy started
 EXISTING_LOGIN_SESSION=$(tmux ls | egrep "^desktop-environment-shell:" | grep -v grep)
 if [ -z $EXISTING_LOGIN_SESSION ]; then
-  $HOME/.config/scripts/startup.sh
+  # $HOME/.config/scripts/startup.sh
 fi
