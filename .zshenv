@@ -11,7 +11,7 @@ export FZF_BASE=/opt/fzf
 export HISTFILE=$HOME/.cache/zsh/histfile
 mkdir -p $(dirname $HISTFILE)
 
-# Set fzf install directory
+# Set nvm install directory
 export NVM_DIR=/opt/nvm
 
 # Configure tmux plugin manager
@@ -24,10 +24,6 @@ if [ -d $SECRETS ]; then
     . $SECRETS/$SECRET
   done
 fi
-
-# Alias remote connections to include webrelay environment secrets
-alias ssh-desktop="nohup google-chrome --app=$RELAY_HOST_DESKTOP >/dev/null 2>&1 &; disown %1"
-alias ssh-laptop="nohup google-chrome --app=$RELAY_HOST_LAPTOP >/dev/null 2>&1 &; disown %1"
 
 # Alias common commands to better alternatives
 alias chrome="nohup google-chrome >/dev/null 2>&1 &; disown %1"

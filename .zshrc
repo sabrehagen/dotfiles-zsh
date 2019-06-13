@@ -98,7 +98,8 @@ alias s="git s"
 alias ascii="figlet -f slant -m 2"
 alias c=cat
 alias cat=bat
-alias f=fzf
+alias e="docker ps --format '{{.Names}}' | f --bind \"enter:execute(docker exec -it {} zsh </dev/tty >/dev/tty 2>&1)+abort\""
+alias f="fzf --height 5% --reverse"
 alias g=grep
 alias gg=lazygit
 alias imgur=imgur-uploader
@@ -121,7 +122,7 @@ alias vp=vcshp
 alias vps="vcshp status"
 alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
-alias x='xargs -n 1 -I %'
+alias x='xargs -n 1 -I @'
 
 # Load jump shell
 eval "$(jump shell zsh)"
