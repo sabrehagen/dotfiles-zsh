@@ -27,3 +27,4 @@ fi
 
 # Alias common commands to better alternatives
 alias chrome="nohup google-chrome >/dev/null 2>&1 &; disown %1"
+alias slack="nohup slack >/dev/null 2>&1 &; disown %1"

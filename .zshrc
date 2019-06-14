@@ -43,36 +43,9 @@ ZLE_REMOVE_SUFFIX_CHARS=
 export HISTFILE=$HOME/.cache/zsh/histfile
 mkdir -p $(dirname $HISTFILE)
 
-# Highlight the development environment icon in the shell prompt if we're on a remote machine
-export STEMN_ZSH_ENVIRONMENT_ICON_CHAR=⛀
-export STEMN_ZSH_ENVIRONMENT_ICON_COLOUR=white
-if [ "$TERRAFORM_TARGET" = "development-environment" ]; then
-  export STEMN_ZSH_ENVIRONMENT_ICON_CHAR=⛃
-  export STEMN_ZSH_ENVIRONMENT_ICON_COLOUR=magenta
-fi
-
-# Show the development environment sync status in the prompt
-export STEMN_ZSH_SYNC_ICON_CHAR=⬆
-export STEMN_ZSH_SYNC_ICON_COLOUR=yellow
-if [ "$TERRAFORM_TARGET" = "development-environment" ]; then
-  export STEMN_ZSH_SYNC_ICON_CHAR=↓
-fi
-
-# Report local or remote sync status
-if [ "$TERRAFORM_TARGET" = "development-environment" ]; then
-  export STEMN_ZSH_SYNC_CHECK="docker ps | grep -q development-environment-sync"
-else
-  export STEMN_ZSH_SYNC_CHECK="pkill -0 --full sync:watch"
-fi
-
-# Set the sync status
-if eval $STEMN_ZSH_SYNC_CHECK; then
-  export STEMN_ZSH_SYNC_STATUS="%{$fg[$STEMN_ZSH_SYNC_ICON_COLOUR]%}$STEMN_ZSH_SYNC_ICON_CHAR "
-fi
-
 # Set the shell prompt
 export PROMPT='
-${_current_dir}%{$fg[$STEMN_ZSH_ENVIRONMENT_ICON_COLOUR]%}$STEMN_ZSH_ENVIRONMENT_ICON_CHAR $STEMN_ZSH_SYNC_STATUS$(git_prompt_info)
+${_current_dir}$(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 # Alias git commands
