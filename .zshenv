@@ -1,6 +1,9 @@
 # Add user binaries to path
 export PATH=$HOME/.bin:$PATH
 
+# Add yarn binaries to path
+export PATH=$HOME/.yarn/bin:$PATH
+
 # Configure antigen
 export ADOTDIR=/opt/antigen
 
