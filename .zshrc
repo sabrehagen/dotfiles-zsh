@@ -48,6 +48,9 @@ export PROMPT='
 ${_current_dir}$(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
+# Set the shell prompt
+export RPROMPT='$(_vi_status)%{$(echotc UP 1)%}%* ${_return_status}%{$(echotc DO 1)%}'
+
 # Alias git commands
 alias a="git a"
 alias ad="git added"
