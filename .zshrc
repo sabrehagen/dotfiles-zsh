@@ -101,3 +101,11 @@ alias x='xargs -n 1 -I @'
 
 # Load jump shell
 eval "$(jump shell zsh)"
+
+login () {
+  # Clone secrets if not already cloned
+  if [ ! -f $HOME/.ssh-private/id_rsa ]; then
+    . $HOME/.config/scripts/clone-secrets.sh
+    . $HOME/.zshenv
+  fi
+}
