@@ -109,3 +109,7 @@ login () {
     . $HOME/.zshenv
   fi
 }
+
+logout () {
+  $HOME/.config/scripts/clean-secrets.sh
+}
