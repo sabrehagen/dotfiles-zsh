@@ -45,7 +45,7 @@ mkdir -p $(dirname $HISTFILE)
 
 # Set the shell prompt
 export PROMPT='
-${_current_dir}$(git_prompt_info)
+${_current_dir}%{$fg[yellow]%}$(test -L $HOME/.ssh/id_rsa || echo 🔒\ )$(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 # Set the shell prompt
