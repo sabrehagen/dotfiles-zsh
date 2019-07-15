@@ -70,6 +70,8 @@ alias pu="git pu"
 alias s="git s"
 
 # Alias common commands to better alternatives
+alias apt-search="apt-cache search"
+alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
 alias c=cat
 alias cat=bat
