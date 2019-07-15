@@ -14,9 +14,6 @@ export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
 export HISTFILE=$HOME/.cache/zsh/histfile
 mkdir -p $(dirname $HISTFILE)
 
-# Set nvm install directory
-export NVM_DIR=/opt/nvm
-
 # Alias common commands to better alternatives
 alias chrome="nohup google-chrome >/dev/null 2>&1 &; disown %1"
 alias polo="nohup polo-gtk >/dev/null 2>&1 &"
