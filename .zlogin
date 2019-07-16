@@ -29,9 +29,6 @@ fi
 # Log current working directory structure
 tree -L 1 -d
 
-# Unlock ssh private key
-eval `keychain --eval id_rsa 2>/dev/null`
-
 # Start desktop services if not alredy started
 EXISTING_LOGIN_SESSION=$(tmux ls | egrep "^desktop-environment-shell:" | grep -v grep)
 if [ -z $EXISTING_LOGIN_SESSION ]; then
