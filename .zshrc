@@ -58,7 +58,7 @@ export RPROMPT='$(_vi_status)%{$(echotc UP 1)%}%{$FG[128]%}%* ${_return_status}%
 
 # Alias git commands
 alias a="git a"
-alias ad="git added"
+alias aa="git aa"
 alias ap="git ap"
 alias cam="git cam"
 alias camp="git camp"
