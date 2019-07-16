@@ -4,6 +4,9 @@ ANTIGEN_MUTEX=false
 # Load antigen plugin manager
 source antigen.zsh
 
+# Configure oh-my-zsh plugins
+zstyle :omz:plugins:keychain options --quiet
+
 # Use oh-my-zsh framework
 antigen use oh-my-zsh
 
