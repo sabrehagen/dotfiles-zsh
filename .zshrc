@@ -4,9 +4,6 @@ ANTIGEN_MUTEX=false
 # Load antigen plugin manager
 source antigen.zsh
 
-# Configure oh-my-zsh plugins
-zstyle :omz:plugins:keychain options --quiet
-
 # Use oh-my-zsh framework
 antigen use oh-my-zsh
 
@@ -16,10 +13,8 @@ antigen bundle docker
 antigen bundle docker-compose
 antigen bundle fzf
 antigen bundle git
-antigen bundle git-auto-fetch
 antigen bundle gnu-utils
 antigen bundle gpg-agent
-antigen bundle keychain
 antigen bundle ubuntu
 
 # Bundles from third parties
