@@ -102,6 +102,9 @@ alias x='xargs -n 1 -I @'
 # Load jump shell
 eval "$(jump shell zsh)"
 
+# Unlock ssh private key
+eval `keychain --eval id_rsa 2>/dev/null`
+
 login () {
   # Clone secrets if not already cloned
   if [ ! -f $HOME/.ssh-private/id_rsa ]; then
