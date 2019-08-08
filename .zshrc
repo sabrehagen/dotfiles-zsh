@@ -119,3 +119,6 @@ login () {
 logout () {
   $HOME/.config/scripts/clean-secrets.sh
 }
+
+# transfer.sh upload function
+transfer() { tmpfile=$(mktemp -t transferXXX); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile; fi; cat -p $tmpfile; rm -f $tmpfile; }
