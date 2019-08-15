@@ -120,3 +120,7 @@ login () {
 logout () {
   $HOME/.config/scripts/clean-secrets.sh
 }
+
+transfer () {
+  curl -# -F "file=@$1" "https://0x0.st"
+}
