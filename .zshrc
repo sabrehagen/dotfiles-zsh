@@ -70,9 +70,11 @@ alias db="git db"
 alias dbl="git dbl"
 alias ll="git l"
 alias p="git p"
-alias pf="git pf"
 alias pp="git pp"
 alias pu="git pu"
+alias puf="git puf"
+alias puu="git puu"
+alias rbm="git rbm"
 alias s="git s"
 
 # Alias common commands to better alternatives
