@@ -110,7 +110,7 @@ alias x='xargs -n 1 -I @'
 eval "$(jump shell zsh)"
 
 # Unlock ssh private key
-eval `keychain --eval id_rsa 2>/dev/null`
+eval `keychain --eval id_rsa --inherit any 2>/dev/null`
 
 login () {
   # Clone secrets if not already cloned
