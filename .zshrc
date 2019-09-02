@@ -111,8 +111,8 @@ alias x='xargs -n 1 -I @'
 # Load jump shell
 eval "$(jump shell zsh)"
 
-# Unlock ssh private key
-eval `keychain --eval id_rsa --inherit any 2>/dev/null`
+# Start desktop services
+$HOME/.config/scripts/startup.sh
 
 login () {
   # Clone secrets if not already cloned
