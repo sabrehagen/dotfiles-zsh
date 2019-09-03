@@ -118,7 +118,6 @@ login () {
   # Clone secrets if not already cloned
   if [ ! -f $HOME/.ssh-private/id_rsa ]; then
     . $HOME/.config/scripts/clone-secrets.sh
-    . $HOME/.zshenv
   fi
 }
 
