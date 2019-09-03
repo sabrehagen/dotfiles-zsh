@@ -81,7 +81,6 @@ alias s="git s"
 alias apt-search="apt-cache search"
 alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
-alias c=cat
 alias cat=bat
 alias e="docker ps --format '{{.Names}}' | f --bind \"enter:execute(docker exec -it {} zsh </dev/tty >/dev/tty 2>&1)+abort\""
 alias f="fzf --height 5% --reverse"
