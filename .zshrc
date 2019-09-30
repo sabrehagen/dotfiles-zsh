@@ -8,6 +8,7 @@ source antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from oh-my-zsh
+antigen bundle autojump
 antigen bundle command-not-found
 antigen bundle docker
 antigen bundle docker-compose
