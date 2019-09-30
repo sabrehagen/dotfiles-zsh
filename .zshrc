@@ -109,9 +109,6 @@ alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
 alias x='xargs -n 1 -I @'
 
-# Load jump shell
-eval "$(jump shell zsh)"
-
 # Start desktop services
 $HOME/.config/scripts/startup.sh
 
