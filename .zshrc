@@ -88,7 +88,8 @@ alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
 alias cat=bat
 alias e="docker ps --format '{{.Names}}' | f --bind \"enter:execute(docker exec -it {} zsh </dev/tty >/dev/tty 2>&1)+abort\""
-alias g=grep
+alias g="grep -i"
+alias gv="grep -iv"
 alias gottyc="gotty-client --v2"
 alias l="ls -lah"
 alias pastebin="curl -F 'f:1=<-' ix.io"
