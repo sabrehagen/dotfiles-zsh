@@ -93,9 +93,11 @@ alias g="grep -i"
 alias gv="grep -iv"
 alias gottyc="gotty-client --v2"
 alias l="ls -lah"
+alias n='nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias sa='sudo $(fc -ln -1)'
+alias san='sudo nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
 alias scripts="cat package.json | jq .scripts"
 alias t=tmux
 alias tn="TMUX= t new-session -s on-demand-$(date +%M%S) -t"
