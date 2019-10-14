@@ -117,9 +117,6 @@ alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
 alias x='xargs -n 1 -I @'
 
-# Start desktop services
-$HOME/.config/scripts/startup.sh
-
 login () {
   # Clone secrets if not already cloned
   if [ ! -f $HOME/.ssh-private/id_rsa ]; then
