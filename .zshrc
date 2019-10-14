@@ -132,13 +132,3 @@ logout () {
 transfer () {
   curl -# -F "file=@$1" https://0x0.st
 }
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/jackson/repositories/lendi/platform/lendi-platform-team/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/jackson/repositories/lendi/platform/lendi-platform-team/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/jackson/repositories/lendi/platform/lendi-platform-team/node_modules/tabtab/.completions/sls.zsh ]] && . /home/jackson/repositories/lendi/platform/lendi-platform-team/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /home/jackson/repositories/lendi/platform/lendi-platform-team/node_modules/tabtab/.completions/slss.zsh ]] && . /home/jackson/repositories/lendi/platform/lendi-platform-team/node_modules/tabtab/.completions/slss.zsh
