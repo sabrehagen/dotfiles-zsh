@@ -8,7 +8,6 @@ source antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from oh-my-zsh
-antigen bundle autojump
 antigen bundle command-not-found
 antigen bundle docker
 antigen bundle docker-compose
@@ -52,6 +51,9 @@ ${_current_dir}%{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ 
 # Set the shell prompt
 export RPROMPT='$(_vi_status)%{$(echotc UP 1)%}%{$FG[128]%}%* ${_return_status}%{$(echotc DO 1)%}'
 
+# Load jump shell
+eval "$(jump shell zsh)"
+
 # Alias git commands
 alias a="git a"
 alias b="git b"
@@ -83,6 +85,8 @@ alias puf="git puf"
 alias puu="git puu"
 alias rbm="git rbm"
 alias s="git s"
+alias st="git stash"
+alias sta="git stash apply"
 
 # Alias common commands to better alternatives
 alias apt-search="apt-cache search"
