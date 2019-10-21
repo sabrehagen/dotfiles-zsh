@@ -97,6 +97,7 @@ alias e="docker ps --format '{{.Names}}' | f --bind \"enter:execute(docker exec 
 alias g="grep -i"
 alias gv="grep -iv"
 alias gottyc="gotty-client --v2"
+alias h="ssh jackson@localhost"
 alias l="ls -lah"
 alias n='nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
 alias pastebin="curl -F 'f:1=<-' ix.io"
