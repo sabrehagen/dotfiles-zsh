@@ -120,6 +120,7 @@ alias vp=vcshp
 alias vps="vcshp status"
 alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
+alias wifi="ssh -t jackson@localhost wicd-curses"
 alias x='xargs -n 1 -I @'
 
 login () {
