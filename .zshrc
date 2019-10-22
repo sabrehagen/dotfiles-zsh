@@ -63,6 +63,8 @@ alias ap="git ap"
 alias bd="git bd"
 alias c="git c"
 alias ca="git ca"
+alias cae="git cae"
+alias caf="git caf"
 alias cam="git cam"
 alias camp="git camp"
 alias campn="git campn"
@@ -70,9 +72,10 @@ alias cln="git cln"
 alias cm="git cm"
 alias co="git co"
 alias cob="git cob"
-alias cop="git cp"
-alias cpm="git cpm"
+alias cop="git cop"
+alias copm="git copm"
 alias d="git d"
+alias dl="git dl"
 alias db="git db"
 alias dbl="git dbl"
 alias f="git f"
@@ -89,16 +92,20 @@ alias st="git stash"
 alias sta="git stash apply"
 
 # Alias common commands to better alternatives
+alias ai="sudo apt-get install -y"
 alias apt-search="apt-cache search"
 alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
 alias cat=bat
+alias clip=clipboard
 alias e="docker ps --format '{{.Names}}' | f --bind \"enter:execute(docker exec -it {} zsh </dev/tty >/dev/tty 2>&1)+abort\""
-alias g="grep -i"
-alias gv="grep -iv"
+alias g="grep -iE"
+alias get="git clone"
+alias gv="grep -ivE"
 alias gottyc="gotty-client --v2"
-alias h="ssh jackson@localhost"
+alias h="~/.config/scripts/ssh-host.sh"
 alias l="ls -lah"
+alias mkx='chmod +x'
 alias n='nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
@@ -107,7 +114,8 @@ alias san='sudo nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
 alias scripts="cat package.json | jq .scripts"
 alias su="sudo su"
 alias t=tmux
-alias tn="TMUX= t new-session -s on-demand-$(date +%M%S) -t"
+alias tc="TMUX= t new-session -s"
+alias tn="TMUX= t new-session -s on-demand -t"
 alias ts="t display-message -p '#S'"
 alias tk="t kill-session -t"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
@@ -121,7 +129,7 @@ alias vp=vcshp
 alias vps="vcshp status"
 alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
-alias wifi="ssh -t jackson@localhost wicd-curses"
+alias wifi="~/.config/scripts/ssh-host-tty.sh wicd-curses"
 alias x='xargs -n 1 -I @'
 
 login () {
@@ -137,4 +145,8 @@ logout () {
 
 transfer () {
   curl -# -F "file=@$1" https://0x0.st
+}
+
+cpx () {
+  cat $HISTFILE | tail -2 | head -1 | cut -c 16- | clipboard
 }
