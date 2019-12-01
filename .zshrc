@@ -88,8 +88,8 @@ alias puf="git puf"
 alias puu="git puu"
 alias rbm="git rbm"
 alias s="git s"
-alias st="git stash"
-alias sta="git stash apply"
+alias st="git st"
+alias sta="git sta"
 
 # Alias common commands to better alternatives
 alias ai="sudo apt-get install -y"
@@ -108,7 +108,9 @@ alias l="ls -lah"
 alias mkx='chmod +x'
 alias n='nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
 alias pastebin="curl -F 'f:1=<-' ix.io"
+alias pdf="evince"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
+alias rmf="rm -rf"
 alias sa='sudo $(fc -ln -1)'
 alias san='sudo nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
 alias scripts="cat package.json | jq .scripts"
