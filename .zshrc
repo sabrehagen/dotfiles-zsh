@@ -79,6 +79,7 @@ alias dl="git dl"
 alias db="git db"
 alias dbl="git dbl"
 alias f="git f"
+alias lf=~/.config/scripts/fzf-git-log.sh
 alias ll="git l"
 alias m="git m"
 alias p="git p"
@@ -88,8 +89,8 @@ alias puf="git puf"
 alias puu="git puu"
 alias rbm="git rbm"
 alias s="git s"
-alias st="git stash"
-alias sta="git stash apply"
+alias st="git st"
+alias sta="git sta"
 
 # Alias common commands to better alternatives
 alias ai="sudo apt-get install -y"
