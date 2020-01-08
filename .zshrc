@@ -104,10 +104,10 @@ alias g="grep -iE"
 alias get="git clone"
 alias gv="grep -ivE"
 alias gottyc="gotty-client --v2"
-alias h="~/.config/scripts/ssh-host.sh"
+alias h="~/.config/scripts/ssh-host-tty.sh"
 alias ip="curl ip-api.com"
 alias l="ls -lah"
-alias mkx='chmod +x'
+alias mkx="chmod +x"
 alias n='nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias pdf="evince"
@@ -134,7 +134,7 @@ alias vps="vcshp status"
 alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
 alias wifi="~/.config/scripts/ssh-host-tty.sh wicd-curses"
-alias x='xargs -n 1 -I @'
+alias x="xargs -n 1 -I @"
 
 login () {
   # Clone secrets if not already cloned
