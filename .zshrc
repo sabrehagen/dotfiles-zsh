@@ -118,7 +118,7 @@ alias scripts="cat package.json | jq .scripts"
 alias su="sudo su"
 alias t=tmux
 alias tc="TMUX= t new-session -s"
-alias tn="TMUX= t new-session -s on-demand -t"
+alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
 alias ts="t display-message -p '#S'"
 alias tk="t kill-session -t"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
