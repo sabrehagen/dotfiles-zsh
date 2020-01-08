@@ -105,6 +105,7 @@ alias get="git clone"
 alias gv="grep -ivE"
 alias gottyc="gotty-client --v2"
 alias h="~/.config/scripts/ssh-host.sh"
+alias ip="curl ip-api.com"
 alias l="ls -lah"
 alias mkx='chmod +x'
 alias n='nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
