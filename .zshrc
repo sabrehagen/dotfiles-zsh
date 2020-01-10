@@ -48,9 +48,6 @@ export PROMPT='
 ${_current_dir}%{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
-# Set the shell prompt
-export RPROMPT='$(_vi_status)%{$(echotc UP 1)%}%{$FG[128]%}%* ${_return_status}%{$(echotc DO 1)%}'
-
 # Load jump shell
 eval "$(jump shell zsh)"
 
@@ -72,15 +69,17 @@ alias cln="git cln"
 alias cm="git cm"
 alias co="git co"
 alias cob="git cob"
+alias coo="git coo"
 alias cop="git cop"
+alias cot="git cot"
 alias copm="git copm"
 alias d="git d"
 alias dl="git dl"
 alias db="git db"
 alias dbl="git dbl"
 alias f="git f"
-alias lf=~/.config/scripts/fzf-git-log.sh
-alias ll="git l"
+alias he="git he"
+alias ll=~/.config/scripts/fzf-git-log.sh
 alias m="git m"
 alias p="git p"
 alias pp="git pp"
@@ -130,6 +129,7 @@ alias uuu="...."
 alias v=vcsh
 alias vcshp="VCSH_REPO_D=$HOME/.config/vcsh/repo-private.d vcsh"
 alias vd="vcsh foreach diff"
+alias vl="vcsh foreach ls-files ~"
 alias vp=vcshp
 alias vps="vcshp status"
 alias vpd="vcshp foreach diff"
@@ -155,3 +155,22 @@ transfer () {
 cpx () {
   cat $HISTFILE | tail -2 | head -1 | cut -c 16- | clipboard
 }
+
+# Vim mode configuration
+bindkey -v
+bindkey '^r' history-incremental-search-backward
+
+export KEYTIMEOUT=1
+function zle-line-init zle-keymap-select {
+  if [ $KEYMAP = vicmd ]; then
+    export RPROMPT="%{$fg[yellow]%}[NORMAL]%{$reset_color%}"
+    echo -ne '\e[1 q' # Block cursor
+  else
+    export RPROMPT="%{$fg[yellow]%}[INSERT]%{$reset_color%}"
+    echo -ne '\e[5 q' # Beam cursor
+  fi
+  zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
