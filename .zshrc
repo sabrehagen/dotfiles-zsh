@@ -99,7 +99,6 @@ alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
 alias cat=bat
 alias clip=clipboard
-alias e="docker ps --format '{{.Names}}' | f --bind \"enter:execute(docker exec -it {} zsh </dev/tty >/dev/tty 2>&1)+abort\""
 alias g="grep -iE"
 alias get="git clone"
 alias gv="grep -ivE"
@@ -107,18 +106,20 @@ alias gottyc="gotty-client --v2"
 alias h="~/.config/scripts/ssh-host-tty.sh"
 alias ip="curl ip-api.com"
 alias l="ls -lah"
+alias lastarg='echo $(last) | sed s/.*\ //'
+alias last='echo $(fc -ln -1)'
 alias mkx="chmod +x"
-alias n='nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
+alias n='nano $(lastarg)'
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias pdf="evince"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias rmf="rm -rf"
-alias sa='sudo $(fc -ln -1)'
-alias san='sudo nano $(echo $(fc -ln -1) | rev | cut -d\  -f 1 | rev)'
+alias sa='sudo $(last)'
+alias san='sudo nano $(lastarg)'
 alias scripts="cat package.json | jq .scripts"
 alias su="sudo su"
 alias t=tmux
-alias tc="TMUX= t new-session -s"
+alias tl='t ls'
 alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
 alias ts="t display-message -p '#S'"
 alias tk="t kill-session -t"
