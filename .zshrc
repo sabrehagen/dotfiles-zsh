@@ -48,8 +48,41 @@ export PROMPT='
 ${_current_dir}%{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
-# Set the shell prompt
-export RPROMPT='$(_vi_status)%{$(echotc UP 1)%}%{$FG[128]%}%* ${_return_status}%{$(echotc DO 1)%}'
+# Reload wal for terminal
+wal -Req 2>/dev/null
+
+# Use vim mode in zle
+bindkey -v
+export KEYTIMEOUT=1
+
+# Additional zle bindings
+bindkey -M vicmd 'j' history-beginning-search-forward
+bindkey -M vicmd 'k' history-beginning-search-backward
+bindkey -M vicmd '^r' fzf-history-widget
+bindkey '^e' end-of-line
+bindkey '^f' forward-word
+bindkey '^r' fzf-history-widget
+
+# Update right prompt with vim mode state
+function zle-keymap-select {
+  if [ $KEYMAP = vicmd ]; then
+    export RPROMPT="%{$fg[yellow]%}[NORMAL]%{$reset_color%}"
+    echo -ne '\e[1 q' # Block cursor
+  else
+    export RPROMPT="%{$fg[yellow]%}[INSERT]%{$reset_color%}"
+    echo -ne '\e[5 q' # Beam cursor
+  fi
+  zle reset-prompt
+}
+
+# Start vim mode in command mode
+function zle-line-init {
+  zle -K vicmd
+}
+
+# Register custom zle functions
+zle -N zle-keymap-select
+zle -N zle-line-init
 
 # Load jump shell
 eval "$(jump shell zsh)"
@@ -99,6 +132,7 @@ alias ai="sudo apt-get install -y"
 alias apt-search="apt-cache search"
 alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
+alias bw="sudo bandwhich"
 alias cat=bat
 alias clip=clipboard
 alias g="grep -iE"
