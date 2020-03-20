@@ -59,12 +59,19 @@ export KEYTIMEOUT=1
 bindkey -M vicmd 'j' history-beginning-search-forward
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd '^r' fzf-history-widget
+bindkey '^[b' backward-word
+bindkey '^[d' kill-word
+bindkey '^[f' forward-word
+bindkey '^[h' backward-kill-word
+bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
-bindkey '^f' forward-word
+bindkey '^b' backward-char
+bindkey '^f' forward-char
+bindkey '^p' up-line-or-history
 bindkey '^r' fzf-history-widget
 
 # Update right prompt with vim mode state
-function zle-keymap-select {
+function zle-keymap-select zle-line-init {
   if [ $KEYMAP = vicmd ]; then
     export RPROMPT="%{$fg[yellow]%}[NORMAL]%{$reset_color%}"
     echo -ne '\e[1 q' # Block cursor
@@ -73,11 +80,6 @@ function zle-keymap-select {
     echo -ne '\e[5 q' # Beam cursor
   fi
   zle reset-prompt
-}
-
-# Start vim mode in command mode
-function zle-line-init {
-  zle -K vicmd
 }
 
 # Register custom zle functions
@@ -147,7 +149,7 @@ alias last='echo $(fc -ln -1)'
 alias mkx="chmod +x"
 alias n='nano $(lastarg)'
 alias pastebin="curl -F 'f:1=<-' ix.io"
-alias pdf="evince"
+alias pdf="zathura"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias rmf="rm -rf"
 alias sa='sudo $(last)'
