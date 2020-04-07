@@ -73,10 +73,10 @@ bindkey '^r' fzf-history-widget
 # Update right prompt with vim mode state
 function zle-keymap-select zle-line-init {
   if [ $KEYMAP = vicmd ]; then
-    export RPROMPT="%{$fg[blue]%}[NORMAL]%{$reset_color%}"
+    export RPROMPT="%{$fg[yellow]%}[NORMAL]%{$reset_color%}"
     echo -ne '\e[1 q' # Block cursor
   else
-    export RPROMPT="%{$fg[blue]%}[INSERT]%{$reset_color%}"
+    export RPROMPT="%{$fg[yellow]%}[INSERT]%{$reset_color%}"
     echo -ne '\e[5 q' # Beam cursor
   fi
   zle reset-prompt
