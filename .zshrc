@@ -63,6 +63,7 @@ bindkey '^[b' backward-word
 bindkey '^[d' kill-word
 bindkey '^[f' forward-word
 bindkey '^[h' backward-kill-word
+bindkey '^[.' insert-last-word
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 bindkey '^b' backward-char
@@ -131,10 +132,8 @@ alias sta="git sta"
 
 # Alias common commands to better alternatives
 alias ai="sudo apt-get install -y"
-alias apt-search="apt-cache search"
 alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
-alias bw="sudo bandwhich"
 alias cat=bat
 alias clip=clipboard
 alias g="grep -iE"
@@ -153,9 +152,9 @@ alias pdf="zathura"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias rmf="rm -rf"
 alias sa='sudo $(last)'
-alias san='sudo nano $(lastarg)'
 alias scripts="cat package.json | jq .scripts"
 alias su="sudo su"
+alias sum="paste -sd+ - | bc"
 alias t=tmux
 alias tl='t ls'
 alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
@@ -175,6 +174,11 @@ alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
 alias wifi="~/.config/scripts/ssh-host-tty.sh wicd-curses"
 alias x="xargs -n 1 -I @"
+
+as () {
+  # quoting due to soon-to-be-fixed bug https://github.com/zsh-users/zsh-autosuggestions/issues/422
+  apt-file search --regexp '/'$@'[^/]+$'
+}
 
 login () {
   # Clone secrets if not already cloned
