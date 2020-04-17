@@ -191,6 +191,23 @@ logout () {
   $HOME/.config/scripts/clean-secrets.sh
 }
 
+tm () {
+  TARGET_GROUP="$@"
+  TMUX_SESSION=$TARGET_GROUP-on-demand-$(date +%M%S)
+
+  # Create a new tmux session in the target group
+  tmux new-session \
+    -d \
+    -s $TMUX_SESSION \
+    -t $TARGET_GROUP
+
+  # Disable the new session status bar to avoid nested status bars
+  tmux set-option -t $TMUX_SESSION status off
+
+  # Attach to the new session
+  TMUX= tmux attach-session -t $TMUX_SESSION
+}
+
 transfer () {
   curl -# -F "file=@$1" https://0x0.st
 }
