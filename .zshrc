@@ -51,9 +51,8 @@ $fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(
 # Reload wal for terminal
 wal -Req 2>/dev/null
 
-# Use vim mode in zle
-bindkey -v
-export KEYTIMEOUT=1
+# Additional fzf bindings
+FZF_DEFAULT_OPTS="--bind=ctrl-j:accept"
 
 # Additional zle bindings
 bindkey -M vicmd 'j' history-beginning-search-forward
@@ -70,22 +69,6 @@ bindkey '^b' backward-char
 bindkey '^f' forward-char
 bindkey '^p' up-line-or-history
 bindkey '^r' fzf-history-widget
-
-# Update right prompt with vim mode state
-function zle-keymap-select zle-line-init {
-  if [ $KEYMAP = vicmd ]; then
-    export RPROMPT="%{$fg[yellow]%}[NORMAL]%{$reset_color%}"
-    echo -ne '\e[1 q' # Block cursor
-  else
-    export RPROMPT="%{$fg[yellow]%}[INSERT]%{$reset_color%}"
-    echo -ne '\e[5 q' # Beam cursor
-  fi
-  zle reset-prompt
-}
-
-# Register custom zle functions
-zle -N zle-keymap-select
-zle -N zle-line-init
 
 # Load jump shell
 eval "$(jump shell zsh)"
