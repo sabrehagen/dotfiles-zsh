@@ -115,6 +115,8 @@ alias sta="git sta"
 
 # Alias common commands to better alternatives
 alias ai="sudo apt-get install -y"
+alias ar="sudo apt-get remove -y"
+alias as="apt-file find"
 alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
 alias cat=bat
