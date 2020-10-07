@@ -108,6 +108,7 @@ alias pp="git pp"
 alias pu="git pu"
 alias puf="git puf"
 alias puu="git puu"
+alias pun="git pun"
 alias rbm="git rbm"
 alias s="git s"
 alias st="git st"
@@ -159,11 +160,6 @@ alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
 alias wifi="~/.config/scripts/ssh-host-tty.sh wicd-curses"
 alias x="xargs -n 1 -I @"
-
-as () {
-  # quoting due to soon-to-be-fixed bug https://github.com/zsh-users/zsh-autosuggestions/issues/422
-  apt-file search --regexp '/'$@'[^/]+$'
-}
 
 login () {
   # Clone secrets if not already cloned
