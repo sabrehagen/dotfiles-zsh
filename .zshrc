@@ -99,15 +99,17 @@ alias d="git d"
 alias dl="git dl"
 alias db="git db"
 alias dbl="git dbl"
+alias dblame=~/.config/scripts/git-diff-blame.sh
 alias f="git f"
 alias he="git he"
-alias ll=~/.config/scripts/fzf-git-log.sh
+alias ll=~/.config/scripts/git-fzf-log.sh
 alias m="git m"
 alias p="git p"
 alias pp="git pp"
 alias pu="git pu"
 alias puf="git puf"
 alias puu="git puu"
+alias pun="git pun"
 alias rbm="git rbm"
 alias s="git s"
 alias st="git st"
@@ -159,11 +161,6 @@ alias vpd="vcshp foreach diff"
 alias vs="vcsh status"
 alias wifi="~/.config/scripts/ssh-host-tty.sh wicd-curses"
 alias x="xargs -n 1 -I @"
-
-as () {
-  # quoting due to soon-to-be-fixed bug https://github.com/zsh-users/zsh-autosuggestions/issues/422
-  apt-file search --regexp '/'$@'[^/]+$'
-}
 
 login () {
   # Clone secrets if not already cloned
