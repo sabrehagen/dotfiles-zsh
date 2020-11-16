@@ -11,11 +11,14 @@ mkdir -p $(dirname $HISTFILE)
 # Add user binaries to path
 export PATH=$HOME/.local/bin:$PATH
 
-# Add yarn binaries to path
-export PATH=$HOME/.yarn/bin:$PATH
-
 # Add go binaries to path
 export PATH=$HOME/go/bin:$PATH
+
+# Add rust binaries to path
+export PATH=$HOME/.cargo/bin:$PATH
+
+# Add yarn binaries to path
+export PATH=$HOME/.yarn/bin:$PATH
 
 # Set ssh socket path
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
