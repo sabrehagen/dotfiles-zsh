@@ -123,7 +123,6 @@ alias as="apt-file find"
 alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
 alias cat="bat --theme ansi-dark"
-alias clip=clipboard
 alias g="grep -iE"
 alias get="git clone"
 alias gv="grep -ivE"
