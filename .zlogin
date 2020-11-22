@@ -26,5 +26,8 @@ if [ ! -z "$CONTAINER_BUILD_DATE" ]; then
   echo "$COLOURED_CONTAINER_IMAGE_NAME | built $COLOURED_TIME_SINCE_CONTAINER_BUILD | $COLOURED_CONTAINER_GIT_SHA"
 fi
 
+# Set the default directory to the repositories folder
+cd ~/repositories
+
 # Log current working directory structure
 tree -L 1 -d
