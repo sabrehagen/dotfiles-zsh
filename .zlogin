@@ -27,7 +27,9 @@ if [ ! -z "$CONTAINER_BUILD_DATE" ]; then
 fi
 
 # Set the default directory to the repositories folder
-cd ~/repositories
+if [ "$PWD" = "$HOME" ]; then
+  cd ~/repositories
+fi
 
 # Log current working directory structure
 tree -L 1 -d
