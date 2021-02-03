@@ -134,6 +134,7 @@ alias lastarg='echo $(last) | sed s/.*\ //'
 alias last='echo $(fc -ln -1)'
 alias mkx="chmod +x"
 alias n='nano $(lastarg)'
+alias own="sudo chown -R $USER:$USER"
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias pdf="zathura"
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
