@@ -48,11 +48,14 @@ export PROMPT='
 $fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
+# Load wal colours
+source ~/.cache/wal/colors.sh
+
 # Reload wal for terminal
 wal -Req 2>/dev/null
 
 # Additional fzf bindings
-FZF_DEFAULT_OPTS="--bind=ctrl-j:accept"
+FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind=ctrl-j:accept"
 
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
@@ -122,11 +125,11 @@ alias ar="sudo apt-get remove -y"
 alias as="apt-file find"
 alias apt-ls="dpkg-query -L"
 alias ascii="figlet -f slant -m 2"
-alias cat="bat --style plain"
+alias cat="bat --style plain --theme ansi-dark"
 alias di="dpkg -i"
 alias g="grep -iE"
 alias get="git clone"
-alias gets="git clone --depth 1 --single-branch --branch main"
+alias gets="git clone --depth 1 --single-branch --branch master"
 alias gv="grep -ivE"
 alias gottyc="gotty-client --v2"
 alias h="~/.config/scripts/ssh-host-tty.sh"
@@ -169,7 +172,7 @@ alias x="xargs -n 1 -I @"
 login () {
   # Clone secrets if not already cloned
   if [ ! -f $HOME/.ssh-private/id_rsa ]; then
-    . $HOME/.config/scripts/clone-secrets.sh
+    source $HOME/.config/scripts/clone-secrets.sh
   fi
 }
 
