@@ -48,11 +48,14 @@ export PROMPT='
 $fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(git_prompt_info)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
+# Load wal colours
+source ~/.cache/wal/colors.sh
+
 # Reload wal for terminal
 wal -Req 2>/dev/null
 
 # Additional fzf bindings
-FZF_DEFAULT_OPTS="--bind=ctrl-j:accept"
+FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind=ctrl-j:accept"
 
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
@@ -169,7 +172,7 @@ alias x="xargs -n 1 -I @"
 login () {
   # Clone secrets if not already cloned
   if [ ! -f $HOME/.ssh-private/id_rsa ]; then
-    . $HOME/.config/scripts/clone-secrets.sh
+    source $HOME/.config/scripts/clone-secrets.sh
   fi
 }
 
