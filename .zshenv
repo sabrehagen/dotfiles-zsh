@@ -25,7 +25,3 @@ export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
 
 # Set tmux plugin manager path
 export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
-
-# Alias common commands to better alternatives
-alias chrome="nohup google-chrome >/dev/null 2>&1 &; disown %1"
-alias slack="nohup slack >/dev/null 2>&1 &; disown %1"
