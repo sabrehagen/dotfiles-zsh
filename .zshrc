@@ -137,7 +137,10 @@ alias ip="curl ip-api.com"
 alias l="ls -lah --group-directories-first"
 alias lastarg='echo $(last) | sed s/.*\ //'
 alias last='echo $(fc -ln -1)'
+alias mkt='make -qp | awk -F":" "/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {split(\$1,A,/ /);for(i in A)print A[i]}" | sort -u'
 alias mkx="chmod +x"
+alias ncdu="ncdu --color dark"
+alias nchat="nchat -d ~/.config/nchat"
 alias nm-imt="nmail -d ~/.config/nmail/imt"
 alias nm-jd="nmail -d ~/.config/nmail/jd"
 alias nm-len="nmail -d ~/.config/nmail/len"
