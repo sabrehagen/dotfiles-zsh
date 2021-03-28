@@ -137,14 +137,7 @@ alias ip="curl ip-api.com"
 alias l="ls -lah --group-directories-first"
 alias lastarg='echo $(last) | sed s/.*\ //'
 alias last='echo $(fc -ln -1)'
-alias mkt='make -qp | awk -F":" "/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {split(\$1,A,/ /);for(i in A)print A[i]}" | sort -u'
 alias mkx="chmod +x"
-alias ncdu="ncdu --color dark"
-alias nchat="nchat -d ~/.config/nchat"
-alias nm-imt="nmail -d ~/.config/nmail/imt"
-alias nm-jd="nmail -d ~/.config/nmail/jd"
-alias nm-len="nmail -d ~/.config/nmail/len"
-alias nm-lib="nmail -d ~/.config/nmail/lib"
 alias own="sudo chown -R $USER:$USER"
 alias pastebin="curl -F 'f:1=<-' ix.io"
 alias pdf="zathura"
@@ -153,7 +146,6 @@ alias rmf="rm -rf"
 alias sa='sudo $(last)'
 alias scripts="cat package.json | jq .scripts"
 alias sc=scripts
-alias su="sudo su"
 alias sum="paste -sd+ - | bc"
 alias t=tmux
 alias tl='t ls'
@@ -169,6 +161,22 @@ alias vd="vcsh foreach diff"
 alias vs="vcsh status"
 alias wifi="~/.config/scripts/ssh-host-tty.sh wicd-curses"
 alias x="xargs -n 1 -I @"
+
+isLoggedIn () {
+  LOGGED_IN_FILE=~/.ssh-private/id_rsa
+
+  # Exit with error if not logged in
+  if [ ! -f $LOGGED_IN_FILE ]; then
+    echo Not logged in! No datastore available.
+    exit 1
+  fi
+}
+
+# Applications requiring login
+alias nmail-imt="isLoggedIn && nmail -d ~/.config/nmail/imt"
+alias nmail-jd="isLoggedIn && nmail -d ~/.config/nmail/jd"
+alias nmail-len="isLoggedIn && nmail -d ~/.config/nmail/len"
+alias nmail-lib="isLoggedIn && nmail -d ~/.config/nmail/lib"
 
 login () {
   # Clone secrets if not already cloned
@@ -205,6 +213,9 @@ transfer () {
 cpx () {
   cat $HISTFILE | tail -2 | head -1 | cut -c 16- | clipboard
 }
+
+# Load werf
+source $(multiwerf use 1.2 ea --as-file)
 
 function cd-redraw-prompt() {
   {
