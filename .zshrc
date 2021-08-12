@@ -54,8 +54,11 @@ source ~/.cache/wal/colors.sh
 # Reload wal for terminal
 wal -Req 2>/dev/null
 
-# Additional fzf bindings
-FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind=ctrl-j:accept"
+# Load werf
+source $(multiwerf use 1.2 ea --as-file)
+
+# Set dbus environment variables
+export $(dbus-launch)
 
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
@@ -215,9 +218,6 @@ transfer () {
 cpx () {
   cat $HISTFILE | tail -2 | head -1 | cut -c 16- | clipboard
 }
-
-# Load werf
-source $(multiwerf use 1.2 ea --as-file)
 
 function cd-redraw-prompt() {
   {

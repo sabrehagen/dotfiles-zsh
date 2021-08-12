@@ -20,6 +20,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 # Add yarn binaries to path
 export PATH=$HOME/.yarn/bin:$PATH
 
+# Additional fzf bindings
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind=ctrl-j:accept"
+
 # Set ssh socket path
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
 
