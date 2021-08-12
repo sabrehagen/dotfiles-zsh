@@ -57,9 +57,6 @@ wal -Req 2>/dev/null
 # Load werf
 source $(multiwerf use 1.2 ea --as-file)
 
-# Set dbus environment variables
-export $(dbus-launch)
-
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
 bindkey '^[.' insert-last-word
