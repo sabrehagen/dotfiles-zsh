@@ -175,10 +175,7 @@ isLoggedIn () {
 }
 
 # Applications requiring login
-alias nmail-imt="isLoggedIn && nmail -d ~/.config/nmail/imt"
 alias nmail-jd="isLoggedIn && nmail -d ~/.config/nmail/jd"
-alias nmail-len="isLoggedIn && nmail -d ~/.config/nmail/len"
-alias nmail-lib="isLoggedIn && nmail -d ~/.config/nmail/lib"
 
 login () {
   # Clone secrets if not already cloned
