@@ -28,6 +28,9 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 
+# Load flux completions
+command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
+
 # Load the theme
 antigen theme avit
 
