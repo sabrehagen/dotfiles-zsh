@@ -4,6 +4,9 @@ ANTIGEN_MUTEX=false
 # Load flux completions
 command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
 
+# Load helm completions
+command -v helm >/dev/null && . <(helm completion zsh 2>/dev/null) && compdef _flux flux
+
 # Load antigen plugin manager
 source antigen.zsh
 
