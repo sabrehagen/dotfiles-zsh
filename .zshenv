@@ -1,5 +1,5 @@
 # Set fzf path
-export FZF_BASE=$HOME/.local/bin/fzf
+export FZF_BASE=$HOME/.fzf/bin/fzf
 
 # Set go path
 export GOPATH=$HOME/go
