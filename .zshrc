@@ -139,7 +139,6 @@ alias cat="bat --style plain --theme ansi-dark"
 alias di="sudo dpkg -i"
 alias dl="dpkg -c"
 alias g="grep -iE"
-alias get="git clone"
 alias gets="git clone --depth 1 --single-branch --branch master"
 alias gv="grep -ivE"
 alias gottyc="gotty-client --v2"
@@ -196,32 +195,11 @@ logout () {
   $HOME/.config/scripts/clean-secrets.sh
 }
 
-tm () {
-  TARGET_GROUP="$@"
-  TMUX_SESSION=$TARGET_GROUP-on-demand-$(date +%M%S)
-
-  # Create a new tmux session in the target group
-  tmux new-session \
-    -d \
-    -s $TMUX_SESSION \
-    -t $TARGET_GROUP
-
-  # Disable the new session status bar to avoid nested status bars
-  tmux set-option -t $TMUX_SESSION status off
-
-  # Attach to the new session
-  TMUX= tmux attach-session -t $TMUX_SESSION
-}
-
-transfer () {
-  curl -# -F "file=@$1" https://0x0.st
-}
-
 cpx () {
-  cat $HISTFILE | tail -2 | head -1 | cut -c 16- | clipboard
+  cat $HISTFILE | tail -2 | head -1 | cut -c 16- | head -c -1 | clipboard
 }
 
-function cd-redraw-prompt() {
+function cd-redraw-prompt () {
   {
     builtin echoti civis
     builtin local f
@@ -234,7 +212,7 @@ function cd-redraw-prompt() {
   }
 }
 
-function cd-rotate() {
+function cd-rotate () {
   () {
     builtin emulate -L zsh
     while (( $#dirstack )) && ! builtin pushd -q $1 &>/dev/null; do
