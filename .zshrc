@@ -16,7 +16,6 @@ antigen use oh-my-zsh
 # Bundles from oh-my-zsh
 antigen bundle command-not-found
 antigen bundle docker
-antigen bundle docker-compose
 antigen bundle fzf
 antigen bundle git
 antigen bundle gnu-utils
@@ -26,7 +25,6 @@ antigen bundle ubuntu
 
 # Bundles from third parties
 antigen bundle buonomo/yarn-completion
-antigen bundle lukechilds/zsh-nvm
 antigen bundle paulirish/git-open
 antigen bundle popstas/zsh-command-time
 antigen bundle zdharma/zsh-diff-so-fancy
@@ -57,12 +55,6 @@ $fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(
 
 # Load wal colours
 source ~/.cache/wal/colors.sh
-
-# Reload wal for terminal
-wal -Req 2>/dev/null
-
-# Load werf
-source $(multiwerf use 1.2 ea --as-file)
 
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
