@@ -56,6 +56,9 @@ $fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(
 # Load wal colours
 source ~/.cache/wal/colors.sh
 
+# Reload wal for terminal
+wal -Req 2>/dev/null
+
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
 bindkey '^[.' insert-last-word
