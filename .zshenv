@@ -21,7 +21,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 
 # Additional fzf bindings
-export FZF_DEFAULT_OPTS="--bind=ctrl-j:accept --height ${FZF_TMUX_HEIGHT:-30%}"
+export FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-30%}"
 
 # Set ssh socket path
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
