@@ -139,9 +139,10 @@ alias gv="grep -ivE"
 alias gottyc="gotty-client --v2"
 alias h="~/.config/scripts/ssh-host-tty.sh"
 alias ip="curl ip-api.com"
-alias l="ls -lah --group-directories-first"
+alias l="exa -la --group-directories-first"
 alias lastarg='echo $(last) | sed s/.*\ //'
 alias last='echo $(fc -ln -1)'
+alias ls="exa"
 alias mkx="chmod +x"
 alias own="sudo chown -R $USER:$USER"
 alias pastebin="curl -F 'f:1=<-' ix.io"
