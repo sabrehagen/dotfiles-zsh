@@ -21,6 +21,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 
 # Additional fzf bindings
+export FZF_CTRL_R_OPTS="--bind=ctrl-j:accept"
 export FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-30%}"
 
 # Set ssh socket path
