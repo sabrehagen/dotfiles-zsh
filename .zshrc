@@ -202,6 +202,11 @@ get () {
   cd $REPO_NAME
 }
 
+mk () {
+  mkdir $1
+  cd $1
+}
+
 function cd-redraw-prompt () {
   {
     builtin echoti civis
