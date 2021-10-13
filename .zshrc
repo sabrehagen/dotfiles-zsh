@@ -209,7 +209,7 @@ mk () {
 }
 
 upload () {
-  curl --upload-file $1 https://transfer.sh/$1
+  curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
 }
 
 function cd-redraw-prompt () {
