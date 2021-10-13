@@ -208,6 +208,10 @@ mk () {
   cd $1
 }
 
+upload () {
+  curl --upload-file $1 https://transfer.sh/$1
+}
+
 function cd-redraw-prompt () {
   {
     builtin echoti civis
