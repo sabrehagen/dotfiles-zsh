@@ -20,7 +20,6 @@ antigen bundle fzf
 antigen bundle git
 antigen bundle gnu-utils
 antigen bundle gpg-agent
-antigen bundle kubectl
 antigen bundle ubuntu
 
 # Bundles from third parties
