@@ -110,6 +110,7 @@ alias f="git f"
 alias he="git he"
 alias ll=~/.config/scripts/git-fzf-log.sh
 alias m="git m"
+alias ma="git ma"
 alias p="git p"
 alias pp="git pp"
 alias pu="git pu"
