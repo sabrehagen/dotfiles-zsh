@@ -181,9 +181,6 @@ isLoggedIn () {
   fi
 }
 
-# Applications requiring login
-alias nmail-jd="isLoggedIn && nmail -d ~/.config/nmail/jd"
-
 login () {
   # Clone secrets if not already cloned
   if [ ! -f $HOME/.ssh-private/id_rsa ]; then
