@@ -23,10 +23,10 @@ antigen bundle gpg-agent
 antigen bundle ubuntu
 
 # Bundles from third parties
-antigen bundle buonomo/yarn-completion
+antigen bundle buonomo/yarn-extra-completion
 antigen bundle paulirish/git-open
 antigen bundle popstas/zsh-command-time
-antigen bundle zdharma/zsh-diff-so-fancy
+antigen bundle so-fancy/zsh-diff-so-fancy
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
