@@ -1,5 +1,6 @@
 # Ignore checking for multiple antigens running simultaneously
 ANTIGEN_MUTEX=false
+ANTIGEN_LOG=/tmp/antigen
 
 # Load flux completions
 command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
@@ -24,7 +25,6 @@ antigen bundle ubuntu
 
 # Bundles from third parties
 antigen bundle buonomo/yarn-extra-completion@main
-antigen bundle paulirish/git-open
 antigen bundle popstas/zsh-command-time
 antigen bundle zdharma-continuum/zsh-diff-so-fancy@main
 antigen bundle zsh-users/zsh-autosuggestions
