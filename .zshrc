@@ -26,7 +26,6 @@ antigen bundle ubuntu
 # Bundles from third parties
 antigen bundle buonomo/yarn-extra-completion@main
 antigen bundle popstas/zsh-command-time
-antigen bundle zdharma-continuum/zsh-diff-so-fancy@main
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
