@@ -125,12 +125,12 @@ alias st="git st"
 alias sta="git sta"
 
 # Alias common commands to better alternatives
+alias ah="apt show"
 alias ai="sudo apt-get install -y"
 alias al="dpkg-query -L"
 alias ar="sudo apt-get remove -y"
 alias as="apt-file search --regexp"
 alias au="sudo apt-get update"
-alias av="apt show"
 alias ax="arc unarchive"
 alias ascii="figlet -f slant -m 2"
 alias cat="bat --style plain --theme ansi-dark"
