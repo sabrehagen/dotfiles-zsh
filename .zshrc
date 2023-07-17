@@ -16,7 +16,6 @@ antigen use oh-my-zsh
 
 # Bundles from oh-my-zsh
 antigen bundle command-not-found
-antigen bundle docker
 antigen bundle fzf
 antigen bundle git
 antigen bundle gnu-utils
