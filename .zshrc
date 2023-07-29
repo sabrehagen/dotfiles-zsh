@@ -157,7 +157,6 @@ alias scripts="cat package.json | jq .scripts"
 alias sc=scripts
 alias sum="paste -sd+ - | bc"
 alias t=tmux
-alias tc='TMUX= t new-session -d -s'
 alias tl='t ls'
 alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
 alias ts="t display-message -p '#S'"
