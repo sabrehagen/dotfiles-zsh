@@ -157,6 +157,7 @@ alias scripts="cat package.json | jq .scripts"
 alias sc=scripts
 alias sum="paste -sd+ - | bc"
 alias t=tmux
+alias tc='TMUX= t new-session -d -s'
 alias tl='t ls'
 alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
 alias ts="t display-message -p '#S'"
@@ -169,7 +170,7 @@ alias v=vcsh
 alias vd="vcsh foreach diff"
 alias vs="vcsh status"
 alias wifi="~/.config/scripts/ssh-host-tty.sh wicd-curses"
-alias x="xargs -n 1 -I @"
+alias x="xargs -I @"
 
 isLoggedIn () {
   LOGGED_IN_FILE=~/.ssh-private/id_rsa
