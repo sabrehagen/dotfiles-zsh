@@ -7,7 +7,6 @@ elif echo $HOSTNAME | grep -q desktop; then
 else
   ascii CLOUD
 fi
-echo
 
 # Print container build info if present
 if [ ! -z "$DESKTOP_ENVIRONMENT_CONTAINER_BUILD_DATE" ]; then
