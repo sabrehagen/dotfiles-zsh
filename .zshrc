@@ -137,6 +137,7 @@ alias btp=~/.config/scripts/host-pulseaudio.sh
 alias cat="bat --style plain --theme ansi"
 alias di="sudo dpkg -i"
 alias dl="dpkg -c"
+alias feh="feh --image-bg black --keep-zoom-vp"
 alias g="grep -iE"
 alias gets="git clone --depth 1 --single-branch --branch master"
 alias gv="grep -ivE"
@@ -156,6 +157,7 @@ alias sa='sudo $(last)'
 alias scripts="cat package.json | jq .scripts"
 alias sc=scripts
 alias sum="paste -sd+ - | bc"
+alias swallow="~/.config/i3/run-and-swallow.py"
 alias t=tmux
 alias tl='t ls'
 alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
