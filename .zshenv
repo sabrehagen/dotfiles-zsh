@@ -29,3 +29,4 @@ export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
 
 # Set tmux plugin manager path
 export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
+. "$HOME/.cargo/env"

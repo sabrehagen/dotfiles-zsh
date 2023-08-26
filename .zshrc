@@ -58,6 +58,7 @@ wal -Req 2>/dev/null
 
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
+bindkey -s '^[t' 'tree^M'
 bindkey '^[.' insert-last-word
 bindkey '^[b' vi-backward-word
 bindkey '^[d' kill-word
