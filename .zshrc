@@ -24,6 +24,7 @@ antigen bundle ubuntu
 
 # Bundles from third parties
 antigen bundle buonomo/yarn-extra-completion@main
+antigen bundle paulirish/git-open
 antigen bundle popstas/zsh-command-time
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
