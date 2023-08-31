@@ -212,8 +212,9 @@ mk () {
 }
 
 mktmp () {
-  mkdir /tmp/$1
-  cd /tmp/$1
+  TMP_DIR=/tmp/${1-$(date +%s)}
+  mkdir $TMP_DIR
+  cd $TMP_DIR
 }
 
 upload () {
