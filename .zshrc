@@ -213,6 +213,12 @@ mk () {
   cd $1
 }
 
+mktmp () {
+  TMP_DIR=/tmp/${1-$(date +%s)}
+  mkdir $TMP_DIR
+  cd $TMP_DIR
+}
+
 upload () {
   curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
 }
