@@ -24,6 +24,7 @@ antigen bundle ubuntu
 
 # Bundles from third parties
 antigen bundle buonomo/yarn-extra-completion@main
+antigen bundle paulirish/git-open
 antigen bundle popstas/zsh-command-time
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
@@ -85,8 +86,10 @@ alias bls="git bls"
 alias bu="git bu"
 alias c="git c"
 alias ca="git ca"
+alias caa="git caa"
 alias cae="git cae"
 alias caf="git caf"
+alias caaf="git caaf"
 alias cam="git cam"
 alias camn="git camn"
 alias camp="git camp"
