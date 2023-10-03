@@ -220,6 +220,14 @@ mktmp () {
   cd $TMP_DIR
 }
 
+pb () {
+  curl --silent ix.io/$1
+}
+
+pbc () {
+  pb $1 | clipboard
+}
+
 upload () {
   curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
 }
