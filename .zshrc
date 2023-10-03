@@ -229,6 +229,10 @@ pbc () {
   pbg $1 | clipboard
 }
 
+pbx () {
+  $(pbg $1)
+}
+
 upload () {
   curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
 }
