@@ -156,6 +156,7 @@ alias ls=exa
 alias mkx="chmod +x"
 alias own="sudo chown -R $USER:$USER"
 alias pastebin="curl -F 'f:1=<-' ix.io"
+alias pb=pastebin
 alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias rmf="rm -rf"
 alias sa='sudo $(last)'
