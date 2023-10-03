@@ -221,12 +221,12 @@ mktmp () {
   cd $TMP_DIR
 }
 
-pb () {
+pbg () {
   curl --silent ix.io/$1
 }
 
 pbc () {
-  pb $1 | clipboard
+  pbg $1 | clipboard
 }
 
 upload () {
