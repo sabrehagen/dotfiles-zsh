@@ -52,7 +52,7 @@ $fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 # Load wal colours
-source ~/.cache/wal/colors.sh
+source $HOME/.cache/wal/colors.sh
 
 # Reload wal for terminal
 wal -Req 2>/dev/null
@@ -107,11 +107,11 @@ alias copm="git copm"
 alias d="git d"
 alias db="git db"
 alias dbl="git dbl"
-alias dblame=~/.config/scripts/git-diff-blame.sh
+alias dblame=$HOME/.config/scripts/git-diff-blame.sh
 alias ds="git ds"
 alias f="git f"
 alias he="git he"
-alias ll=~/.config/scripts/git-fzf-log.sh
+alias ll=$HOME/.config/scripts/git-fzf-log.sh
 alias m="git m"
 alias ma="git ma"
 alias p="git p"
@@ -138,7 +138,7 @@ alias au="sudo apt-get update"
 alias ax="arc unarchive"
 alias ascii="figlet -f slant -m 2"
 alias bt=bluetuith
-alias btp=~/.config/scripts/host-pulseaudio.sh
+alias btp=$HOME/.config/scripts/host-pulseaudio.sh
 alias cat="bat --style plain --theme ansi"
 alias di="sudo dpkg -i"
 alias dl="dpkg -c"
@@ -147,7 +147,7 @@ alias g="grep -iE"
 alias gets="git clone --depth 1 --single-branch --branch master"
 alias gv="grep -ivE"
 alias gottyc="gotty-client --v2"
-alias h=~/.config/scripts/ssh-host-tty.sh
+alias h=$HOME/.config/scripts/ssh-host-tty.sh
 alias ip="curl ip-api.com"
 alias l="exa -la --group-directories-first"
 alias lastarg='echo $(last) | sed s/.*\ //'
@@ -163,7 +163,7 @@ alias sa='sudo $(last)'
 alias scripts="cat package.json | jq .scripts"
 alias sc=scripts
 alias sum="paste -sd+ - | bc"
-alias swallow="~/.config/i3/run-and-swallow.py"
+alias swallow="$HOME/.config/i3/run-and-swallow.py"
 alias t=tmux
 alias tl='t ls'
 alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
@@ -176,11 +176,11 @@ alias uuu="....; ls -lht"
 alias v=vcsh
 alias vd="vcsh foreach diff"
 alias vs="vcsh status"
-alias wifi="~/.config/scripts/ssh-host-tty.sh wicd-curses"
+alias wifi="$HOME/.config/scripts/ssh-host-tty.sh wicd-curses"
 alias x="xargs -I @"
 
 isLoggedIn () {
-  LOGGED_IN_FILE=~/.ssh-private/id_rsa
+  LOGGED_IN_FILE=$HOME/.ssh-private/id_rsa
 
   # Exit with error if not logged in
   if [ ! -f $LOGGED_IN_FILE ]; then
