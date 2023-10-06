@@ -28,8 +28,8 @@ if [ ! -z "$DESKTOP_ENVIRONMENT_CONTAINER_BUILD_DATE" ]; then
 fi
 
 # Set the default directory to the repositories folder
-if [ "$PWD" = "$HOME" ] && [ -d ~/repositories ]; then
-  cd ~/repositories
+if [ "$PWD" = "$HOME" ] && [ -d $HOME/repositories ]; then
+  cd $HOME/repositories
 fi
 
 # Log current working directory structure
