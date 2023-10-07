@@ -4,8 +4,8 @@ if echo $HOSTNAME | grep -q laptop; then
   ascii LAPTOP
 elif echo $HOSTNAME | grep -q desktop; then
   ascii DESKTOP
-elif echo $HOSTNAME | grep -q utm; then
-  ascii ARM64
+elif [ -d /mnt/host ]; then
+  ascii arm64
 else
   ascii CLOUD
 fi
