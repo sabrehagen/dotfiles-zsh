@@ -166,9 +166,9 @@ alias sum="paste -sd+ - | bc"
 alias swallow="$HOME/.config/i3/run-and-swallow.py"
 alias t=tmux
 alias tl='t ls'
-alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
-alias ts="t display-message -p '#S'"
 alias tk="t kill-session -t"
+alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
+alias ts="t choose-session"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
 alias u="..; ls -lht"
 alias uu="...; ls -lht"
