@@ -111,7 +111,6 @@ alias dblame=$HOME/.config/scripts/git-diff-blame.sh
 alias ds="git ds"
 alias f="git f"
 alias gr="git replace"
-alias he="git he"
 alias ll=$HOME/.config/scripts/git-fzf-log.sh
 alias m="git m"
 alias ma="git ma"
@@ -126,6 +125,7 @@ alias rr="git rr"
 alias rb="git rb"
 alias rbm="git rbm"
 alias s="git s"
+alias sh="git sh"
 alias st="git st"
 alias sta="git sta"
 
