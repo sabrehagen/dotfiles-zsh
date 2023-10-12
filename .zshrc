@@ -137,6 +137,7 @@ alias rbo="git rbo"
 alias s="git s"
 alias sf="git sf"
 alias sh="git sh"
+alias ss="git ss"
 alias st="git st"
 alias sta="git sta"
 
