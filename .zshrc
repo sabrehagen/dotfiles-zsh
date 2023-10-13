@@ -137,11 +137,12 @@ alias rbm="git rbm"
 alias rbo="git rbo"
 alias s="git s"
 alias sf="git sf"
+alias sa="git sa"
 alias sh="git sh"
+alias sl="git sl"
 alias sp="git sp"
 alias ss="git ss"
 alias st="git st"
-alias sta="git sta"
 
 # Alias common commands to better alternatives
 alias ah="apt show"
