@@ -52,7 +52,7 @@ $fg[blue]%~ %{$fg[yellow]%}$(git_prompt_info)
 %{%(?.$fg[$CARETCOLOR].$fg[red])%}λ%{$reset_color%} '
 
 # Set the shell right prompt
-RPROMPT+='%(?..%{$fg_bold[red]%}%?%{$reset_color%}'
+RPROMPT='$(vi_mode_prompt_info)%{$(echotc UP 1)%}%(?..%{$fg_bold[red]%}%?%{$reset_color%})${_return_status}%{$(echotc DO 1)%}'
 
 # Load wal colours
 source $HOME/.cache/wal/colors.sh
