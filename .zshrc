@@ -26,6 +26,7 @@ antigen bundle ubuntu
 antigen bundle buonomo/yarn-extra-completion@main
 antigen bundle paulirish/git-open
 antigen bundle popstas/zsh-command-time
+antigen bundle zap-zsh/sudo
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
