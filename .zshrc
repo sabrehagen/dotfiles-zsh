@@ -166,9 +166,9 @@ alias cat="bat --style plain --theme ansi"
 alias di="sudo dpkg -i"
 alias dl="dpkg -c"
 alias feh="feh --image-bg black --keep-zoom-vp"
-alias g="grep -iE"
+alias g="grep --color=always --extended-regexp --ignore-case"
 alias gets="git clone --depth 1 --single-branch --branch master"
-alias gv="grep -ivE"
+alias gv="g --invert-match"
 alias gottyc="gotty-client --v2"
 alias h=$HOME/.config/scripts/host-ssh-tty.sh
 alias ha=$HOME/.config/scripts/arm64-ssh.sh
