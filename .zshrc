@@ -49,12 +49,12 @@ export HISTFILE=$HOME/.cache/zsh/histfile
 mkdir -p $(dirname $HISTFILE)
 
 # Set the shell prompt
-PROMPT="
-$fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo '🔒 ')$(git_prompt_info)
-%{%(?.$fg[$CARETCOLOR].$fg[red])%}λ%{$reset_color%} "
+PROMPT='
+$fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(git_prompt_info)
+%{%(?.$fg[$CARETCOLOR].$fg[red])%}λ%{$reset_color%} '
 
 # Set the shell right prompt
-RPROMPT="$(vi_mode_prompt_info)%{$(echotc UP 1)%}%(?..%{$fg_bold[red]%}%?%{$reset_color%})${_return_status}%{$(echotc DO 1)%}"
+RPROMPT='$(vi_mode_prompt_info)%{$(echotc UP 1)%}%(?..%{$fg_bold[red]%}%?%{$reset_color%})${_return_status}%{$(echotc DO 1)%}'
 
 # Load wal colours
 source $HOME/.cache/wal/colors.sh
