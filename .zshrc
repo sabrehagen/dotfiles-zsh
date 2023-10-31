@@ -49,12 +49,12 @@ export HISTFILE=$HOME/.cache/zsh/histfile
 mkdir -p $(dirname $HISTFILE)
 
 # Set the shell prompt
-PROMPT='
-$fg[blue]%~ %{$fg[yellow]%}$(git_prompt_info)
-%{%(?.$fg[$CARETCOLOR].$fg[red])%}λ%{$reset_color%} '
+PROMPT="
+$fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo '🔒 ')$(git_prompt_info)
+%{%(?.$fg[$CARETCOLOR].$fg[red])%}λ%{$reset_color%} "
 
 # Set the shell right prompt
-RPROMPT='$(vi_mode_prompt_info)%{$(echotc UP 1)%}%(?..%{$fg_bold[red]%}%?%{$reset_color%})${_return_status}%{$(echotc DO 1)%}'
+RPROMPT="$(vi_mode_prompt_info)%{$(echotc UP 1)%}%(?..%{$fg_bold[red]%}%?%{$reset_color%})${_return_status}%{$(echotc DO 1)%}"
 
 # Load wal colours
 source $HOME/.cache/wal/colors.sh
@@ -178,8 +178,8 @@ alias ha=$HOME/.config/scripts/arm64-ssh.sh
 alias hn=$HOME/.config/scripts/host-network.sh
 alias ip="curl ip-api.com"
 alias l="exa -la --group-directories-first"
-alias lastarg='echo $(last) | sed s/.*\ //'
-alias last='echo $(fc -ln -1)'
+alias lastarg="echo $(last) | sed s/.*\ //"
+alias last="echo $(fc -ln -1)"
 alias ls=exa
 alias mkx="chmod +x"
 alias own="sudo chown -R $USER:$USER"
@@ -192,9 +192,9 @@ alias sc=scripts
 alias sum="paste -sd+ - | bc"
 alias swallow="$HOME/.config/i3/run-and-swallow.py"
 alias t=tmux
-alias tl='t ls'
+alias tl="t ls"
 alias tk="t kill-session -t"
-alias tn='TMUX= t new-session -s on-demand-$(date +%s) -t'
+alias tn="TMUX= t new-session -s on-demand-$(date +%s) -t"
 alias ts="t choose-session"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
 alias u="..; ls -lht"
