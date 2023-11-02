@@ -60,7 +60,7 @@ RPROMPT='$(vi_mode_prompt_info)%{$(echotc UP 1)%}%(?..%{$fg_bold[red]%}%?%{$rese
 source $HOME/.cache/wal/colors.sh
 
 # Reload wal for terminal
-wal -Req 2>/dev/null
+wal -Reqn 2>/dev/null
 
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
