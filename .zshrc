@@ -193,6 +193,7 @@ alias ptree="ps xf -o pid,ppid,pgrp,euser,args"
 alias rmf="rm -rf"
 alias scripts="cat package.json | jq .scripts"
 alias sc=scripts
+alias strip=ansi2txt
 alias sum="paste -sd+ - | bc"
 alias swallow="$HOME/.config/i3/run-and-swallow.py"
 alias t=tmux
