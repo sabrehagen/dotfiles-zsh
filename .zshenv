@@ -1,5 +1,5 @@
 # Set aws config path
-export AWS_CONFIG_FILE=$HOME/.aws/sso/config
+export AWS_CONFIG_FILE=$HOME/.config/aws/config
 
 # Set fzf path
 export FZF_BASE=$HOME/.fzf/bin/fzf
