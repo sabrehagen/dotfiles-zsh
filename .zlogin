@@ -1,13 +1,13 @@
 # Print mesasge of the day
 echo
-if echo $HOSTNAME | grep -q laptop; then
+if [ -d /mnt/host ]; then
+  ascii arm64
+elif echo $HOSTNAME | grep -q laptop; then
   ascii LAPTOP
 elif echo $HOSTNAME | grep -q desktop; then
   ascii DESKTOP
 elif echo $HOSTNAME | grep -q linux; then
   ascii x86
-elif [ -d /mnt/host ]; then
-  ascii arm64
 else
   ascii CLOUD
 fi
