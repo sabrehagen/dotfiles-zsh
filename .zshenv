@@ -35,3 +35,9 @@ export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
 
 # Set tmux plugin manager path
 export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
+
+# Log pane output if running in tmux
+if [ -n "$TMUX" ]; then
+  mkdir -p $HOME/.tmux/logs
+  tmux pipe-pane "cat | ansi2txt >> $HOME/.tmux/logs/tmux_session_#{session_name}_#{window_name}_$(date +%Y-%m-%d-%H-%M-%S).log" 2>/dev/null
+fi

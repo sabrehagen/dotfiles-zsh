@@ -54,12 +54,6 @@ source $HOME/.cache/wal/colors.sh
 # Reload wal for terminal
 wal -Reqn 2>/dev/null
 
-# Log pane if running in tmux
-if [ -n "$TMUX" ]; then
-  mkdir -p $HOME/.tmux/logs
-  tmux pipe-pane "cat | ansi2txt >> $HOME/.tmux/logs/tmux_session_#{session_name}_#{window_name}_$(date +%Y-%m-%d-%H-%M-%S).log" 2> /dev/null
-fi
-
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
 bindkey -s '^[t' 'tree^M'
