@@ -1,42 +1,34 @@
-# Ignore checking for multiple antigens running simultaneously
-ANTIGEN_MUTEX=false
-ANTIGEN_LOG=/tmp/antigen
+# Load zgenom plugin manager
+source "${HOME}/.zgenom/zgenom.zsh"
 
-# Load flux completions
-command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
+# If no zgenom static init exists
+if ! zgenom saved; then
 
-# Load helm completions
-command -v helm >/dev/null && . <(helm completion zsh 2>/dev/null) && compdef _flux flux
+  # Use oh-my-zsh framework
+  zgenom oh-my-zsh
 
-# Load antigen plugin manager
-source antigen.zsh
+  # Bundles from oh-my-zsh
+  zgenom oh-my-zsh plugins/command-not-found
+  zgenom oh-my-zsh plugins/fzf
+  zgenom oh-my-zsh plugins/git
+  zgenom oh-my-zsh plugins/gnu-utils
 
-# Use oh-my-zsh framework
-antigen use oh-my-zsh
+  # Bundles from third parties
+  zgenom load grigorii-zander/zsh-npm-scripts-autocomplete
+  zgenom load paulirish/git-open
+  zgenom load popstas/zsh-command-time
+  zgenom load zap-zsh/sudo
+  zgenom load zsh-users/zsh-autosuggestions
+  zgenom load zsh-users/zsh-completions
+  zgenom load zsh-users/zsh-history-substring-search
+  zgenom load zsh-users/zsh-syntax-highlighting
 
-# Bundles from oh-my-zsh
-antigen bundle command-not-found
-antigen bundle fzf
-antigen bundle git
-antigen bundle gnu-utils
-antigen bundle gpg-agent
-antigen bundle ubuntu
+  # Load the theme
+  zgenom oh-my-zsh themes/avit
 
-# Bundles from third parties
-antigen bundle buonomo/yarn-extra-completion@main
-antigen bundle paulirish/git-open
-antigen bundle popstas/zsh-command-time
-antigen bundle zap-zsh/sudo
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Load the theme
-antigen theme avit
-
-# Apply antigen plugins
-antigen apply
+  # Generate zgenom static init
+  zgenom save
+fi
 
 # Disable zsh errors when no globs are matched
 unsetopt nomatch
@@ -61,6 +53,12 @@ source $HOME/.cache/wal/colors.sh
 
 # Reload wal for terminal
 wal -Reqn 2>/dev/null
+
+# Log pane if running in tmux
+if [ -n "$TMUX" ]; then
+  mkdir -p $HOME/.tmux/logs
+  tmux pipe-pane "cat | ansi2txt >> $HOME/.tmux/logs/tmux_session_#{session_name}_#{window_name}_$(date +%Y-%m-%d-%H-%M-%S).log" 2> /dev/null
+fi
 
 # Additional zle bindings
 bindkey -s '^[i' 'l^M'
