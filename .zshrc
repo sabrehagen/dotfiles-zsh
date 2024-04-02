@@ -48,6 +48,12 @@ $fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(
 # Set the shell right prompt
 RPROMPT='$(vi_mode_prompt_info)%{$(echotc UP 1)%}%(?..%{$fg_bold[red]%}%?%{$reset_color%})${_return_status}%{$(echotc DO 1)%}'
 
+# Load jump shell
+eval "$(jump shell zsh)"
+
+# Load nvm
+source $HOME/.nvm/nvm.sh
+
 # Load wal colours
 source $HOME/.cache/wal/colors.sh
 
@@ -69,9 +75,6 @@ bindkey '^f' forward-char
 bindkey '^p' up-line-or-history
 bindkey '^r' fzf-history-widget
 bindkey '^w' vi-backward-kill-word
-
-# Load jump shell
-eval "$(jump shell zsh)"
 
 # Alias git commands
 alias a="git a"
