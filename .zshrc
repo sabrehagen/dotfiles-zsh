@@ -52,7 +52,7 @@ RPROMPT='$(vi_mode_prompt_info)%{$(echotc UP 1)%}%(?..%{$fg_bold[red]%}%?%{$rese
 eval "$(jump shell zsh)"
 
 # Load nvm
-source $HOME/.nvm/nvm.sh
+source /opt/nvm/nvm.sh
 
 # Load wal colours
 source $HOME/.cache/wal/colors.sh
