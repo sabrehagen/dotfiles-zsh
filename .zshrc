@@ -209,7 +209,7 @@ alias vs="vcsh status --terse"
 alias vl="vcsh list"
 alias wifi="$HOME/.config/scripts/ssh-host-tty.sh wicd-curses"
 alias x="xargs -I @"
-alias zs="source ~/.zshrc"
+alias zs="source $HOME/.zshrc; source $HOME/.zshenv"
 alias zl="clear; zsh --login"
 
 isLoggedIn () {
