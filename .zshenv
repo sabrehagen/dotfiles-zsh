@@ -42,5 +42,5 @@ if [ -n "$TMUX" ]; then
   tmux pipe-pane "cat | ansi2txt >> $HOME/.tmux/logs/tmux_session_#{session_name}_#{window_name}_$(date +%Y-%m-%d-%H-%M-%S).log" 2>/dev/null
 fi
 
-# Export private environment configuration
-. $HOME/.zshenv-private 2>/dev/null
+# Export private environment variables
+source $HOME/.zshenv-private 2>/dev/null
