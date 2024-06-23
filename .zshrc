@@ -17,7 +17,6 @@ if ! zgenom saved; then
   zgenom load grigorii-zander/zsh-npm-scripts-autocomplete
   zgenom load paulirish/git-open
   zgenom load popstas/zsh-command-time
-  zgenom load zap-zsh/sudo
   zgenom load zsh-users/zsh-autosuggestions
   zgenom load zsh-users/zsh-completions
   zgenom load zsh-users/zsh-history-substring-search
