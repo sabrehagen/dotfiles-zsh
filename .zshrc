@@ -86,7 +86,6 @@ alias bd="git bd"
 alias bls="git bls"
 alias bmv="git bmv"
 alias bu="git bu"
-alias c="git c"
 alias ca="git ca"
 alias caa="git caa"
 alias cae="git cae"
@@ -231,6 +230,18 @@ login () {
 
 logout () {
   $HOME/.config/scripts/clean-secrets.sh
+}
+
+c () {
+  sgpt --chat shell "$*"
+}
+
+cc () {
+  sgpt --code "$*"
+}
+
+ch () {
+  sgpt --show-chat shell
 }
 
 cpx () {
