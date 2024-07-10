@@ -29,16 +29,6 @@ if ! zgenom saved; then
   zgenom save
 fi
 
-# Disable zsh errors when no globs are matched
-unsetopt nomatch
-
-# Do not remove spaces when piping commands
-ZLE_REMOVE_SUFFIX_CHARS=
-
-# Set zsh history file location
-export HISTFILE=$HOME/.cache/zsh/histfile
-mkdir -p $(dirname $HISTFILE)
-
 # Set the shell prompt
 PROMPT='
 $fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(git_prompt_info)
@@ -46,6 +36,12 @@ $fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(
 
 # Set the shell right prompt
 RPROMPT='$(vi_mode_prompt_info)%{$(echotc UP 1)%}%(?..%{$fg_bold[red]%}%?%{$reset_color%})${_return_status}%{$(echotc DO 1)%}'
+
+# Disable zsh errors when no globs are matched
+unsetopt nomatch
+
+# Do not remove spaces when piping commands
+ZLE_REMOVE_SUFFIX_CHARS=
 
 # Load jump shell
 eval "$(jump shell zsh)"
@@ -323,3 +319,16 @@ builtin zle -N cd-forward
 }
 
 setopt auto_pushd
+
+# Set zsh history options
+HISTFILE=$HOME/.cache/zsh/histfile
+HISTSIZE=500000
+SAVEHIST=500000
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry
+setopt SHARE_HISTORY             # Share history between all sessions
+
+# Ensure path to history file exists
+mkdir -p $(dirname $HISTFILE)
