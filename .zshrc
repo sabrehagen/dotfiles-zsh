@@ -111,6 +111,7 @@ alias cot="git cot"
 alias d="git d"
 alias db="git db"
 alias dc="git dc"
+alias dd="git dd"
 alias dbl="git dbl"
 alias dblame=$HOME/.config/scripts/git-diff-blame.sh
 alias ds="git ds"
