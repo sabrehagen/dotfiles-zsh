@@ -12,7 +12,7 @@ export HISTFILE=$HOME/.cache/zsh/histfile
 mkdir -p $(dirname $HISTFILE)
 
 # Set less pager configuration
-export LESS="--ignore-case --raw-control-chars"
+export LESS="--ignore-case --quit-if-one-screen --raw-control-chars"
 
 # Add user binaries to path
 export PATH=$HOME/.local/bin:$PATH
