@@ -43,6 +43,9 @@ unsetopt nomatch
 # Do not remove spaces when piping commands
 ZLE_REMOVE_SUFFIX_CHARS=
 
+# Handle comments in interactive shell
+setopt INTERACTIVE_COMMENTS
+
 # Load jump shell
 eval "$(jump shell zsh)"
 
