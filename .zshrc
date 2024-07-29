@@ -181,7 +181,8 @@ alias ha=$HOME/.config/scripts/arm64-ssh.sh
 alias hn=$HOME/.config/scripts/host-network.sh
 alias ip="curl ip-api.com"
 alias jqc="jq -C"
-alias l="eza --all --grid --group-directories-first --long --no-permissions --octal-permissions --smart-group"
+alias jql="jqc | less"
+alias l="EZA_GRID_ROWS=50 eza --all --grid --group-directories-first --long --no-permissions --octal-permissions --smart-group"
 alias la="l --absolute"
 alias ld="lh --only-dirs"
 alias lf="lh --only-files"
@@ -282,7 +283,7 @@ pbx () {
   $(pbg $1)
 }
 
-upload () {
+transfer () {
   curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
 }
 
