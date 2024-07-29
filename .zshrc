@@ -180,10 +180,13 @@ alias h=$HOME/.config/scripts/host-ssh-tty.sh
 alias ha=$HOME/.config/scripts/arm64-ssh.sh
 alias hn=$HOME/.config/scripts/host-network.sh
 alias ip="curl ip-api.com"
-alias l="exa -la --group-directories-first"
-alias lastarg="echo $(last) | sed s/.*\ //"
-alias last='echo $(fc -ln -1)'
-alias ls=exa
+alias jqc="jq -C"
+alias l="eza --all --grid --group-directories-first --long --no-permissions --octal-permissions --smart-group"
+alias la="l --absolute"
+alias ld="lh --only-dirs"
+alias lf="lh --only-files"
+alias lh="l --total-size"
+alias ls=eza
 alias mkx="chmod +x"
 alias own="sudo chown -R $USER:$USER"
 alias pastebin="curl -F 'f:1=<-' ix.io"
