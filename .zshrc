@@ -188,6 +188,7 @@ alias ld="lh --only-dirs"
 alias lf="lh --only-files"
 alias lh="l --total-size"
 alias ls=eza
+alias lt="l --sort=modified"
 alias mkx="chmod +x"
 alias own="sudo chown -R $USER:$USER"
 alias pastebin="curl -F 'f:1=<-' ix.io"
