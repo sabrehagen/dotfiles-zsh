@@ -77,6 +77,7 @@ bindkey '^w' vi-backward-kill-word
 # Alias git commands
 alias a="git a"
 alias aa="git aa"
+alias aad="git aad"
 alias ap="git ap"
 alias app="git app"
 alias apr="git apr"
