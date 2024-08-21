@@ -206,6 +206,7 @@ alias strip=ansi2txt
 alias sum="paste -sd+ - | bc"
 alias swallow="$HOME/.config/i3/run-and-swallow.py"
 alias t=tmux
+alias ta="t attach-session -t"
 alias tl="t ls"
 alias tk="t kill-session -t"
 alias tn="TMUX= t new-session -s on-demand-$(date +%s) -t"
