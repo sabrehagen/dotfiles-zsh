@@ -167,6 +167,7 @@ alias ascii="figlet -f slant -m 2"
 alias bt=bluetuith
 alias btp=$HOME/.config/scripts/host-pulseaudio.sh
 alias cat="batcat --style plain --theme ansi"
+alias clip=clipboard
 alias de="docker exec --interactive --tty"
 alias di="sudo dpkg -i"
 alias dl="dpkg -c"
