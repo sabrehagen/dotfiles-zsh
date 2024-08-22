@@ -1,6 +1,9 @@
 # Set aws config path
 export AWS_CONFIG_FILE=$HOME/.config/aws/config
 
+# Make tree always output colour
+CLICOLOR_FORCE=1
+
 # Set fzf path
 export FZF_BASE=$HOME/.fzf/bin/fzf
 
