@@ -258,6 +258,22 @@ ch () {
   sgpt --show-chat shell
 }
 
+cx () {
+  cxp | c
+}
+
+ccx () {
+  cxp | cc
+}
+
+cxl () {
+  cxp | wc -l
+}
+
+cxp () {
+  find . -type f | gv '.git|.meltano|lock' | x zsh -c "echo file: @; cat @"
+}
+
 get () {
   git get $1
   REPO_NAME=$(basename $1 | sed s/.git$//)
