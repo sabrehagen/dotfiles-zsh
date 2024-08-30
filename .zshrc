@@ -258,10 +258,6 @@ ch () {
   sgpt --show-chat shell
 }
 
-cpx () {
-  cat $HISTFILE | tail -2 | head -1 | cut -c 16- | head -c -1 | clipboard
-}
-
 get () {
   git get $1
   REPO_NAME=$(basename $1 | sed s/.git$//)
