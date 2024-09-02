@@ -17,6 +17,7 @@ if ! zgenom saved; then
   zgenom load grigorii-zander/zsh-npm-scripts-autocomplete
   zgenom load paulirish/git-open
   zgenom load popstas/zsh-command-time
+  zgenom load reegnz/jq-zsh-plugin
   zgenom load zsh-users/zsh-autosuggestions
   zgenom load zsh-users/zsh-completions
   zgenom load zsh-users/zsh-history-substring-search
@@ -73,6 +74,7 @@ bindkey '^f' forward-char
 bindkey '^p' up-line-or-history
 bindkey '^r' fzf-history-widget
 bindkey '^w' vi-backward-kill-word
+bindkey '^[^J' jq-complete
 
 # Alias git commands
 alias a="git a"
