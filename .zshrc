@@ -190,7 +190,7 @@ alias hn=$HOME/.config/scripts/host-network.sh
 alias ip="curl ip-api.com"
 alias jqc="jq -C"
 alias jql="jqc | less"
-alias l="EZA_GRID_ROWS=50 eza --all --grid --group-directories-first --long --no-permissions --octal-permissions --smart-group"
+alias l="EZA_GRID_ROWS=50 eza --all --color=always --grid --group-directories-first --long --no-permissions --octal-permissions --smart-group"
 alias la="l --absolute"
 alias ld="lh --only-dirs"
 alias lf="lh --only-files"
