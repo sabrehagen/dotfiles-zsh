@@ -12,6 +12,7 @@ if ! zgenom saved; then
   zgenom oh-my-zsh plugins/fzf
   zgenom oh-my-zsh plugins/git
   zgenom oh-my-zsh plugins/gnu-utils
+  zgenom oh-my-zsh plugins/grc
 
   # Bundles from third parties
   zgenom load grigorii-zander/zsh-npm-scripts-autocomplete
