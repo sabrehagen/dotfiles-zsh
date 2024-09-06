@@ -358,7 +358,6 @@ SAVEHIST=500000
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history
 setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space
-setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry
 setopt SHARE_HISTORY             # Share history between all sessions
 
 # Ensure path to history file exists
