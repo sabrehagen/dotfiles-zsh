@@ -173,6 +173,7 @@ alias clip=clipboard
 alias de="docker exec --interactive --tty"
 alias di="sudo dpkg -i"
 alias dl="dpkg -c"
+alias dp="docker ps"
 alias dr="docker run --interactive --rm --tty"
 alias feh="feh --image-bg black --keep-zoom-vp"
 alias g="grep --color=always --extended-regexp --ignore-case"
