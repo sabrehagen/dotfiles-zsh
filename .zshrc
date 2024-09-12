@@ -206,7 +206,6 @@ alias t=tmux
 alias ta="t attach-session -t"
 alias tl="t ls"
 alias tk="t kill-session -t"
-alias tn="TMUX= t new-session -s on-demand-$(date +%s) -t"
 alias ts="t choose-session"
 alias tree="tree -a -I 'node_modules|.git' -L 4"
 alias v=vcsh
@@ -304,6 +303,10 @@ pbc () {
 
 pbx () {
   $(pbg $1)
+}
+
+tn () {
+  TMUX= tmux new-session -s on-demand-$(date +%s) -t "$@"
 }
 
 transfer () {
