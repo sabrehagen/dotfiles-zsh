@@ -61,8 +61,6 @@ source $HOME/.cache/wal/colors.sh
 (wal -Reqn 2>/dev/null &)
 
 # Additional zle bindings
-bindkey -s '^[i' 'l^M'
-bindkey -s '^[t' 'tree^M'
 bindkey '^[.' insert-last-word
 bindkey '^[b' vi-backward-word
 bindkey '^[d' kill-word
@@ -354,6 +352,28 @@ builtin zle -N cd-forward
 }
 
 setopt auto_pushd
+
+# List directory widget that runs ls -l
+list-directory() {
+  echo
+  l
+  zle reset-prompt
+}
+zle -N list-directory
+
+# Bind the list directory widget to Alt + I
+bindkey '^[i' list-directory
+
+# Tree directory widget that runs ls -l
+tree-directory() {
+  echo
+  tree
+  zle reset-prompt
+}
+zle -N tree-directory
+
+# Bind the tree directory widget to Alt + T
+bindkey '^[t' tree-directory
 
 # Set zsh history options
 HISTFILE=$HOME/.cache/zsh/histfile
