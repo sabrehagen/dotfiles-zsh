@@ -55,7 +55,7 @@ eval "$(jump shell zsh)"
 source /opt/nvm/nvm.sh
 
 # Load wal colours
-source $HOME/.cache/wal/colors.sh
+source $HOME/.cache/wal/colors.sh 2>/dev/null
 
 # Reload wal for terminal (run in subshell as wal can hang when pty is non-responsive)
 (wal -Reqn 2>/dev/null &)
