@@ -206,7 +206,11 @@ alias ta="t attach-session -t"
 alias tl="t ls"
 alias tk="t kill-session -t"
 alias ts="t choose-session"
-alias tree="tree -a -I '.git|dist|node_modules|tsconfig.tsbuildinfo' -L 4"
+alias tree="tree -I '.git|dist|node_modules|tsconfig.tsbuildinfo' -L 2"
+alias treea="tree -a"
+alias treead="treea -d"
+alias treed="tree -d"
+alias treeda="treed -a"
 alias v=vcsh
 alias vd="vcsh foreach diff"
 alias vs="vcsh status --terse"
@@ -354,28 +358,6 @@ builtin zle -N cd-forward
 
 setopt auto_pushd
 
-# List directory widget that runs ls -l
-list-directory() {
-  echo
-  l
-  zle reset-prompt
-}
-zle -N list-directory
-
-# Bind the list directory widget to Alt + I
-bindkey '^[i' list-directory
-
-# Tree directory widget that runs ls -l
-tree-directory() {
-  echo
-  tree
-  zle reset-prompt
-}
-zle -N tree-directory
-
-# Bind the tree directory widget to Alt + T
-bindkey '^[t' tree-directory
-
 # Set zsh history options
 HISTFILE=$HOME/.cache/zsh/histfile
 HISTSIZE=500000
@@ -387,3 +369,91 @@ setopt SHARE_HISTORY             # Share history between all sessions
 
 # Ensure path to history file exists
 mkdir -p $(dirname $HISTFILE)
+
+# Function that evaluates the passed command and leaves zle state unchanged
+zle-exec-inline() {
+  echo
+  eval "$@"
+  zle reset-prompt
+}
+
+# List directory widget that runs ls -l
+list-directory() {
+  zle-exec-inline l
+}
+zle -N list-directory
+
+# Bind the list directory widget to Alt + I
+bindkey '^[i' list-directory
+
+# Tree directory widget that runs tree
+zle-tree() {
+  zle-exec-inline tree
+}
+zle -N zle-tree
+
+# Bind the tree directory widget to Alt + T
+bindkey '^[t' zle-tree
+
+# Tree directory widget that runs treea
+zle-treea() {
+  zle-exec-inline treea
+}
+zle -N zle-treea
+
+# Bind the treea directory widget to Alt + Shift + T
+bindkey '^[T' zle-treea
+
+# Tree directory widget that runs treed
+zle-treed() {
+  zle-exec-inline treed
+}
+zle -N zle-treed
+
+# Bind the tree directory widget to Alt + D
+# bindkey '^[d' zle-treed
+
+alt-d-map() {
+  treed-depth-3() {
+    zle-exec-inline treed -L 3
+  }
+  zle -N treed-depth-3
+
+  treed-depth-4() {
+    zle-exec-inline treed -L 4
+  }
+  zle -N treed-depth-4
+
+  treed-depth-5() {
+    zle-exec-inline treed -L 5
+  }
+  zle -N treed-depth-5
+
+  local -A keys
+  keys=(
+    "d" "zle-treed"
+    "3" "treed-depth-3"
+    "4" "treed-depth-4"
+    "5" "treed-depth-5"
+  )
+
+  read -k1 -t 5 key || return
+  if (( ${+keys[$key]} )); then
+    zle ${keys[$key]}
+  else
+    zle -R "Invalid key: $key"
+    return 1
+  fi
+}
+
+zle -N alt-d-map
+bindkey '^[d' alt-d-map
+
+# Tree directory widget that runs treeda
+zle-treeda() {
+  zle-exec-inline treeda
+}
+zle -N zle-treeda
+
+# Bind the treeda directory widget to Alt + Shift + D
+bindkey '^[D' zle-treeda
