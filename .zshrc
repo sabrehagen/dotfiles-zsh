@@ -411,9 +411,9 @@ zle-treed() {
 zle -N zle-treed
 
 # Bind the tree directory widget to Alt + D
-# bindkey '^[d' zle-treed
+bindkey '^[d' zle-treed
 
-alt-d-map() {
+alt-shift-d-map() {
   treed-depth-3() {
     zle-exec-inline treed -L 3
   }
@@ -429,15 +429,39 @@ alt-d-map() {
   }
   zle -N treed-depth-5
 
+  zle-treeda() {
+    zle-exec-inline treeda
+  }
+  zle -N zle-treeda
+
+  treeda-depth-3() {
+    zle-exec-inline treeda -L 3
+  }
+  zle -N treeda-depth-3
+
+  treeda-depth-4() {
+    zle-exec-inline treeda -L 4
+  }
+  zle -N treeda-depth-4
+
+  treeda-depth-5() {
+    zle-exec-inline treeda -L 5
+  }
+  zle -N treeda-depth-5
+
   local -A keys
   keys=(
     "d" "zle-treed"
+    "D" "zle-treeda"
     "3" "treed-depth-3"
     "4" "treed-depth-4"
     "5" "treed-depth-5"
+    "#" "treeda-depth-3"
+    "$" "treeda-depth-4"
+    "%" "treeda-depth-5"
   )
 
-  read -k1 -t 5 key || return
+  read -k1 -t 3 key || return
   if (( ${+keys[$key]} )); then
     zle ${keys[$key]}
   else
@@ -446,14 +470,5 @@ alt-d-map() {
   fi
 }
 
-zle -N alt-d-map
-bindkey '^[d' alt-d-map
-
-# Tree directory widget that runs treeda
-zle-treeda() {
-  zle-exec-inline treeda
-}
-zle -N zle-treeda
-
-# Bind the treeda directory widget to Alt + Shift + D
-bindkey '^[D' zle-treeda
+zle -N alt-shift-d-map
+bindkey '^[D' alt-shift-d-map
