@@ -477,7 +477,7 @@ bindkey '^[T' alt-shift-t-map
 
 # Function that runs tmux-window-name in background for use with zsh hooks
 tmux-window-name() {
-  ($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+  ($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &>/dev/null &)
 }
 add-zsh-hook chpwd tmux-window-name
 add-zsh-hook precmd tmux-window-name
