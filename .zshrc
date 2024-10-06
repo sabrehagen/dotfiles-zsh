@@ -397,7 +397,7 @@ zle -N zle-tree
 # Bind the tree directory widget to Alt + T
 bindkey '^[t' zle-tree
 
-# Function to
+# Mode widget for running tree commands
 alt-shift-t-map() {
   treed-depth-2() {
     zle-exec-inline treed -L 2
@@ -470,6 +470,15 @@ alt-shift-t-map() {
     zle ${keys[$key]}
   fi
 }
-
 zle -N alt-shift-t-map
+
+# Bind the tree mode widget to Alt + Shift + T
 bindkey '^[T' alt-shift-t-map
+
+# Function that runs tmux-window-name in background for use with zsh hooks
+tmux-window-name() {
+  ($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+}
+add-zsh-hook chpwd tmux-window-name
+add-zsh-hook precmd tmux-window-name
+add-zsh-hook preexec tmux-window-name
