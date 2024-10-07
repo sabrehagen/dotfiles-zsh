@@ -379,6 +379,43 @@ zle-exec-inline() {
   zle reset-prompt
 }
 
+# Login shell widget that runs zsh --login
+function zle-zsh-login() {
+  clear
+  exec zsh --login </dev/tty
+}
+zle -N zle-zsh-login
+
+# Bind the login shell widget to Alt + Shift + I
+bindkey '^[I' zle-zsh-login
+
+# Source zshrc widget that runs source $HOME/.zshrc
+function zle-source-zshrc() {
+  eval source $HOME/.zshrc
+
+  # Update prompt to indicate zshrc sourced successfully
+  ORIGINAL_PROMPT=$PROMPT
+  PROMPT="$(echo $PROMPT | sed s/λ/$fg[green]λ%{$reset_color%}/)"
+  zle reset-prompt
+
+
+  function reset-prompt() {
+    PROMPT=$ORIGINAL_PROMPT
+    zle reset-prompt
+  }
+  trap reset-prompt USR1
+
+  # Send signal to reset prompt after one second in the background so control is returned to zle
+  (
+    sleep 1
+    kill -USR1 $$
+  ) &!
+}
+zle -N zle-source-zshrc
+
+# Bind the source zshrc widget to Alt + Shift + S
+bindkey '^[S' zle-source-zshrc
+
 # List directory widget that runs ls -l
 zle-ls() {
   zle-exec-inline l
