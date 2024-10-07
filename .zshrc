@@ -402,6 +402,16 @@ zle -N zle-source-zshrc
 # Bind the source zshrc widget to Alt + Shift + S
 bindkey '^[S' zle-source-zshrc
 
+# Clear and exec widget that clears the terminal and executes the command
+zle-clear-and-exec() {
+  zle clear-screen
+  zle accept-line
+}
+zle -N zle-clear-and-exec
+
+# Bind the clear and exec widget to Alt + Shift + M
+bindkey '^[M' zle-clear-and-exec
+
 # List directory widget that runs ls -l
 zle-ls() {
   zle-exec-inline l
