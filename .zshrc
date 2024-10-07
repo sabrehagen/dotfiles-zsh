@@ -195,8 +195,6 @@ alias ls=eza
 alias lt="l --sort=modified"
 alias mkx="chmod +x"
 alias own="sudo chown -R $USER:$USER"
-alias pastebin="curl -F 'f:1=<-' ix.io"
-alias pb=pastebin
 alias scripts="cat package.json | jq .scripts"
 alias sc=scripts
 alias strip=ansi2txt
@@ -219,7 +217,7 @@ alias x="xargs -I @"
 alias zs="source $HOME/.zshrc; source $HOME/.zshenv"
 alias zl="clear; zsh --login"
 
-isLoggedIn () {
+isLoggedIn() {
   LOGGED_IN_FILE=$HOME/.ssh-private/id_rsa
 
   # Exit with error if not logged in
@@ -229,52 +227,52 @@ isLoggedIn () {
   fi
 }
 
-login () {
+login() {
   # Clone secrets if not already cloned
   if [ ! -f $HOME/.ssh-private/id_rsa ]; then
     source $HOME/.config/scripts/clone-secrets.sh
   fi
 }
 
-logout () {
+logout() {
   $HOME/.config/scripts/clean-secrets.sh
 }
 
-c () {
+c() {
   sgpt --chat shell "$*"
 }
 
-cc () {
+cc() {
   sgpt --code "$*"
 }
 
-ch () {
+ch() {
   sgpt --show-chat shell
 }
 
-cx () {
+cx() {
   cxp | c
 }
 
-ccx () {
+ccx() {
   cxp | cc
 }
 
-cxl () {
+cxl() {
   cxp | wc -l
 }
 
-cxp () {
+cxp() {
   find . -type f | gv '.git|.meltano|lock' | x zsh -c "echo file: @; cat @"
 }
 
-get () {
+get() {
   git get $1
   REPO_NAME=$(basename $1 | sed s/.git$//)
   cd $REPO_NAME
 }
 
-man () {
+man() {
   LESS_TERMCAP_mb=$'\E[1;33m' \
   LESS_TERMCAP_md=$'\E[1;32m' \
   LESS_TERMCAP_me=$'\E[0m' \
@@ -285,38 +283,26 @@ man () {
   command man "$@"
 }
 
-mk () {
+mk() {
   mkdir $1
   cd $1
 }
 
-mktmp () {
+mktmp() {
   TMP_DIR=/tmp/${1-$(date +%s)}
   mkdir $TMP_DIR
   cd $TMP_DIR
 }
 
-pbg () {
-  curl --silent ix.io/$1
-}
-
-pbc () {
-  pbg $1 | clipboard
-}
-
-pbx () {
-  $(pbg $1)
-}
-
-tn () {
+tn() {
   TMUX= tmux new-session -s on-demand-$(date +%s) -t "$@"
 }
 
-transfer () {
+transfer() {
   curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
 }
 
-function cd-redraw-prompt () {
+function cd-redraw-prompt() {
   {
     builtin echoti civis
     builtin local f
@@ -329,8 +315,8 @@ function cd-redraw-prompt () {
   }
 }
 
-function cd-rotate () {
-  () {
+function cd-rotate() {
+ () {
     builtin emulate -L zsh
     while (( $#dirstack )) && ! builtin pushd -q $1 &>/dev/null; do
       builtin popd -q $1
@@ -367,7 +353,7 @@ setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming 
 setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space
 setopt SHARE_HISTORY             # Share history between all sessions
 
-# Ensure path to history file exists
+# Ensure history file directory exists
 mkdir -p $(dirname $HISTFILE)
 
 # Function that evaluates the passed command and leaves zle state unchanged
