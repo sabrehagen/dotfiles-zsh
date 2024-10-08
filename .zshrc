@@ -48,16 +48,28 @@ ZLE_REMOVE_SUFFIX_CHARS=
 setopt INTERACTIVE_COMMENTS
 
 # Load jump shell
-eval "$(jump shell zsh)"
+eval "$(jump shell zsh)" 2>/dev/null
 
 # Load nvm
-source /opt/nvm/nvm.sh
+source /opt/nvm/nvm.sh 2>/dev/null
 
 # Load wal colours
 source $HOME/.cache/wal/colors.sh 2>/dev/null
 
 # Reload wal for terminal (run in subshell as wal can hang when pty is non-responsive)
 (wal -Reqn 2>/dev/null &)
+
+# Set zsh history options
+HISTFILE=$HOME/.cache/zsh/histfile
+HISTSIZE=500000
+SAVEHIST=500000
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space
+setopt SHARE_HISTORY             # Share history between all sessions
+
+# Ensure history file directory exists
+mkdir -p $(dirname $HISTFILE)
 
 # Additional zle bindings
 bindkey '^[.' insert-last-word
@@ -297,7 +309,7 @@ tn() {
 }
 
 transfer() {
-  curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
+  curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null
 }
 
 function cd-redraw-prompt() {
@@ -323,9 +335,9 @@ function cd-rotate() {
   } "$@" && cd-redraw-prompt
 }
 
-function cd-up() { builtin cd -q .. && cd-redraw-prompt; }
-function cd-back() { cd-rotate +1; }
-function cd-forward() { cd-rotate -0; }
+function cd-up() { builtin cd -q .. && cd-redraw-prompt }
+function cd-back() { cd-rotate +1 }
+function cd-forward() { cd-rotate -0 }
 
 builtin zle -N cd-up
 builtin zle -N cd-back
@@ -341,18 +353,6 @@ builtin zle -N cd-forward
 }
 
 setopt auto_pushd
-
-# Set zsh history options
-HISTFILE=$HOME/.cache/zsh/histfile
-HISTSIZE=500000
-SAVEHIST=500000
-setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format
-setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history
-setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space
-setopt SHARE_HISTORY             # Share history between all sessions
-
-# Ensure history file directory exists
-mkdir -p $(dirname $HISTFILE)
 
 # Function that evaluates the passed command and leaves zle state unchanged
 zle-exec-inline() {
@@ -382,17 +382,17 @@ function zle-source-zshrc() {
   PROMPT="$(echo $PROMPT | sed s/λ/$fg[green]λ%{$reset_color%}/)"
   zle reset-prompt
 
-
   function reset-prompt() {
     PROMPT=$ORIGINAL_PROMPT
     zle reset-prompt
   }
-  trap reset-prompt USR1
+  RESET_PROMPT_SIGNAL=USR1
+  trap reset-prompt $RESET_PROMPT_SIGNAL
 
   # Send signal to reset prompt after one second in the background so control is returned to zle
   (
     sleep 1
-    kill -USR1 $$
+    kill -$RESET_PROMPT_SIGNAL $$
   ) &!
 }
 zle -N zle-source-zshrc
