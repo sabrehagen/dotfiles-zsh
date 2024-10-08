@@ -373,11 +373,12 @@ zle -N zle-zsh-login
 # Bind the login shell widget to Alt + Shift + I
 bindkey '^[I' zle-zsh-login
 
-# Source zshrc widget that runs source $HOME/.zshrc
-function zle-source-zshrc() {
+# Source shell widget that realoads .zshrc and .zshenv
+function zle-source-shell() {
   eval source $HOME/.zshrc
+  eval source $HOME/.zshenv
 
-  # Update prompt to indicate zshrc sourced successfully
+  # Update prompt to indicate shell config sourced successfully
   ORIGINAL_PROMPT=$PROMPT
   PROMPT="$(echo $PROMPT | sed s/λ/$fg[green]λ%{$reset_color%}/)"
   zle reset-prompt
@@ -395,10 +396,10 @@ function zle-source-zshrc() {
     kill -$RESET_PROMPT_SIGNAL $$
   ) &!
 }
-zle -N zle-source-zshrc
+zle -N zle-source-shell
 
 # Bind the source zshrc widget to Alt + Shift + S
-bindkey '^[S' zle-source-zshrc
+bindkey '^[S' zle-source-shell
 
 # Clear and exec widget that clears the terminal and executes the command
 zle-clear-and-exec() {
