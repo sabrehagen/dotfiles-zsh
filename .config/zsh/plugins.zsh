@@ -1,3 +1,8 @@
+# Ensure plugin manager installed
+if [ ! -d $HOME/.zgenom ]; then
+  git clone --depth 1 https://github.com/jandamm/zgenom.git $HOME/.zgenom
+fi
+
 # Load zgenom plugin manager
 source "$HOME/.zgenom/zgenom.zsh"
 
