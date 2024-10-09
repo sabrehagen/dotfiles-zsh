@@ -4,7 +4,7 @@ if [ ! -d $HOME/.zgenom ]; then
 fi
 
 # Load zgenom plugin manager
-source "$HOME/.zgenom/zgenom.zsh"
+source $HOME/.zgenom/zgenom.zsh
 
 # If no zgenom static init exists
 if ! zgenom saved; then
@@ -14,6 +14,7 @@ if ! zgenom saved; then
 
   # Bundles from oh-my-zsh
   zgenom oh-my-zsh plugins/command-not-found
+  zgenom oh-my-zsh plugins/fzf
   zgenom oh-my-zsh plugins/git
   zgenom oh-my-zsh plugins/gnu-utils
   zgenom oh-my-zsh plugins/grc
