@@ -1,4 +1,4 @@
-# Ensure plugin manager installed
+# Ensure plugin manager is installed
 if [ ! -d $HOME/.zgenom ]; then
   git clone --depth 1 https://github.com/jandamm/zgenom.git $HOME/.zgenom
 fi
@@ -14,7 +14,6 @@ if ! zgenom saved; then
 
   # Bundles from oh-my-zsh
   zgenom oh-my-zsh plugins/command-not-found
-  zgenom oh-my-zsh plugins/fzf
   zgenom oh-my-zsh plugins/git
   zgenom oh-my-zsh plugins/gnu-utils
   zgenom oh-my-zsh plugins/grc
