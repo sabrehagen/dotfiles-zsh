@@ -88,8 +88,7 @@ alias as="apt-file search --regexp"
 alias au="sudo apt-get update"
 alias ax="arc unarchive"
 alias ascii="figlet -f slant -m 2"
-alias bt=bluetuith
-alias cat="batcat --style plain --theme ansi"
+alias bat="batcat --style plain --theme ansi"
 alias clip=clipboard
 alias de="docker exec --interactive --tty"
 alias di="sudo dpkg -i"
@@ -140,3 +139,6 @@ alias vl="vcsh list"
 alias x="xargs -I @"
 alias zs="source $HOME/.zshrc; source $HOME/.zshenv"
 alias zl="clear; zsh --login"
+
+# Conditional aliases
+command -v batcat >/dev/null && alias cat=bat
