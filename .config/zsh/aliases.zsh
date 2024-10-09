@@ -120,8 +120,7 @@ alias ls=eza
 alias lt="l --sort=modified"
 alias mkx="chmod +x"
 alias own="sudo chown -R $USER:$USER"
-alias scripts="cat package.json | jq .scripts"
-alias sc=scripts
+alias sc="cat package.json | jq .scripts"
 alias strip=ansi2txt
 alias sum="paste -sd+ - | bc"
 alias t=tmux
