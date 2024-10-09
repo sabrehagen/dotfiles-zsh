@@ -16,6 +16,9 @@ export LESS='--ignore-case --quit-if-one-screen --raw-control-chars'
 # Add user binaries to path
 export PATH=$HOME/.local/bin:$PATH
 
+# Add user apt binaries to path
+export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$PATH
+
 # Add go binaries to path
 export PATH=$HOME/go/bin:$PATH
 

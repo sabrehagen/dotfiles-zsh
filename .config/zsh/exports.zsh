@@ -1,3 +1,6 @@
+# Set current user
+export USER=$(whoami)
+
 # Load jump functions
 eval "$(jump shell zsh 2>/dev/null)"
 
