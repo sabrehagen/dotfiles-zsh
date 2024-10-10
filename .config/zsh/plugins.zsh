@@ -23,10 +23,10 @@ if ! zgenom saved; then
   zgenom load grigorii-zander/zsh-npm-scripts-autocomplete
   zgenom load paulirish/git-open
   zgenom load popstas/zsh-command-time
+  zgenom load zdharma-continuum/fast-syntax-highlighting
   zgenom load zsh-users/zsh-autosuggestions
   zgenom load zsh-users/zsh-completions
   zgenom load zsh-users/zsh-history-substring-search
-  zgenom load zsh-users/zsh-syntax-highlighting
 
   # Load the theme
   zgenom oh-my-zsh themes/avit
