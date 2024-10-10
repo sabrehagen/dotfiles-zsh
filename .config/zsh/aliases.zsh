@@ -106,6 +106,7 @@ alias grl="gr --files-with-matches"
 alias gv="g --invert-match"
 alias h=$HOME/.config/scripts/host-ssh-tty.sh
 alias hn=$HOME/.config/scripts/host-network.sh
+alias inf=infinity
 alias ip="curl ip-api.com"
 alias jqc="jq -C"
 alias jql="jqc | less"
