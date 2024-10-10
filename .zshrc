@@ -5,6 +5,7 @@ source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/setopt.zsh
 source $ZSH_CONFIG/exports.zsh
 source $ZSH_CONFIG/prompt.zsh
+source $ZSH_CONFIG/completions.zsh
 source $ZSH_CONFIG/aliases.zsh
 source $ZSH_CONFIG/functions.zsh
 source $ZSH_CONFIG/hooks.zsh
