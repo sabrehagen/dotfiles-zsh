@@ -36,6 +36,12 @@ infinite() {
   while true; do eval "$@"; done
 }
 
+load-env() {
+  set -o allexport
+  source "$@"
+  set +o allexport
+}
+
 man() {
   LESS_TERMCAP_mb=$'\E[1;33m' \
   LESS_TERMCAP_md=$'\E[1;32m' \
