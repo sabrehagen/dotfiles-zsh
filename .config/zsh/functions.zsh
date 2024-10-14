@@ -40,14 +40,11 @@ load-env() {
   set -o allexport
   source "$@"
   set +o allexport
-}
-
-# Verbose load-env
-vload-env() {
-  load-env "$@"
 
   for ENV_VAR in $(grep -o '^[^#]*' "$@" | sed -E 's/([^=]*)=.*/\1/'); do
-    echo $ENV_VAR=$(eval echo \$$ENV_VAR | sed s/./*/g)
+    if [ -z "$(eval echo \$$ENV_VAR)" ]; then
+      echo "Environment variable $ENV_VAR is not set"
+    fi
   done
 }
 
