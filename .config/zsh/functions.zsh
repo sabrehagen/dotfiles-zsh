@@ -42,6 +42,15 @@ load-env() {
   set +o allexport
 }
 
+# Verbose load-env
+vload-env() {
+  load-env "$@"
+
+  for ENV_VAR in $(grep -o '^[^#]*' "$@" | sed -E 's/([^=]*)=.*/\1/'); do
+    echo $ENV_VAR=$(eval echo \$$ENV_VAR | sed s/./*/g)
+  done
+}
+
 man() {
   LESS_TERMCAP_mb=$'\E[1;33m' \
   LESS_TERMCAP_md=$'\E[1;32m' \
