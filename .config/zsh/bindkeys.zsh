@@ -4,7 +4,7 @@ bindkey '^[I' zle-zsh-login
 # Alt + Shift + S runs source shell
 bindkey '^[S' zle-source-shell
 
-# Alt + Shift + J runs clear and exec
+# Alt + Ctrl + J runs clear and exec
 bindkey '^[^J' zle-clear-and-exec
 
 # Alt + I runs list directory
