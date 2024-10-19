@@ -26,7 +26,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 
 # Add user apt binaries to path
-export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$PATH
+export PATH=$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
 
 # Add user apt libraries to path
 export LD_LIBRARY_PATH=~/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
