@@ -16,9 +16,6 @@ export LESS='--ignore-case --quit-if-one-screen --raw-control-chars'
 # Add user binaries to path
 export PATH=$HOME/.local/bin:$PATH
 
-# Add user apt binaries to path
-export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$PATH
-
 # Add go binaries to path
 export PATH=$HOME/go/bin:$PATH
 
@@ -27,6 +24,12 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 # Add yarn binaries to path
 export PATH=$HOME/.yarn/bin:$PATH
+
+# Add user apt binaries to path
+export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$PATH
+
+# Add user apt libraries to path
+export LD_LIBRARY_PATH=~/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 
 # Additional fzf bindings
 export FZF_CTRL_R_OPTS='--bind=ctrl-j:accept'
