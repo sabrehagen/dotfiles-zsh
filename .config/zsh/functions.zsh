@@ -70,6 +70,15 @@ mktmp() {
   cd $TMP_DIR
 }
 
+paste() {
+  local file=${1:-/dev/stdin}
+  curl --data-binary @${file} https://paste.rs
+}
+
+pget() {
+  curl https://paste.rs/$1
+}
+
 tn() {
   TMUX= tmux new-session -s on-demand-$(date +%s) -t "$@"
 }
