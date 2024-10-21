@@ -70,13 +70,28 @@ mktmp() {
   cd $TMP_DIR
 }
 
-paste() {
-  local file=${1:-/dev/stdin}
-  curl --data-binary @${file} https://paste.rs
+pastebin() {
+  if (( $# )); then
+    local file
+    for file; do
+      curl --silent --data-binary @"$file" --header "X-FileName: ${file##*/}" https://paste.c-net.org
+    done
+  else
+    curl --silent --data-binary @- https://paste.c-net.org
+  fi
 }
 
-pget() {
-  curl https://paste.rs/$1
+pasteget() {
+  local arg
+  if (( $# )); then
+    for arg; do
+      curl --silent https://paste.c-net.org/${arg##*/}
+    done
+  else
+    while read -r arg; do
+      curl --silent https://paste.c-net.org/${arg##*/}
+    done
+  fi
 }
 
 tn() {
