@@ -12,3 +12,4 @@ source $ZSH_CONFIG/hooks.zsh
 source $ZSH_CONFIG/widgets.zsh
 source $ZSH_CONFIG/bindkeys.zsh
 source $ZSH_CONFIG/history.zsh
+source $ZSH_CONFIG/zle.zsh
