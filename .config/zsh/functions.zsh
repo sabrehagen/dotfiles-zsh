@@ -23,7 +23,7 @@ cxl() {
 }
 
 cxp() {
-  find . -type f | gv '.git|.meltano|lock' | x zsh -c "echo file: @; cat @"
+  find . -type f | gv '.git|.meltano|lock' | x zsh -c 'echo file: @; cat @'
 }
 
 get() {
