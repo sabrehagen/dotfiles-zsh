@@ -97,7 +97,3 @@ pasteget() {
 tn() {
   TMUX= tmux new-session -s on-demand-$(date +%s) -t "$@"
 }
-
-transfer() {
-  curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null
-}
