@@ -43,7 +43,9 @@ install_github_releases() {
     dpkg-deb -x $HOME/dra.deb $HOME/.apt && \
     rm $HOME/dra.deb
 
-  dra="dra download --automatic --install --output $HOME/.local/bin $1"
+  dra() {
+    command dra download --automatic --install --output $HOME/.local/bin $1
+  }
 
   dra eza-community/eza &
   dra fastfetch-cli/fastfetch &
