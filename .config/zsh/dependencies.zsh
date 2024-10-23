@@ -62,8 +62,6 @@ install_npm_packages() {
     http-server \
     nodemon \
     rebase-editor
-
-  wait
 }
 
 install_python_packages() {
