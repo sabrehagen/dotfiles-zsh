@@ -1,27 +1,26 @@
 install_apt_get_packages() {
-  apt-get-userspace apt-file
-  apt-get-userspace apt-utils
-  apt-get-userspace bat
-  apt-get-userspace build-essential
-  apt-get-userspace curl
-  apt-get-userspace docker-compose
-  apt-get-userspace figlet
-  apt-get-userspace htop
-  apt-get-userspace jq
-  apt-get-userspace keychain
-  apt-get-userspace make
-  apt-get-userspace nano
-  apt-get-userspace ncdu
-  apt-get-userspace net-tools
-  apt-get-userspace openssl
-  apt-get-userspace python3
-  apt-get-userspace tree
-  apt-get-userspace tmux
-  apt-get-userspace unzip
-  apt-get-userspace wget
-  apt-get-userspace xz-utils
-
-  wait
+  apt-get-userspace \
+    apt-file \
+    apt-utils \
+    bat \
+    build-essential \
+    curl \
+    docker-compose \
+    figlet \
+    htop \
+    jq \
+    keychain \
+    make \
+    nano \
+    ncdu \
+    net-tools \
+    openssl \
+    python3 \
+    tmux \
+    tree \
+    unzip \
+    wget \
+    xz-utils
 
   # Update apt-get package system path references to userspace path references
   find $HOME/.apt/usr/bin -type f -exec grep -Il . {} \; | \
@@ -57,11 +56,12 @@ install_npm_packages() {
   curl -fsSL https://nodejs.org/dist/v20.18.0/node-v20.18.0-linux-x64.tar.xz | \
     tar -C $HOME/.apt/usr -Jx --strip-components=1
 
-  npm install --global clipboard-cli &
-  npm install --global diff-so-fancy &
-  npm install --global http-server &
-  npm install --global nodemon &
-  npm install --global rebase-editor &
+  npm install --global \
+    clipboard-cli \
+    diff-so-fancy \
+    http-server \
+    nodemon \
+    rebase-editor
 
   wait
 }
@@ -69,9 +69,9 @@ install_npm_packages() {
 install_python_packages() {
   curl -LsSf https://astral.sh/uv/install.sh | sh
 
-  uv tool install --python 3.12 posting &
-  uv tool install --python 3.12 shell-gpt &
-  uv tool install --python 3.12 tldr &
+  uv tool install posting &
+  uv tool install shell-gpt &
+  uv tool install tldr &
 
   wait
 }
