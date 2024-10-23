@@ -43,7 +43,7 @@ install_github_releases() {
     dpkg-deb -x $HOME/dra.deb $HOME/.apt && \
     rm $HOME/dra.deb
 
-  alias dra="dra download --automatic --install --output $HOME/.local/bin"
+  dra="dra download --automatic --install --output $HOME/.local/bin"
 
   dra eza-community/eza &
   dra fastfetch-cli/fastfetch &
