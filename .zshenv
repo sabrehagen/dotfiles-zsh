@@ -13,6 +13,9 @@ export FZF_CTRL_R_OPTS='--bind=ctrl-j:accept'
 # Set go path
 export GOPATH=$HOME/go
 
+# Set locale
+export LC_ALL=en_US.UTF-8
+
 # Add user apt libraries to path
 export LD_LIBRARY_PATH=$HOME/.apt/usr/lib:$HOME/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 
@@ -39,6 +42,9 @@ export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
 
 # Set tmux plugin manager path
 export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
+
+# Set timezone
+export TZ=Australia/Sydney
 
 # Set current user
 export USER=$(whoami)
