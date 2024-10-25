@@ -26,6 +26,15 @@ cxp() {
   find . -type f | gv '.git|.meltano|lock' | x zsh -c 'echo file: @; cat @'
 }
 
+ascii() {
+  APT_GET_USERSPACE_FIGLET=$HOME/.apt/usr/share/figlet
+  if [ -d $APT_GET_USERSPACE_FIGLET ]; then
+    figlet -d $APT_GET_USERSPACE_FIGLET "$@"
+  else
+    figlet "$@"
+  fi
+}
+
 get() {
   git get $1
   REPO_NAME=$(basename $1 | sed s/.git$//)
