@@ -16,15 +16,18 @@ install_apt_get_packages() {
     net-tools \
     openssl \
     python3 \
+    sudo \
     tmux \
     tree \
     unzip \
+    vcsh \
     wget \
-    xz-utils
+    xz-utils \
+    zsh
 
   # Update apt-get package system path references to userspace path references
   find $HOME/.apt/usr/bin -type f -exec grep -Il . {} \; | \
-    xargs sed -i "s;#\!/;#\!$HOME/.apt/;"
+    xargs sed -i "s;#\!/usr/bin/python3;#\!$HOME/.apt/usr/bin/python3;"
 }
 
 install_dotfiles() {
