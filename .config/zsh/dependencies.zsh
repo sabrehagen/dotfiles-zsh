@@ -81,12 +81,17 @@ install_python_packages() {
   wait
 }
 
+install_tmux_packages() {
+  tmux start-server
+}
+
 install_dependencies() {
   install_dotfiles
   install_apt_get_packages
   install_github_releases
   install_npm_packages
   install_python_packages
+  install_tmux_packages
 }
 
 if ! command -v batcat >/dev/null; then
