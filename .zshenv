@@ -32,7 +32,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 
 # Add user apt binaries to path
-export PATH=$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
+export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
 
 # Set ssh socket path
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
