@@ -14,7 +14,7 @@ export FZF_CTRL_R_OPTS='--bind=ctrl-j:accept'
 export GOPATH=$HOME/go
 
 # Set locale
-export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Add user apt libraries to path
 export LD_LIBRARY_PATH=$HOME/.apt/usr/lib:$HOME/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
