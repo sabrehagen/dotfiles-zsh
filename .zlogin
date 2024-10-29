@@ -40,11 +40,6 @@ if [ ! -z "$DESKTOP_ENVIRONMENT_CONTAINER_BUILD_DATE" ]; then
   echo "$COLOURED_CONTAINER_IMAGE_NAME | built $COLOURED_TIME_SINCE_CONTAINER_BUILD | $COLOURED_CONTAINER_GIT_SHA"
 fi
 
-# Move to home directory if started in root directory
-if [ "$PWD" = / ]; then
-  cd $HOME
-fi
-
 # Set the default directory to the repositories folder
 if [ "$PWD" = $HOME ] && [ -d $HOME/repositories ]; then
   cd $HOME/repositories
