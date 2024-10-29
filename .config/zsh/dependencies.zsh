@@ -70,7 +70,7 @@ install_npm_packages() {
 }
 
 install_python_packages() {
-  curl -fsSL https://astral.sh/uv/install.sh | sh
+  curl -fsSL https://astral.sh/uv/install.sh | command sh
 
   uv tool install posting &
   uv tool install shell-gpt &
