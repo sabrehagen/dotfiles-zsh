@@ -15,7 +15,6 @@ if ! zgenom saved; then
   # Bundles from oh-my-zsh
   zgenom oh-my-zsh plugins/command-not-found
   zgenom oh-my-zsh plugins/fzf
-  zgenom oh-my-zsh plugins/git
   zgenom oh-my-zsh plugins/gnu-utils
   zgenom oh-my-zsh plugins/grc
 
