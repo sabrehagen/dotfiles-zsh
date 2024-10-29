@@ -20,7 +20,7 @@ elif echo $HOSTNAME | grep -q desktop; then
 elif echo $HOSTNAME | grep -q linux; then
   ascii x86
 else
-  ascii CLOUD
+  ascii $HOSTNAME
 fi
 
 # Print container build info if present
