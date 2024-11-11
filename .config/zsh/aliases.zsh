@@ -2,6 +2,7 @@
 alias a="git a"
 alias aa="git aa"
 alias aad="git aad"
+alias aal="git aal"
 alias ap="git ap"
 alias app="git app"
 alias apr="git apr"
