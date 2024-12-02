@@ -1,3 +1,6 @@
+# Set hostname
+export HOSTNAME=$(hostname)
+
 # Set aws config path
 export AWS_CONFIG_FILE=$HOME/.config/aws/config
 
