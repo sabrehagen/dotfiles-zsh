@@ -90,6 +90,7 @@ alias au="sudo apt-get update"
 alias ax="arc unarchive"
 alias bat="batcat --style plain --theme ansi"
 alias cat=bat
+alias code="cursor $@ >/dev/null"
 alias de="docker exec --interactive --tty"
 alias di="sudo dpkg -i"
 alias dl="dpkg -c"
