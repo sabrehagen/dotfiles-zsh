@@ -7,6 +7,8 @@ install_apt_get_packages() {
     curl \
     docker-compose \
     figlet \
+    fonts-font-awesome \
+    fonts-noto-color-emoji \
     htop \
     jq \
     keychain \
