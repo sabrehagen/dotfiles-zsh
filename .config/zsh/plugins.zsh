@@ -9,6 +9,9 @@ source $HOME/.zgenom/zgenom.zsh
 # If no zgenom static init exists
 if ! zgenom saved; then
 
+  # Disable oh-my-zsh auto update
+  zstyle ':omz:update' mode disabled
+
   # Use oh-my-zsh framework
   zgenom oh-my-zsh
 
