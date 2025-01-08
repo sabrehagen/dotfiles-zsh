@@ -7,6 +7,13 @@ zle-exec-inline() {
   zle reset-prompt
 }
 
+# Function that evaluates the passed command silently and clears the prompt
+zle-silent-execute() {
+  eval "$BUFFER" >/dev/null 2>&1
+  zle backward-kill-line
+}
+zle -N zle-silent-execute
+
 # Login shell widget that runs zsh --login
 zle-zsh-login() {
   clear

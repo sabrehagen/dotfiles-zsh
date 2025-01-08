@@ -1,3 +1,6 @@
+# Ctrl + X + E runs silent execute
+bindkey '^X^E' zle-silent-execute
+
 # Alt + Shift + I runs login shell
 bindkey '^[I' zle-zsh-login
 
