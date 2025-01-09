@@ -6,6 +6,10 @@ tmux has-session -t $TMUX_SSH_SESSION 2>/dev/null || tmux new-session -d -s $TMU
 
 # Start tmux on ssh login
 if [[ -z $TMUX ]] && [[ -n $SSH_TTY ]]; then
+  # TODO: Send process signal to zsh to trigger shell environment reload from tmux environment
+  # pgrep zsh | xargs kill -USR1
+
+  # Replace current shell with new tmux session
   exec tmux new-session -A -s $TMUX_SSH_SESSION-$(date +%s) -t $TMUX_SSH_SESSION
 fi
 
