@@ -53,6 +53,18 @@ zle-clear-and-exec() {
 }
 zle -N zle-clear-and-exec
 
+# Git status widget that runs git s
+zle-git-status() {
+  zle-exec-inline s
+}
+zle -N zle-git-status
+
+# Git diff widget that runs git d
+zle-git-diff() {
+  zle-exec-inline d
+}
+zle -N zle-git-diff
+
 # List directory widget that runs ls -l
 zle-ls() {
   zle-exec-inline l

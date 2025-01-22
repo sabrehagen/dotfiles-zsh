@@ -1,6 +1,6 @@
 # Set the prompt
 PROMPT='
-$fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.ssh-private/id_rsa || echo 🔒\ )$(git_prompt_info)
+$fg[blue]%~ %{$fg[yellow]%}$(test -f $HOME/.config/scripts/clone-secrets.sh && (test -f $HOME/.ssh-private/id_rsa || echo 🔒\ ))$(git_prompt_info)
 %{%(?.$fg[$CARETCOLOR].$fg[red])%}λ%{$reset_color%} '
 
 # Set the right prompt

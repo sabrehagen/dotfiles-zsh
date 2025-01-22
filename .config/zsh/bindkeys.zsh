@@ -1,11 +1,17 @@
 # Ctrl + X + E runs silent execute
 bindkey '^X^E' zle-silent-execute
 
+# Alt + Shift + S runs git status
+bindkey '^[S' zle-git-status
+
+# Alt + Shift + D runs git diff
+bindkey '^[D' zle-git-diff
+
 # Alt + Shift + I runs login shell
 bindkey '^[I' zle-zsh-login
 
-# Alt + Shift + S runs source shell
-bindkey '^[S' zle-source-shell
+# Alt + Shift + R runs source shell
+bindkey '^[R' zle-source-shell
 
 # Alt + Ctrl + J runs clear and exec
 bindkey '^[^J' zle-clear-and-exec
