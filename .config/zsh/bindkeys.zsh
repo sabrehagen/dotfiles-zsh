@@ -1,6 +1,9 @@
 # Ctrl + X + E runs silent execute
 bindkey '^X^E' zle-silent-execute
 
+# Alt + Shift + C runs load last command output
+bindkey '^[C' zle-last-command-output
+
 # Alt + Shift + S runs git status
 bindkey '^[S' zle-git-status
 
