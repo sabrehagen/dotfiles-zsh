@@ -14,6 +14,12 @@ zle-silent-execute() {
 }
 zle -N zle-silent-execute
 
+# Function to load last command output into the line buffer
+zle-last-command-output() {
+  LBUFFER+="$(eval $history[$((HISTCMD-1))])"
+}
+zle -N zle-last-command-output
+
 # Login shell widget that runs zsh --login
 zle-zsh-login() {
   clear
