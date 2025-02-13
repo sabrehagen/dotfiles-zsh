@@ -32,6 +32,10 @@ install_apt_get_packages() {
   # Update apt-get package system path references to userspace path references
   find $HOME/.apt/usr/bin -type f -exec grep -Il . {} \; | \
     xargs sed -i "s;#\!/usr/bin/python3;#\!$HOME/.apt/usr/bin/python3;"
+
+  # Set sudo binary permissions
+  chmod +s $HOME/.apt/usr/bin/sudo && \
+    chown root:root $HOME/.apt/usr/bin/sudo
 }
 
 install_dotfiles() {
