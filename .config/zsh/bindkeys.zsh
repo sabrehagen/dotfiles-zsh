@@ -4,11 +4,14 @@ bindkey '^X^E' zle-silent-execute
 # Alt + Shift + C runs load last command output
 bindkey '^[C' zle-last-command-output
 
-# Alt + Shift + S runs git status
-bindkey '^[S' zle-git-status
+# Alt + Shift + A runs git add
+bindkey '^[A' zle-git-add
 
 # Alt + Shift + D runs git diff
 bindkey '^[D' zle-git-diff
+
+# Alt + Shift + S runs git status
+bindkey '^[S' zle-git-status
 
 # Alt + Shift + I runs login shell
 bindkey '^[I' zle-zsh-login
