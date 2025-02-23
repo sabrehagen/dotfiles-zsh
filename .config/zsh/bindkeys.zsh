@@ -7,6 +7,9 @@ bindkey '^[C' zle-last-command-output
 # Alt + Shift + A runs git add
 bindkey '^[A' zle-git-add
 
+# Ctrl + Alt + Shift + A runs git added
+bindkey '^[^A' zle-git-added
+
 # Alt + Shift + D runs git diff
 bindkey '^[D' zle-git-diff
 
