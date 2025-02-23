@@ -66,6 +66,12 @@ zle-git-add() {
 }
 zle -N zle-git-add
 
+# Git add widget that runs git aa
+zle-git-added() {
+  zle-exec-inline aa
+}
+zle -N zle-git-added
+
 # Git diff widget that runs git d
 zle-git-diff() {
   zle-exec-inline d
