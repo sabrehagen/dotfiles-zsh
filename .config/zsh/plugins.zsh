@@ -23,9 +23,9 @@ if ! zgenom saved; then
 
   # Bundles from third parties
   zgenom load grigorii-zander/zsh-npm-scripts-autocomplete
-  zgenom load johnhamelink/env-zsh
   zgenom load paulirish/git-open
   zgenom load popstas/zsh-command-time
+  zgenom load sabrehagen/env-zsh
   zgenom load zdharma-continuum/fast-syntax-highlighting
   zgenom load zsh-users/zsh-autosuggestions
   zgenom load zsh-users/zsh-completions
