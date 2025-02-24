@@ -66,10 +66,9 @@ zle-clear-and-exec() {
 }
 zle -N zle-clear-and-exec
 
-# Git add widget that runs git a
+# Git add widget that runs git a and prints git status
 zle-git-add() {
-  zle-exec-inline a .
-  zle-git-status
+  zle-exec-inline "a . && s"
 }
 zle -N zle-git-add
 
