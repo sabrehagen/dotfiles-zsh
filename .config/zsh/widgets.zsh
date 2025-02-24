@@ -1,5 +1,12 @@
 # Function that evaluates the passed command and resets the prompt
 zle-exec-inline() {
+  # Ensure precmd hooks are run before executing the command inline
+  local precmd
+  for precmd in $precmd_functions; do
+    $precmd
+  done
+
+  # Evaluate the command inline and reproduce normal output spacing
   echo
   eval "$@"
   echo
