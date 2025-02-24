@@ -6,11 +6,11 @@ fi
 # Load zgenom plugin manager
 source $HOME/.zgenom/zgenom.zsh
 
+# Disable oh-my-zsh auto update
+zstyle ':omz:update' mode disabled
+
 # If no zgenom static init exists
 if ! zgenom saved; then
-
-  # Disable oh-my-zsh auto update
-  zstyle ':omz:update' mode disabled
 
   # Use oh-my-zsh framework
   zgenom oh-my-zsh
