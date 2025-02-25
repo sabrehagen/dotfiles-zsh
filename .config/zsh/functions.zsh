@@ -3,7 +3,7 @@ c() {
 }
 
 cc() {
-  sgpt --code "Produce a posix compatible shell command or shell script to do the following, unless specified otherwise:$*"
+  sgpt --code "Produce a posix compatible shell command or shell script to do the following, unless specified otherwise: $*"
 }
 
 ch() {
