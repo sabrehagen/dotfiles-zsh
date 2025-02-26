@@ -4,7 +4,7 @@ TMUX_SSH_SESSION=ssh-client
 # Ensure tmux ssh session exists for ssh clients to join on connection
 tmux has-session -t $TMUX_SSH_SESSION 2>/dev/null || tmux new-session -d -s $TMUX_SSH_SESSION zsh --login 2>/dev/null
 
-# Start tmux on ssh login
+# Start tmux on interactive ssh session login
 if [[ -z $TMUX ]] && [[ -n $SSH_TTY ]]; then
   # TODO: Send process signal to zsh to trigger shell environment reload from tmux environment
   # pgrep zsh | xargs kill -USR1
