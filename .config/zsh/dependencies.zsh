@@ -20,6 +20,7 @@ install_apt_get_packages() {
     python3 \
     python3-pip \
     python3-libtmux \
+    ruby \
     sudo \
     tmux \
     tree \
