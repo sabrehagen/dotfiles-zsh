@@ -4,23 +4,10 @@ TMUX_SSH_SESSION=ssh-client
 # Ensure tmux ssh session exists for ssh clients to join on connection
 tmux has-session -t $TMUX_SSH_SESSION 2>/dev/null || tmux new-session -d -s $TMUX_SSH_SESSION zsh --login 2>/dev/null
 
-# Start tmux on interactive ssh session login
-if [[ -z $TMUX ]] && [[ -n $SSH_TTY ]]; then
-  # TODO: Send process signal to zsh to trigger shell environment reload from tmux environment
-  # pgrep zsh | xargs kill -USR1
-
-  # Replace current shell with new tmux session
-  exec tmux new-session -A -s $TMUX_SSH_SESSION-$(date +%s) -t $TMUX_SSH_SESSION
-fi
-
 # Print mesasge of the day
 echo
 if [ -d /mnt/host ]; then
   ascii arm64
-elif echo $HOSTNAME | grep -q laptop; then
-  ascii LAPTOP
-elif echo $HOSTNAME | grep -q desktop; then
-  ascii DESKTOP
 elif echo $HOSTNAME | grep -q linux; then
   ascii x86
 else
