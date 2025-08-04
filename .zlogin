@@ -11,7 +11,7 @@ if [ -d /mnt/host ]; then
 elif echo $HOSTNAME | grep -q linux; then
   ascii x86
 else
-  ascii $HOSTNAME
+  echo $HOSTNAME | tr - \\n | ascii
 fi
 
 # Print container build info if present
