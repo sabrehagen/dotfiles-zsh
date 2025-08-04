@@ -98,6 +98,6 @@ install_dependencies() {
   install_tmux_packages
 }
 
-if ! command -v batcat >/dev/null; then
+if ! command -v cat >/dev/null; then
   install_dependencies
 fi
