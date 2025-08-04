@@ -1,5 +1,5 @@
 install_apt_get_packages() {
-  apt-get-userspace \
+  sudo apt-get install -qq \
     apt-file \
     apt-utils \
     bat \
@@ -30,12 +30,12 @@ install_apt_get_packages() {
     zsh
 
   # Update apt-get package system path references to userspace path references
-  find $HOME/.apt/usr/bin -type f -exec grep -Il . {} \; | \
-    xargs sed -i "s;#\!/usr/bin/python3;#\!$HOME/.apt/usr/bin/python3;"
+  # find $HOME/.apt/usr/bin -type f -exec grep -Il . {} \; | \
+  #   xargs sed -i "s;#\!/usr/bin/python3;#\!$HOME/.apt/usr/bin/python3;"
 
   # Set sudo binary permissions
-  chmod +s $HOME/.apt/usr/bin/sudo && \
-    chown root:root $HOME/.apt/usr/bin/sudo
+  # chmod +s $HOME/.apt/usr/bin/sudo && \
+  #   chown root:root $HOME/.apt/usr/bin/sudo
 }
 
 install_dotfiles() {
@@ -98,6 +98,6 @@ install_dependencies() {
   install_tmux_packages
 }
 
-if ! command -v cat >/dev/null; then
+if ! command -v batcat >/dev/null; then
   install_dependencies
 fi
