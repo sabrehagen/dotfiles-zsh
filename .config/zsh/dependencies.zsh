@@ -104,14 +104,6 @@ install_dependencies() {
 # If expected system dependency is not found, install system dependencies
 if ! command -v batcat >/dev/null; then
   install_dependencies
-fi
-
-# If expected dotfiles repository is not found, install dotfiles
-if ! [ -d "$HOME/.config/vcsh/repo.d/dotfiles-tmux.git" ]; then
   install_dotfiles
-fi
-
-# If expected tmux package is not found, install tmux packages
-if ! [ -d "$HOME/.tmux/plugins/tpm" ]; then
   install_tmux_packages
 fi
