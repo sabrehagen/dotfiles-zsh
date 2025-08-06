@@ -55,6 +55,9 @@ install_github_releases() {
     dpkg-deb -x $HOME/dra.deb $HOME/.apt && \
     rm $HOME/dra.deb
 
+  # Ensure dra install path exists
+  mkdir -p $HOME/.local/bin
+
   dra eza-community/eza &
   dra fastfetch-cli/fastfetch &
   dra junegunn/fzf &
