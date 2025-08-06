@@ -40,10 +40,10 @@ install_apt_get_packages() {
 }
 
 install_dotfiles() {
-  vcsh clone https://github.com/sabrehagen/dotfiles-scripts &
-  vcsh clone https://github.com/sabrehagen/dotfiles-htop &
   vcsh clone https://github.com/sabrehagen/dotfiles-git &
+  vcsh clone https://github.com/sabrehagen/dotfiles-htop &
   vcsh clone https://github.com/sabrehagen/dotfiles-nano &
+  vcsh clone https://github.com/sabrehagen/dotfiles-scripts &
   vcsh clone https://github.com/sabrehagen/dotfiles-ssh &
   vcsh clone https://github.com/sabrehagen/dotfiles-tmux &
 
