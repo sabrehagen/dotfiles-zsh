@@ -10,7 +10,7 @@ if [[ -z $TMUX ]] && [[ -n $SSH_TTY ]]; then
   # pgrep zsh | xargs kill -USR1
 
   # Replace current shell with new tmux session
-  exec tmux new-session -A -s $TMUX_SSH_SESSION-$(date +%s) -t $TMUX_SSH_SESSION
+  exec tmux new-session -A -t $TMUX_SSH_SESSION
 fi
 
 # Print mesasge of the day
