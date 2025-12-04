@@ -25,9 +25,6 @@ bindkey '^[R' zle-source-shell
 # Alt + Ctrl + J runs clear and exec
 bindkey '^[^J' zle-clear-and-exec
 
-# Alt + I runs list directory
-bindkey '^[i' zle-ls
-
 # Alt + T runs tree directory
 bindkey '^[t' zle-tree
 
@@ -43,6 +40,14 @@ bindkey '^[-' zle-cd-back
 # Alt + Shift + Minus forward directory
 bindkey '^[_' zle-cd-forward
 
+# Ctrl + K runs list directory
+bindkey '^k' zle-ls
+
+# Duplicate bindings
+
+# Alt + Ctrl + K runs tree 3
+bindkey '^[^K' tree-depth-3
+
 # Additional zle bindings
 bindkey '^[.' insert-last-word
 bindkey '^[b' vi-backward-word
@@ -56,3 +61,11 @@ bindkey '^f' forward-char
 bindkey '^p' up-line-or-history
 bindkey '^r' fzf-history-widget
 bindkey '^w' vi-backward-kill-word
+
+# zsh-history-substring-search plugin configuration
+
+# Alt + I runs search history backwards
+bindkey '^[i' history-substring-search-up
+
+# Alt + Shift + I runs search history forwards
+bindkey '^[I' history-substring-search-down
