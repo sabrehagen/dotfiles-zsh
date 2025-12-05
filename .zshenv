@@ -26,7 +26,7 @@ export LC_ALL=en_US.UTF-8
 export LD_LIBRARY_PATH=$HOME/.apt/usr/lib:$HOME/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 
 # Set less pager configuration
-export LESS='--ignore-case --quit-if-one-screen --raw-control-chars'
+export LESS='--ignore-case --no-init --quit-if-one-screen --RAW-CONTROL-CHARS'
 
 # Add user binaries to path
 export PATH=$HOME/.local/bin:$PATH

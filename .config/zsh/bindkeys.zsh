@@ -43,10 +43,11 @@ bindkey '^[_' zle-cd-forward
 # Ctrl + K runs list directory
 bindkey '^k' zle-ls
 
-# Duplicate bindings
+# Alt + Ctrl + K runs tree directory
+bindkey '^[^K' zle-treed-depth-3
 
-# Alt + Ctrl + K runs tree 3
-bindkey '^[^K' tree-depth-3
+# Alt + Ctrl + I runs tree directory
+bindkey '^[^I' zle-tree-depth-3
 
 # Additional zle bindings
 bindkey '^[.' insert-last-word
@@ -62,10 +63,8 @@ bindkey '^p' up-line-or-history
 bindkey '^r' fzf-history-widget
 bindkey '^w' vi-backward-kill-word
 
-# zsh-history-substring-search plugin configuration
-
-# Alt + I runs search history backwards
+# Alt + I runs zsh-history-substring-search backwards
 bindkey '^[i' history-substring-search-up
 
-# Alt + Shift + I runs search history forwards
+# Alt + Shift + I runs zsh-history-substring-search forwards
 bindkey '^[I' history-substring-search-down

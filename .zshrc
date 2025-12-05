@@ -10,7 +10,7 @@ source $ZSH_CONFIG/prompt.zsh
 source $ZSH_CONFIG/completions.zsh
 source $ZSH_CONFIG/functions.zsh
 source $ZSH_CONFIG/hooks.zsh
-source $ZSH_CONFIG/widgets.zsh
+source $ZSH_CONFIG/widgets/index.zsh
 source $ZSH_CONFIG/bindkeys.zsh
 source $ZSH_CONFIG/history.zsh
 source $ZSH_CONFIG/zle.zsh
