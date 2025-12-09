@@ -16,8 +16,8 @@ bindkey '^[D' zle-git-diff
 # Alt + Shift + S runs git status
 bindkey '^[S' zle-git-status
 
-# Alt + Shift + I runs login shell
-bindkey '^[I' zle-zsh-login
+# Alt + Shift + I runs tree directory
+bindkey '^[I' zle-ls
 
 # Alt + Shift + R runs source shell
 bindkey '^[R' zle-source-shell
@@ -49,6 +49,21 @@ bindkey '^[^K' zle-treed-depth-3
 # Alt + Ctrl + I runs tree directory
 bindkey '^[^I' zle-tree-depth-3
 
+# Alt + I runs list directory
+bindkey '^[i' zle-ls
+
+# Alt + Shift + I runs tree directory
+bindkey '^[I' zle-treed-depth-3
+
+# Ctrl + K runs list directory
+bindkey '^k' zle-ls
+
+# Alt + Ctrl + K runs tree directory
+bindkey '^[^K' zle-treed-depth-3
+
+# Alt + Ctrl + I runs tree directory
+bindkey '^[^I' zle-tree-depth-3
+
 # Additional zle bindings
 bindkey '^[.' insert-last-word
 bindkey '^[b' vi-backward-word
@@ -63,8 +78,8 @@ bindkey '^p' up-line-or-history
 bindkey '^r' fzf-history-widget
 bindkey '^w' vi-backward-kill-word
 
-# Alt + I runs zsh-history-substring-search backwards
-bindkey '^[i' history-substring-search-up
+# Ctrl + U runs zsh-history-substring-search backwards
+bindkey '^u' history-substring-search-up
 
-# Alt + Shift + I runs zsh-history-substring-search forwards
-bindkey '^[I' history-substring-search-down
+# Ctrl + Alt + U runs zsh-history-substring-search forwards
+bindkey '^[U' history-substring-search-down
