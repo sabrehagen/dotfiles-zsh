@@ -43,6 +43,11 @@ export PATH=$HOME/.yarn/bin:$PATH
 # Add user apt binaries to path
 export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
 
+# Export zig version manager configuration
+export ZVM_INSTALL="$HOME/.zvm/self"
+export PATH="$PATH:$HOME/.zvm/bin"
+export PATH="$PATH:$ZVM_INSTALL"
+
 # Set ssh socket path
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
 
