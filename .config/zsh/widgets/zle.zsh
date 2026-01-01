@@ -22,10 +22,17 @@ zle-silent-execute() {
 zle -N zle-silent-execute
 
 # Function to load last command output into the line buffer
-zle-last-command-output() {
+zle-buffer-last-command-output() {
   LBUFFER+="$(eval $history[$((HISTCMD-1))])"
 }
-zle -N zle-last-command-output
+zle -N zle-buffer-last-command-output
+
+# Function to load last command output into the pager
+zle-page-last-command-output() {
+  zle-exec-inline "eval $history[$((HISTCMD-1))] | cat"
+  zle reset-prompt
+}
+zle -N zle-page-last-command-output
 
 # Clear and exec widget that clears the terminal and executes the command
 zle-clear-and-exec() {

@@ -1,8 +1,8 @@
 # Ctrl + X + E runs silent execute
 bindkey '^X^E' zle-silent-execute
 
-# Alt + Shift + C runs load last command output
-bindkey '^[C' zle-last-command-output
+# Alt + Shift + C runs buffer last command output
+bindkey '^[C' zle-buffer-last-command-output
 
 # Alt + Shift + A runs git add
 bindkey '^[A' zle-git-add
@@ -18,6 +18,9 @@ bindkey '^[S' zle-git-status
 
 # Alt + Shift + I runs tree directory
 bindkey '^[I' zle-ls
+
+# Alt + Shift + P runs page last command output
+bindkey '^[P' zle-page-last-command-output
 
 # Alt + Shift + R runs source shell
 bindkey '^[R' zle-source-shell
