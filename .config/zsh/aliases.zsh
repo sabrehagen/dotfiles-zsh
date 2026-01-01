@@ -132,6 +132,7 @@ alias logout=$HOME/.config/scripts/clean-secrets.sh
 alias ls=eza
 alias lt="l --sort=modified"
 alias mkx="chmod +x"
+alias mpv="command mpv --no-video"
 alias own="sudo chown -R $USER:$USER"
 alias sc="cat package.json | jq .scripts"
 alias strip=ansi2txt
