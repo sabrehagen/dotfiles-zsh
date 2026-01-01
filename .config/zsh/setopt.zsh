@@ -16,5 +16,8 @@ setopt HIST_IGNORE_SPACE
 # Share history between all sessions
 setopt SHARE_HISTORY
 
+# Enable file locking to prevent history corruption
+setopt HIST_FCNTL_LOCK
+
 # Handle comments in interactive shell
 setopt INTERACTIVE_COMMENTS
