@@ -46,8 +46,9 @@ FZF-EOF" --preview-window=right:60%
 }
 
 get() {
-  git get $1
-  REPO_NAME=$(basename $1 | sed s/.git$//)
+  git get $@
+  LAST_ARG=$@[-1]
+  REPO_NAME=$(basename $LAST_ARG | sed s/.git$//)
   cd $REPO_NAME
 }
 
