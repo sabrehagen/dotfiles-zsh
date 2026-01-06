@@ -53,7 +53,7 @@ get() {
   git get $@
   LAST_ARG=$@[-1]
   REPO_NAME=$(basename $LAST_ARG | sed s/.git$//)
-  cd $REPO_NAME
+  test -d $REPO_NAME && cd $REPO_NAME
 }
 
 load-env() {
