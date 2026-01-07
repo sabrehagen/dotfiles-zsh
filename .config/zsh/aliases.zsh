@@ -95,6 +95,7 @@ alias ax="arc unarchive"
 alias bat="batcat --style plain --theme ansi"
 alias cat=bat
 alias cbonsai="cbonsai --seed 119 --live --infinite"
+alias clip=clipboard
 alias code="cursor $@"
 alias de="docker exec --interactive --tty"
 alias di="sudo dpkg -i"
