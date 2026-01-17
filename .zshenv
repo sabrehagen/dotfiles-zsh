@@ -22,9 +22,6 @@ export GOPATH=$HOME/go
 # Set locale
 export LC_ALL=en_US.UTF-8
 
-# Add user apt libraries to path
-export LD_LIBRARY_PATH=$HOME/.apt/usr/lib:$HOME/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-
 # Set less pager configuration
 export LESS='--ignore-case --no-init --quit-if-one-screen --RAW-CONTROL-CHARS'
 
@@ -40,8 +37,11 @@ export PATH=$HOME/.cargo/bin:$PATH
 # Add yarn binaries to path
 export PATH=$HOME/.yarn/bin:$PATH
 
-# Add user apt binaries to path
-export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
+# Add user apt binaries to path if available
+test -d $HOME/.apt && export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
+
+# Add user apt libraries to path if available
+test -d $HOME/.apt && export LD_LIBRARY_PATH=$HOME/.apt/usr/lib:$HOME/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 
 # Export zig version manager configuration
 export ZVM_INSTALL="$HOME/.zvm/self"

@@ -1,3 +1,12 @@
+ascii() {
+  APT_GET_USERSPACE_FIGLET=$HOME/.apt/usr/share/figlet
+  if [ -d $APT_GET_USERSPACE_FIGLET ]; then
+    figlet -d $APT_GET_USERSPACE_FIGLET "$@"
+  else
+    figlet "$@"
+  fi
+}
+
 c() {
   sgpt --chat shell "$*"
 }
@@ -26,13 +35,14 @@ cxp() {
   find . -type f | gv '.git|.meltano|lock' | x zsh -c 'echo file: @; cat @'
 }
 
-ascii() {
-  APT_GET_USERSPACE_FIGLET=$HOME/.apt/usr/share/figlet
-  if [ -d $APT_GET_USERSPACE_FIGLET ]; then
-    figlet -d $APT_GET_USERSPACE_FIGLET "$@"
-  else
-    figlet "$@"
-  fi
+dunstify_char_by_char () {
+	local message="$1"
+	local current_message=""
+	for ((i=0; i<${#message}; i++ )) do
+		current_message+="${message:$i:1}"
+		dunstify -h string:x-dunst-stack-tag:test "$current_message"
+		sleep 0.1
+	done
 }
 
 fzf-git-log () {
@@ -54,6 +64,10 @@ get() {
   LAST_ARG=$@[-1]
   REPO_NAME=$(basename $LAST_ARG | sed s/.git$//)
   test -d $REPO_NAME && cd $REPO_NAME
+}
+
+git_https_to_ssh () {
+  sed -i 's;=.*://.*github.com/\(.*\);= git@github.com:\1;' "${1:-.git/config}"
 }
 
 load-env() {
