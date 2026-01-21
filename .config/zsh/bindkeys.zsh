@@ -58,6 +58,12 @@ bindkey '^[i' zle-ls
 # Alt + Shift + I runs tree directory
 bindkey '^[I' zle-treed-depth-3
 
+# Ctrl + Alt + Shift + L runs zsh login
+bindkey '\e[1;8C' zle-zsh-login
+
+# Ctrl + Alt + Shift + K runs tree depth 3
+bindkey "\e[1;8A" zle-tree-depth-3
+
 # Ctrl + K runs list directory
 bindkey '^k' zle-ls
 
