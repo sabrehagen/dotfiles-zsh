@@ -40,6 +40,9 @@ export PATH=$HOME/.yarn/bin:$PATH
 # Use qt5ct for qt application theming
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+# Export qt5ct library path
+export LD_LIBRARY_PATH=/opt/qt5ct/src/qt5ct-common:$LD_LIBRARY_PATH
+
 # Add user apt binaries to path if available
 test -d $HOME/.apt && export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
 
