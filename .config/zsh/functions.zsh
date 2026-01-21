@@ -15,24 +15,16 @@ cc() {
   sgpt --code "Produce a posix compatible shell command or shell script to do the following, unless specified otherwise: $*"
 }
 
+ccx() {
+  sgpt --shell "Produce a posix compatible shell command or shell script to do the following, unless specified otherwise: $*"
+}
+
 ch() {
   sgpt --show-chat shell
 }
 
-cx() {
-  cxp | c
-}
-
-ccx() {
-  cxp | cc
-}
-
-cxl() {
-  cxp | wc -l
-}
-
-cxp() {
-  find . -type f | gv '.git|.meltano|lock' | x zsh -c 'echo file: @; cat @'
+cl() {
+  sgpt --list-chats
 }
 
 dunstify_char_by_char () {
@@ -94,7 +86,7 @@ man() {
 }
 
 mk() {
-  mkdir $1
+  mkdir -p $1
   cd $1
 }
 
