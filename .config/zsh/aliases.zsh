@@ -133,7 +133,8 @@ alias lf="lh --only-files"
 alias lh="l --total-size"
 alias login="source $HOME/.config/scripts/clone-secrets.sh"
 alias logout=$HOME/.config/scripts/clean-secrets.sh
-alias ls=eza
+alias ls="l --sort=size"
+alias lsd="l --reverse --sort=size"
 alias lt="l --sort=modified"
 alias mkx="chmod +x"
 alias mpv="command mpv --no-video"
