@@ -4,6 +4,9 @@ bindkey '^X^E' zle-silent-execute
 # Alt + Shift + C runs buffer last command output
 bindkey '^[C' zle-buffer-last-command-output
 
+# Alt + Shift + X runs buffer output of exec zle buffer
+bindkey '^[X' zle-buffer-output-of-exec-zle-buffer
+
 # Alt + Shift + A runs git add
 bindkey '^[A' zle-git-add
 
