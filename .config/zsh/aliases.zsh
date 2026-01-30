@@ -161,3 +161,7 @@ alias vl="vcsh list"
 alias x="xargs -I @"
 alias zs="source $HOME/.zshrc; source $HOME/.zshenv"
 alias zl="clear; zsh --login"
+
+# Run extension with program
+alias -s pdf='zathura'
+alias -s sh='zsh'
