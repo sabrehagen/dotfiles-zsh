@@ -27,12 +27,12 @@ zle-buffer-last-command-output() {
 }
 zle -N zle-buffer-last-command-output
 
-# Function that executes the current buffer and replaces it with the output
-zle-buffer-output-of-exec-zle-buffer() {
+# Function that executes the current buffer and replaces it with the command output
+zle-exec-and-replace-buffer() {
   BUFFER="$(eval "$BUFFER" 2>&1)"
   CURSOR=${#BUFFER}
 }
-zle -N zle-buffer-output-of-exec-zle-buffer
+zle -N zle-exec-and-replace-buffer
 
 # Function to load last command output into the pager
 zle-page-last-command-output() {
