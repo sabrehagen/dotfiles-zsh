@@ -9,6 +9,9 @@ source $HOME/.zgenom/zgenom.zsh
 # Disable oh-my-zsh auto update
 zstyle ':omz:update' mode disabled
 
+# Load datetime module
+zmodload zsh/datetime
+
 # If no zgenom static init exists
 if ! zgenom saved; then
 
