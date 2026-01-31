@@ -43,16 +43,13 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # Export qt5ct library path
 export LD_LIBRARY_PATH=/opt/qt5ct/src/qt5ct-common:$LD_LIBRARY_PATH
 
-# Add user apt binaries to path if available
-test -d $HOME/.apt && export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
-
-# Add user apt libraries to path if available
-test -d $HOME/.apt && export LD_LIBRARY_PATH=$HOME/.apt/usr/lib:$HOME/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+export XDG_RUNTIME_DIR=$HOME/.local/run
+mkdir -p -m u=rwx,go= $XDG_RUNTIME_DIR
 
 # Export zig version manager configuration
-export ZVM_INSTALL="$HOME/.zvm/self"
-export PATH="$PATH:$HOME/.zvm/bin"
-export PATH="$PATH:$ZVM_INSTALL"
+export ZVM_INSTALL=$HOME/.zvm/self
+export PATH=$PATH:$HOME/.zvm/bin
+export PATH=$PATH:$ZVM_INSTALL
 
 # Set ssh socket path
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
@@ -65,6 +62,12 @@ export TZ=Australia/Sydney
 
 # Set current user
 export USER=$(whoami)
+
+# Add user apt binaries to path if available
+test -d $HOME/.apt && export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
+
+# Add user apt libraries to path if available
+test -d $HOME/.apt && export LD_LIBRARY_PATH=$HOME/.apt/usr/lib:$HOME/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 
 # Export private environment values
 source $HOME/.zshenv-private 2>/dev/null
