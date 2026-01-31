@@ -97,7 +97,6 @@ alias asciic-blocks="command asciic --colorize --use-system-binaries"
 alias au="sudo apt-get update"
 alias ax="arc unarchive"
 alias bat="batcat --style plain --theme ansi"
-alias cat=bat
 alias cbonsai="cbonsai --seed 119 --live --infinite"
 alias clip=clipboard
 alias code="cursor $@"
@@ -164,3 +163,7 @@ alias zl="clear; zsh --login"
 
 # Run extension with program
 alias -s pdf='zathura'
+
+# Alias alternative binaries if available
+command -v bat >/dev/null && alias cat=bat || true
+command -v nala >/dev/null && alias apt-get=nala || true
