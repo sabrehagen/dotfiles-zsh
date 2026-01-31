@@ -13,6 +13,7 @@ install_apt_get_packages() {
     jq \
     keychain \
     make \
+    nala \
     nano \
     ncdu \
     net-tools \
