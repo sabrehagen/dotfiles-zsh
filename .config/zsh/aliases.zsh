@@ -164,4 +164,3 @@ alias zl="clear; zsh --login"
 
 # Run extension with program
 alias -s pdf='zathura'
-alias -s sh='zsh'
