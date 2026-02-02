@@ -6,11 +6,11 @@ zle-zsh-login() {
 zle -N zle-zsh-login
 
 zle-zsh-source-zshenv() {
-  eval source $HOME/.zshenv
+  source $HOME/.zshenv
 }
 
 zle-zsh-source-zshrc() {
-  eval source $HOME/.zshrc
+  source $HOME/.zshrc
   zle-zsh-source-zshenv
 }
 
