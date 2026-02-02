@@ -1,3 +1,6 @@
+# Skip if shell is not interactive
+[[ -o interactive ]] || return
+
 # Common tmux session for all ssh connections
 TMUX_SSH_SESSION=ssh-client
 
