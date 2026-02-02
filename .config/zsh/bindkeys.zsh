@@ -26,7 +26,7 @@ bindkey '^[I' zle-ls
 bindkey '^[P' zle-page-last-command-output
 
 # Alt + Shift + R runs source shell
-bindkey '^[R' zle-source-shell
+bindkey '^[R' zle-zsh-reload-shell
 
 # Alt + Ctrl + J runs clear and exec
 bindkey '^[^J' zle-clear-and-exec

@@ -5,10 +5,18 @@ zle-zsh-login() {
 }
 zle -N zle-zsh-login
 
-# Source shell widget that reloads .zshrc and .zshenv
-zle-source-shell() {
-  eval source $HOME/.zshrc
+zle-zsh-source-zshenv() {
   eval source $HOME/.zshenv
+}
+
+zle-zsh-source-zshrc() {
+  eval source $HOME/.zshrc
+  zle-zsh-source-zshenv
+}
+
+# Reload shell widget that reloads .zshrc and .zshenv
+zle-zsh-reload-shell() {
+  zle-zsh-source-zshrc
 
   # Update prompt to indicate shell config sourced successfully
   ORIGINAL_PROMPT=$PROMPT
@@ -28,7 +36,7 @@ zle-source-shell() {
     kill -$RESET_PROMPT_SIGNAL $$
   ) &!
 }
-zle -N zle-source-shell
+zle -N zle-zsh-reload-shell
 
 # Clear and exec widget that clears the terminal and executes the command
 zle-clear-and-exec() {

@@ -1,6 +1,16 @@
 # Set hostname
 export HOSTNAME=${HOSTNAME:-$(hostname)}
 
+# Export xdg user config directory
+export XDG_CONFIG_DIR=$HOME/.config
+
+# Export xdg user runtime directory
+export XDG_RUNTIME_DIR=$HOME/.local/run
+mkdir -p -m u=rwx,go= $XDG_RUNTIME_DIR
+
+# Export xdg user session type
+export XDG_SESSION_TYPE=x11
+
 # Set aws config path
 export AWS_CONFIG_FILE=$HOME/.config/aws/config
 
@@ -9,6 +19,9 @@ export CLAUDE_CONFIG_DIR=$HOME/.config/claude
 
 # Make tree always output colour
 export CLICOLOR_FORCE=1
+
+# Set dbus session bus address
+export DBUS_SESSION_BUS_ADDRESS=$XDG_RUNTIME_DIR/dbus-session-bus
 
 # Set fzf path
 export FZF_BASE=$HOME/.fzf/bin/fzf
@@ -42,16 +55,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Export qt5ct library path
 export LD_LIBRARY_PATH=/opt/qt5ct/src/qt5ct-common:$LD_LIBRARY_PATH
-
-# Export config directory
-export XDG_CONFIG_DIR=$HOME/.config
-
-# Export runtime directory
-export XDG_RUNTIME_DIR=$HOME/.local/run
-mkdir -p -m u=rwx,go= $XDG_RUNTIME_DIR
-
-# Export session type
-export XDG_SESSION_TYPE=x11
 
 # Export zig version manager configuration
 export ZVM_INSTALL=$HOME/.zvm/self
