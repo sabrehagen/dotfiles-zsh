@@ -43,6 +43,9 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # Export qt5ct library path
 export LD_LIBRARY_PATH=/opt/qt5ct/src/qt5ct-common:$LD_LIBRARY_PATH
 
+# Export config directory
+export XDG_CONFIG_DIR=$HOME/.config
+
 # Export runtime directory
 export XDG_RUNTIME_DIR=$HOME/.local/run
 mkdir -p -m u=rwx,go= $XDG_RUNTIME_DIR
