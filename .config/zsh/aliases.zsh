@@ -122,6 +122,7 @@ alias gr="g --recursive"
 alias grl="gl --recursive"
 alias gv="g --invert-match"
 alias h=$HOME/.config/scripts/host-ssh-tty.sh
+alias hcp=$HOME/.config/scripts/host-scp.sh
 alias hn=$HOME/.config/scripts/host-network.sh
 alias imv=imv-x11
 alias inf=infinity
