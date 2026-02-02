@@ -14,7 +14,7 @@ zle-zsh-source-zshrc() {
   zle-zsh-source-zshenv
 }
 
-# Reload shell widget that reloads .zshrc and .zshenv
+# Reload shell source and environment
 zle-zsh-reload-shell() {
   zle-zsh-source-zshrc
 
