@@ -21,7 +21,7 @@ export CLAUDE_CONFIG_DIR=$HOME/.config/claude
 export CLICOLOR_FORCE=1
 
 # Set dbus session bus address
-export DBUS_SESSION_BUS_ADDRESS=$XDG_RUNTIME_DIR/dbus-session-bus
+export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/dbus-session-bus
 
 # Set fzf path
 export FZF_BASE=$HOME/.fzf/bin/fzf
