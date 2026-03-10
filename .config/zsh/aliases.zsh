@@ -88,9 +88,9 @@ alias st="git st"
 
 # Alias common commands to better alternatives
 alias ah="nala show"
-alias ai="sudo nala install -y"
+alias ai="sudo nala install"
 alias al="dpkg-query -L"
-alias ar="sudo nala remove -y"
+alias ar="sudo nala remove"
 alias as="apt-file search --regexp"
 alias asciic="asciic --colorize --style mixed --charset '.,:;i1tfLCG08@' --use-system-binaries"
 alias asciic-blocks="command asciic --colorize --use-system-binaries"
