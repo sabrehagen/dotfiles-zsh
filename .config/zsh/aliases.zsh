@@ -126,7 +126,7 @@ alias hcp=$HOME/.config/scripts/host-scp.sh
 alias hn=$HOME/.config/scripts/host-network.sh
 alias imv=imv-x11
 alias inf=infinity
-alias ip="curl ip-api.com"
+alias ipa="curl ip-api.com"
 alias jqc="jq -C"
 alias jql="jqc | less"
 alias l="EZA_GRID_ROWS=50 eza --all --color=always --grid --group-directories-first --long --no-permissions --octal-permissions --smart-group"
