@@ -99,6 +99,7 @@ alias ax="arc unarchive"
 alias bat="batcat --style plain --theme ansi"
 alias cat=bat
 alias cbonsai="cbonsai --seed 119 --live --infinite"
+alias claude="claude --dangerously-skip-permissions"
 alias clip=clipboard
 alias code="cursor $@"
 alias de="docker exec --interactive --tty"
