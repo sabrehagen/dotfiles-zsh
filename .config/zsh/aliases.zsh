@@ -116,11 +116,9 @@ alias dsp="docker system prune -f"
 alias e="echo -n"
 alias feh="feh --image-bg black --keep-zoom-vp"
 alias figlet="figlet-figlet -f slant -m 2 -w 200"
-alias g="grep --binary-files=without-match --color=always --extended-regexp --ignore-case"
+alias g="rg --color=always --ignore-case"
 alias ghp="GH_CONFIG_DIR=$HOME/.config/gh-personal gh"
-alias gl="g --files-with-matches --line-number"
-alias gr="g --recursive"
-alias grl="gl --recursive"
+alias gl="g --files-with-matches"
 alias gv="g --invert-match"
 alias h=$HOME/.config/scripts/host-ssh-tty.sh
 alias hcp=$HOME/.config/scripts/host-scp.sh
