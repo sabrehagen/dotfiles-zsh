@@ -47,7 +47,6 @@ alias dd="git dd"
 alias ds="git ds"
 alias f="git f"
 alias fname="git find"
-alias gs="git subst"
 alias ll=fzf-git-log
 alias lll="git lll"
 alias m="git m"
