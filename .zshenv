@@ -41,6 +41,9 @@ export LESS='--ignore-case --no-init --quit-if-one-screen --RAW-CONTROL-CHARS'
 # Add user binaries to path
 export PATH=$HOME/.local/bin:$PATH
 
+# Add bun binaries to path
+export PATH=$HOME/.bun/bin:$PATH
+
 # Add go binaries to path
 export PATH=$HOME/go/bin:$PATH
 
