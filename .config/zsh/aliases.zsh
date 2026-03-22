@@ -140,6 +140,7 @@ alias lsd="l --reverse --sort=size"
 alias lt="l --sort=modified"
 alias mkx="chmod +x"
 alias mpv="command mpv --no-video"
+alias n=nano
 alias own="sudo chown -R $USER:$USER"
 alias sc="cat package.json | jq .scripts"
 alias strip=ansi2txt
