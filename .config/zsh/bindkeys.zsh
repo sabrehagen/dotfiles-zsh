@@ -19,6 +19,12 @@ bindkey '^[D' zle-git-diff
 # Alt + Shift + S runs git status
 bindkey '^[S' zle-git-status
 
+# Ctrl + Alt + Shift + D runs vcsh diff
+bindkey '^[^D' zle-vcsh-diff
+
+# Ctrl + Alt + Shift + S runs vcsh status
+bindkey '^[^S' zle-vcsh-status
+
 # Alt + Shift + I runs tree directory
 bindkey '^[I' zle-ls
 

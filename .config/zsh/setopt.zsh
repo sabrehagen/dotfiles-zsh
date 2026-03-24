@@ -21,3 +21,6 @@ setopt HIST_FCNTL_LOCK
 
 # Handle comments in interactive shell
 setopt INTERACTIVE_COMMENTS
+
+# Prevent Ctrl+D from closing the shell
+setopt IGNORE_EOF

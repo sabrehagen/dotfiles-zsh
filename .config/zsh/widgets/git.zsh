@@ -21,3 +21,15 @@ zle-git-status() {
   zle-exec-inline s
 }
 zle -N zle-git-status
+
+# Vcsh diff widget that runs vd
+zle-vcsh-diff() {
+  zle-exec-inline vd
+}
+zle -N zle-vcsh-diff
+
+# Vcsh status widget that runs vs
+zle-vcsh-status() {
+  zle-exec-inline vs
+}
+zle -N zle-vcsh-status
