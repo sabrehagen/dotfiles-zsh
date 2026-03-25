@@ -23,10 +23,6 @@ ch() {
   sgpt --show-chat shell
 }
 
-cl() {
-  sgpt --list-chats
-}
-
 dunstify_char_by_char () {
 	local message="$1"
 	local current_message=""
