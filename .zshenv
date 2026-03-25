@@ -35,9 +35,6 @@ export GOPATH=$HOME/go
 # Set locale
 export LC_ALL=en_US.UTF-8
 
-# Set less pager configuration
-export LESS='--ignore-case --no-init --quit-if-one-screen --RAW-CONTROL-CHARS'
-
 # Add user binaries to path
 export PATH=$HOME/.local/bin:$PATH
 
