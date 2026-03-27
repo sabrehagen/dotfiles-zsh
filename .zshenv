@@ -77,7 +77,7 @@ export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
 export TZ=Australia/Sydney
 
 # Set current user
-export USER=$(whoami)
+export USER=${USER:-$(whoami)}
 
 # Add user apt binaries to path if available
 test -d $HOME/.apt && export PATH=$HOME/.apt/bin:$HOME/.apt/sbin:$HOME/.apt/usr/bin:$HOME/.apt/usr/sbin:$PATH
