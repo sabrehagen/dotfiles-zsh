@@ -71,6 +71,7 @@ load-env() {
 }
 
 man() {
+  GROFF_NO_SGR=1 \
   LESS_TERMCAP_mb=$'\E[1;33m' \
   LESS_TERMCAP_md=$'\E[1;32m' \
   LESS_TERMCAP_me=$'\E[0m' \
