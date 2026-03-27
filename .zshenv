@@ -1,5 +1,11 @@
+# Export desktop environment shell configuration
+eval "$($DESKTOP_ENVIRONMENT_SOURCE_DESKTOP_ENVIRONMENT/docker/scripts/environment.sh 2>/dev/null)"
+
+# Set environment x display
+export DISPLAY=$DESKTOP_ENVIRONMENT_X_DISPLAY
+
 # Set hostname
-export HOSTNAME=${HOSTNAME:-$(hostname)}
+export HOSTNAME=${DESKTOP_ENVIRONMENT_HOSTNAME:-$(hostname)}
 
 # Export xdg user config directory
 export XDG_CONFIG_DIR=$HOME/.config
