@@ -29,6 +29,9 @@ export CLICOLOR_FORCE=1
 # Set dbus session bus address
 export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/dbus-session-bus
 
+# Force colour output when no tty attached
+export FORCE_COLOR=1
+
 # Set fzf path
 export FZF_BASE=$HOME/.fzf/bin/fzf
 
