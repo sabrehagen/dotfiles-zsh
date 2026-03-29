@@ -11,11 +11,11 @@ export HOSTNAME=${DESKTOP_ENVIRONMENT_HOSTNAME:-$(hostname)}
 export XDG_CONFIG_DIR=$HOME/.config
 
 # Export xdg user runtime directory
-export XDG_RUNTIME_DIR=$HOME/.local/run
-mkdir -p -m u=rwx,go= $XDG_RUNTIME_DIR
+mkdir -p -m u=rwx,go= $HOME/.local/run
+export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-$HOME/.local/run}
 
 # Export xdg user session type
-export XDG_SESSION_TYPE=x11
+export XDG_SESSION_TYPE=${XDG_SESSION_TYPE:-x11}
 
 # Set aws config path
 export AWS_CONFIG_FILE=$HOME/.config/aws/config
@@ -27,7 +27,7 @@ export CLAUDE_CONFIG_DIR=$HOME/.config/claude
 export CLICOLOR_FORCE=1
 
 # Set dbus session bus address
-export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/dbus-session-bus
+export DBUS_SESSION_BUS_ADDRESS=${DBUS_SESSION_BUS_ADDRESS:-unix:path=$HOME/.local/run/dbus-session-bus}
 
 # Force colour output when no tty attached
 export FORCE_COLOR=1
