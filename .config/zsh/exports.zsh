@@ -1,4 +1,4 @@
-# Load jump functions
+# Load jump
 eval "$(jump shell zsh 2>/dev/null)"
 
 # Load mise
