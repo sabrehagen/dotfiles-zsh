@@ -124,5 +124,5 @@ pasteget() {
 }
 
 tn() {
-  TMUX= tmux new-session -s on-demand-$(date +%s) -t "$@"
+  TMUX= tmux new-session -s on-demand-$(date +%s) -t "$@" \; set-option destroy-unattached on
 }
