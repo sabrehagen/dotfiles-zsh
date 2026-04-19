@@ -87,6 +87,7 @@ alias sl="git sl"
 alias sp="git sp"
 alias ss="git ss"
 alias st="git st"
+alias ut="git ut"
 
 # Alias common commands to better alternatives
 alias ah="nala show"
