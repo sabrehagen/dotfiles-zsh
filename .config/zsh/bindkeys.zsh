@@ -61,9 +61,6 @@ bindkey '^[I' zle-treed-depth-3
 # Ctrl + Alt + Shift + L runs zsh login
 bindkey '\e[1;8C' zle-zsh-login
 
-# Alt + Ctrl + I runs tree directory
-bindkey '^[^I' zle-tree-depth-3
-
 # Additional zle bindings
 bindkey '^[.' insert-last-word
 bindkey '^[b' vi-backward-word
