@@ -25,9 +25,6 @@ bindkey '^[^D' zle-vcsh-diff
 # Ctrl + Alt + Shift + S runs vcsh status
 bindkey '^[^S' zle-vcsh-status
 
-# Alt + Shift + I runs tree directory
-bindkey '^[I' zle-ls
-
 # Alt + Shift + P runs page last command output
 bindkey '^[P' zle-page-last-command-output
 
@@ -52,9 +49,6 @@ bindkey '^[-' zle-cd-back
 # Alt + Shift + Minus forward directory
 bindkey '^[_' zle-cd-forward
 
-# Ctrl + K runs list directory
-bindkey '^k' zle-ls
-
 # Alt + Ctrl + K runs tree directory
 bindkey '^[^K' zle-treed-depth-3
 
@@ -69,9 +63,6 @@ bindkey '^[I' zle-treed-depth-3
 
 # Ctrl + Alt + Shift + L runs zsh login
 bindkey '\e[1;8C' zle-zsh-login
-
-# Ctrl + K runs list directory
-bindkey '^k' zle-ls
 
 # Alt + Ctrl + K runs tree
 bindkey '^[^K' zle-tree-depth-3
