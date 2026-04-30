@@ -70,6 +70,9 @@ export PATH=$PATH:$ZVM_INSTALL
 # Set ssh socket path
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
 
+# Pin termux pkg mirror
+export TERMUX_PKG_NO_MIRROR_SELECT=1
+
 # Set tmux plugin manager path
 export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins
 
