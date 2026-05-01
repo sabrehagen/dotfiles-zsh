@@ -56,3 +56,10 @@ _paste_and_refresh() {
   (( $+functions[_zsh_highlight] )) && _zsh_highlight && zle .redisplay
 }
 zle -N bracketed-paste _paste_and_refresh
+
+# Kill backward to the last whitespace
+zle-backward-kill-word-to-space() {
+  local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>"'\''`+,:@\\|'
+  zle backward-kill-word
+}
+zle -N zle-backward-kill-word-to-space
