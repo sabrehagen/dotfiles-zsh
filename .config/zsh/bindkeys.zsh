@@ -74,7 +74,7 @@ bindkey '^f' forward-char
 bindkey '^p' up-line-or-history
 bindkey '^r' fzf-history-widget
 bindkey '^w' vi-backward-kill-word
-bindkey '^[[87;6u' zle-backward-kill-word-to-space
+bindkey '^[W' zle-backward-kill-word-to-space
 
 # Ctrl + U runs zsh-history-substring-search backwards
 bindkey '^u' history-substring-search-up
