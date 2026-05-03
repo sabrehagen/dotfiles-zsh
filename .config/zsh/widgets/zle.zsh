@@ -11,7 +11,6 @@ zle-exec-inline() {
   eval "$@" >/dev/tty </dev/tty
   echo
   echo
-  echo
   zle reset-prompt
 }
 
