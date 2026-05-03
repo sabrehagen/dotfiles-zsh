@@ -20,9 +20,6 @@ export XDG_SESSION_TYPE=${XDG_SESSION_TYPE:-x11}
 # Set aws config path
 export AWS_CONFIG_FILE=$HOME/.config/aws/config
 
-# Set claude code config path
-export CLAUDE_CONFIG_DIR=$HOME/.config/claude
-
 # Make tree always output colour
 export CLICOLOR_FORCE=1
 
