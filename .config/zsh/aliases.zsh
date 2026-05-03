@@ -46,6 +46,7 @@ alias dblame=$HOME/.config/scripts/git-diff-blame.sh
 alias dbp="git dbp"
 alias dc="git dc"
 alias dd="git dd"
+alias dpl="git dpl"
 alias ds="git ds"
 alias f="git f"
 alias fname="git find"
