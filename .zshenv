@@ -65,7 +65,7 @@ export PATH=$PATH:$HOME/.zvm/bin
 export PATH=$PATH:$ZVM_INSTALL
 
 # Set ssh socket path
-export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
+export SSH_AUTH_SOCK=/tmp/ssh-agent.sock
 
 # Pin termux pkg mirror
 export TERMUX_PKG_NO_MIRROR_SELECT=1
