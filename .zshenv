@@ -1,6 +1,9 @@
 # Export desktop environment shell configuration
 eval "$($DESKTOP_ENVIRONMENT_SOURCE_DESKTOP_ENVIRONMENT/docker/scripts/environment.sh 2>/dev/null)"
 
+# Match host pam_umask 002 in non-PAM shells like docker exec
+umask 002
+
 # Set environment x display
 export DISPLAY=$DESKTOP_ENVIRONMENT_X_DISPLAY
 
